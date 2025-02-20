@@ -15,24 +15,37 @@
     .icon:first-child {
       color: $primary;
       position: absolute;
+      font-size: 20px;
       left: 10px;
       z-index: 0;
     }
 
     .icon:last-child {
       position: absolute;
-      right: 10px;
+      font-size: 18px;
+      right: 8px;
       z-index: 0;
     }
 
     select {
       -webkit-appearance: none;
       border: 0;
+      font-size: 12px;
       background-color: transparent;
-      padding: 5px 30px 5px 35px;
+      padding: 0px 30px 0px 45px;
       position: relative;
+      text-align: center;
       z-index: 1;
     }
+
+    select:focus {
+      outline: none;
+    }    
+  }
+  
+  .category:hover select {
+    color: $primary;
+    transition: 0.1s;
   }
 
   .searchField {
