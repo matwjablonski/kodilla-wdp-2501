@@ -36,7 +36,11 @@
       font-weight: 500;
       letter-spacing: 1px;
 
-      &:hover,
+      &:hover{
+        @extend %hover-animation;
+        @extend .hover-text;
+        @extend .hover-background;
+      }
       &.active {
         background-color: $primary;
         color: #ffffff;
