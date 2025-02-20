@@ -91,7 +91,7 @@
       justify-content: center;
       align-items: center;
 
-      :first-child {
+      .oldPrice {
         text-decoration: line-through;
         color: lighten($text-color, 50%);
         padding: 0 10px;
