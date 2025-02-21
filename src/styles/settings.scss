@@ -1,13 +1,16 @@
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+// LIST OF VARIABLES WITH COLORS
+$orange: #d58e32;
+$lightGray: #434343;
+$mediumGray: #363636;
+$darkGray: #2a2a2a;
+$borderDarkGray: #292929;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
-
-$primary: #d58e32;
-
-$text-color: #2a2a2a;
-
-$form-border-color: #292929;
+$header-topbar-bg: $lightGray;
+$header-bg: $mediumGray;
+$footer-claim-bg: $darkGray;
+$footer-bg: $mediumGray;
+$primary: $orange;
+$text-color: $darkGray;
+$form-border-color: $borderDarkGray;
