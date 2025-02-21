@@ -2,6 +2,7 @@
 
 .root {
   background-color: $header-bg;
+  min-width: 400px;
 
   :global(.container) > :global(.row) {
     height: 145px;
@@ -67,6 +68,20 @@
           background-color: lighten($primary, 10%);
         }
       }
+    }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      margin-bottom: -70px;
+    }
+
+    .phoneNumber p {
+      font-size: 14px;
+    }
+
+    .cart{
+      margin-top: 20px;
     }
   }
 }

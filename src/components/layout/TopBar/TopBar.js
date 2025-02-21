@@ -2,7 +2,15 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
+import {
+  faCaretDown,
+  faUser,
+  faLock,
+  faBars,
+  faDollarSign,
+  faLanguage,
+  faQuestion,
+} from '@fortawesome/free-solid-svg-icons';
 
 import styles from './TopBar.module.scss';
 
@@ -10,20 +18,29 @@ const TopBar = () => (
   <div className={styles.root}>
     <div className='container'>
       <div className='row'>
-        <div className={`col text-left ${styles.topOptions}`}>
+        <div className={`col C ${styles.topOptions}`}>
           <ul>
             <li>
-              <a href='#'>
+              <a className={styles.iconForMobile} href='#'>
+                <FontAwesomeIcon className={styles.icon} icon={faDollarSign} />
+              </a>
+              <a className={styles.textForDesktop} href='#'>
                 USD <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
             </li>
             <li>
-              <a href='#'>
+              <a className={styles.iconForMobile} href='#'>
+                <FontAwesomeIcon className={styles.icon} icon={faLanguage} />
+              </a>
+              <a className={styles.textForDesktop} href='#'>
                 English <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
             </li>
             <li>
-              <a href='#'>
+              <a className={styles.iconForMobile} href='#'>
+                <FontAwesomeIcon className={styles.icon} icon={faQuestion} />
+              </a>
+              <a className={styles.textForDesktop} href='#'>
                 Help <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
             </li>

@@ -2,6 +2,7 @@
 
 .root {
   background-color: $header-topbar-bg;
+  min-width: 400px;
 
   ul {
     list-style: none;
@@ -38,5 +39,50 @@
     .icon {
       margin-right: 5px;
     }
+  }
+  .iconForMobile {
+    display: none;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topMenu ul li a {
+    font-size: 0px;
+  }
+
+  .topMenu ul li .icon {
+    font-size: 20px;
+  }
+
+  .topOptions {
+    padding: 0 0 0 10px;
+  }
+
+  .topMenu {
+    padding: 0 10px 0 0;
+  }
+  .topMenu {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  ul {
+    li {
+      a {
+        font-size: 10px;
+      }
+    }
+  }
+
+  .topMenu {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .topOptions ul li {
+    margin-right: 0.5rem !important;
   }
 }
