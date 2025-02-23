@@ -2,7 +2,7 @@
 
 .root {
   background-color: $header-topbar-bg;
-  min-width: 400px;
+  min-width: 450px;
 
   ul {
     list-style: none;
@@ -12,21 +12,11 @@
     li {
       display: inline-block;
       line-height: 55px;
-
-      a {
-        color: #ffffff;
-        font-size: 13px;
-
-        &:hover {
-          color: $primary;
-          text-decoration: none;
-        }
-      }
     }
   }
 
   .topOptions ul li {
-    margin-right: 1.5rem;
+    margin-right: 1rem;
 
     .icon {
       margin-left: 5px;
@@ -40,15 +30,27 @@
       margin-right: 5px;
     }
   }
-  .iconForMobile {
-    display: none;
-    font-size: 20px;
+}
+
+a {
+  color: #ffffff;
+  font-size: 13px;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
   }
 }
 
 @media (max-width: 768px) {
-  .topMenu ul li a {
-    font-size: 0px;
+  .topMenu {
+    padding: 0 10px 0 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .textHidden{
+    font-size: 0;
   }
 
   .topMenu ul li .icon {
@@ -59,30 +61,11 @@
     padding: 0 0 0 10px;
   }
 
-  .topMenu {
-    padding: 0 10px 0 0;
-  }
-  .topMenu {
-    display: flex;
-    justify-content: flex-end;
-  }
 }
 
 @media (max-width: 480px) {
-  ul {
-    li {
-      a {
-        font-size: 10px;
-      }
-    }
-  }
-
   .topMenu {
     display: flex;
     justify-content: flex-end;
-  }
-
-  .topOptions ul li {
-    margin-right: 0.5rem !important;
   }
 }

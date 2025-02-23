@@ -2,15 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faCaretDown,
-  faUser,
-  faLock,
-  faBars,
-  faDollarSign,
-  faLanguage,
-  faQuestion,
-} from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './TopBar.module.scss';
 
@@ -21,26 +13,17 @@ const TopBar = () => (
         <div className={`col C ${styles.topOptions}`}>
           <ul>
             <li>
-              <a className={styles.iconForMobile} href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faDollarSign} />
-              </a>
-              <a className={styles.textForDesktop} href='#'>
+              <a href='#'>
                 USD <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
             </li>
             <li>
-              <a className={styles.iconForMobile} href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faLanguage} />
-              </a>
-              <a className={styles.textForDesktop} href='#'>
+              <a href='#'>
                 English <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
             </li>
             <li>
-              <a className={styles.iconForMobile} href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faQuestion} />
-              </a>
-              <a className={styles.textForDesktop} href='#'>
+              <a href='#'>
                 Help <FontAwesomeIcon className={styles.icon} icon={faCaretDown} />
               </a>
             </li>
@@ -49,17 +32,17 @@ const TopBar = () => (
         <div className={`col text-right ${styles.topMenu}`}>
           <ul>
             <li>
-              <a href='#'>
+              <a className={styles.textHidden} href='#'>
                 <FontAwesomeIcon className={styles.icon} icon={faUser} /> Login
               </a>
             </li>
             <li>
-              <a href='#'>
+              <a className={styles.textHidden} href='#'>
                 <FontAwesomeIcon className={styles.icon} icon={faLock} /> Register
               </a>
             </li>
             <li>
-              <a href='#'>
+              <a className={styles.textHidden} href='#'>
                 <FontAwesomeIcon className={styles.icon} icon={faBars} />
               </a>
             </li>
