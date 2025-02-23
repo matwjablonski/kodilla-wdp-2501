@@ -1,0 +1,16 @@
+@import "../../../styles/settings.scss";
+@import "../CompanyClaim/CompanyClaim.module.scss";
+
+@media (max-width: 768px) {
+  img {
+    margin-bottom: -40px;
+  }
+
+  .phoneNumber p {
+    font-size: 14px;
+  }
+
+  .cart {
+    margin-top: 20px;
+  }
+}
