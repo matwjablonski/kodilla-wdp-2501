@@ -1,6 +1,6 @@
 $base-padding: 24px;
 
-// List of variables with colors - !TYLKO DO UŻYTKU W TYM PLIKU!
+// List of variables with colors - !ONLY FOR USE IN THIS FILE!
 
 $orange: #d58e32;
 $grayDarker: #434343;
@@ -16,13 +16,13 @@ $textGrayLight: #d8d8d8;
 $textGrayMedium: #a9a9a9;
 $textGrayBlue: #e0e3ed;
 
-// List of variables with colors - !DO USUNIĘCIA PO WSZYSTKICH ZMIANACH!
+// List of variables with colors - !TO BE REMOVED AFTER ALL CHANGES!
 
 $primary: $orange;
 $form-border-color: $formBorderGrayDark;
 $text-color: $grayDarkest;
 
-// List of variables with colors - !DO UŻYTKU W KOMPONENTACH!
+// List of variables with colors - !FOR USE IN COMPONENTS!
 
 $header-topbar-bg: $grayDarker;
 $header-bg: $grayDark;
