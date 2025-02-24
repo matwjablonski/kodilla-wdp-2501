@@ -16,6 +16,11 @@ $textGrayLight: #d8d8d8;
 $textGrayMedium: #a9a9a9;
 $textGrayBlue: #e0e3ed;
 
+// List of variables with colors - !DO USUNIĘCIA PO WSZYSTKICH ZMIANACH!
+
+$primary: $orange;
+$form-border-color: $formBorderGrayDark;
+$text-color: $grayDarkest;
 
 // List of variables with colors - !DO UŻYTKU W KOMPONENTACH!
 
@@ -25,7 +30,7 @@ $header-bg: $grayDark;
 $footer-claim-bg: $grayMedium;
 $footer-bg: $grayDark;
 
-$button-bg: $primary;
+$button-bg: $orange;
 $button-border-color: $grayMedium;
 $button-text-color: $white;
 $button-hover-text-color: $white;
@@ -34,23 +39,23 @@ $button-hover-bg: $grayDark;
 $featureBox-bg: $white;
 $featureBox-text-transform-color: $grayMedium;
 $featureBox-icon-color: $white;
-$featureBox-bg-after: $primary;
-$featureBox-border-color: $primary;
-$featureBox-content-color: $primary;
+$featureBox-bg-after: $orange;
+$featureBox-border-color: $orange;
+$featureBox-content-color: $orange;
 
 $productBox-bg: $white;
 $productBox-border: $grayLight;
 $productBox-overlay-bg: $grayLighter;
 $productBox-icon-bg: $formBorderGrayDark;
 $productBox-icon-color: $white;
-$productBox-title-color: $primary;
+$productBox-title-color: $orange;
 $productBox-link-color: $grayDarkest;
 
-$newFurniture-title-color: $primary;
+$newFurniture-title-color: $orange;
 $newFurniture-link-color: $grayDarkest;
 $newFurniture-bg: $white;
 $newFurniture-button-bg: $grayLight;
-$newFurniture-button-bg-hover: $primary;
+$newFurniture-button-bg-hover: $orange;
 
 $productSearch-border: $formBorderGrayDark;
 $productSearch-text-color: $grayMedium;
@@ -58,9 +63,9 @@ $productSearch-placeholder-color: $grayMedium;
 $productSearch-button-bg: transparent;
 
 $companyClaim-text-color: $textGrayLight;
-$companyClaim-icon-bg: $primary;
-$companyClaim-cart-bg: $primary;
-$companyClaim-cart-bg-hover: lighten($primary, 10%);
+$companyClaim-icon-bg: $orange;
+$companyClaim-cart-bg: $orange;
+$companyClaim-cart-bg-hover: lighten($orange, 10%);
 $companyClaim-bottom-bg: $grayDark;
 $companyClaim-bottom-text-color: $textGrayBlue;
 
@@ -71,15 +76,15 @@ $footer-menu-link-hover: $white;
 $footer-bottom-bg: $grayMedium;
 $footer-bottom-text-color: $textGrayMedium;
 $footer-bottom-link-color: $textGrayMedium;
-$footer-bottom-link-hover: $primary;
+$footer-bottom-link-hover: $orange;
 
 $menuBar-bg: $white;
 $menuBar-link-color: $grayMedium;
-$menuBar-link-active-bg: $primary;
+$menuBar-link-active-bg: $orange;
 $menuBar-link-active-color: $white;
-$menuBar-link-active-border: $primary;
+$menuBar-link-active-border: $orange;
 $menuBar-link-border: $grayMedium;
 
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
-$topBar-link-hover: $primary;
+$topBar-link-hover: $orange;
