@@ -1,6 +1,7 @@
 $base-padding: 24px;
 
 // List of variables with colors - !TYLKO DO UŻYTKU W TYM PLIKU!
+
 $orange: #d58e32;
 $grayDarker: #434343;
 $grayDark: #363636;
@@ -24,33 +25,32 @@ $header-bg: $grayDark;
 $footer-claim-bg: $grayMedium;
 $footer-bg: $grayDark;
 
-// do zweryfikowania od buttona
-$button-bg: $white;
+$button-bg: $primary;
 $button-border-color: $grayMedium;
-$button-text-color: $darkGray;
+$button-text-color: $white;
 $button-hover-text-color: $white;
-$button-hover-bg: $primary;
+$button-hover-bg: $grayDark;
 
 $featureBox-bg: $white;
 $featureBox-text-transform-color: $grayMedium;
 $featureBox-icon-color: $white;
-$featureBox-bg-after: $orange;
-$featureBox-border-color: $orange;
-$featureBox-content-color: $orange;
+$featureBox-bg-after: $primary;
+$featureBox-border-color: $primary;
+$featureBox-content-color: $primary;
 
 $productBox-bg: $white;
 $productBox-border: $grayLight;
 $productBox-overlay-bg: $grayLighter;
 $productBox-icon-bg: $formBorderGrayDark;
 $productBox-icon-color: $white;
-$productBox-title-color: $orange;
+$productBox-title-color: $primary;
 $productBox-link-color: $grayDarkest;
 
-$newFurniture-title-color: $orange;
+$newFurniture-title-color: $primary;
 $newFurniture-link-color: $grayDarkest;
 $newFurniture-bg: $white;
 $newFurniture-button-bg: $grayLight;
-$newFurniture-button-bg-hover: $orange;
+$newFurniture-button-bg-hover: $primary;
 
 $productSearch-border: $formBorderGrayDark;
 $productSearch-text-color: $grayMedium;
@@ -58,9 +58,9 @@ $productSearch-placeholder-color: $grayMedium;
 $productSearch-button-bg: transparent;
 
 $companyClaim-text-color: $textGrayLight;
-$companyClaim-icon-bg: $orange;
-$companyClaim-cart-bg: $orange;
-$companyClaim-cart-bg-hover: lighten($orange, 10%);
+$companyClaim-icon-bg: $primary;
+$companyClaim-cart-bg: $primary;
+$companyClaim-cart-bg-hover: lighten($primary, 10%);
 $companyClaim-bottom-bg: $grayDark;
 $companyClaim-bottom-text-color: $textGrayBlue;
 
@@ -71,15 +71,15 @@ $footer-menu-link-hover: $white;
 $footer-bottom-bg: $grayMedium;
 $footer-bottom-text-color: $textGrayMedium;
 $footer-bottom-link-color: $textGrayMedium;
-$footer-bottom-link-hover: $orange;
+$footer-bottom-link-hover: $primary;
 
 $menuBar-bg: $white;
 $menuBar-link-color: $grayMedium;
-$menuBar-link-active-bg: $orange;
+$menuBar-link-active-bg: $primary;
 $menuBar-link-active-color: $white;
-$menuBar-link-active-border: $orange;
+$menuBar-link-active-border: $primary;
 $menuBar-link-border: $grayMedium;
 
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
-$topBar-link-hover: $orange;
+$topBar-link-hover: $primary;
