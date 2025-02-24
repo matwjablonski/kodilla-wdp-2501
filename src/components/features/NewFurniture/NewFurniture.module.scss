@@ -49,8 +49,12 @@
             font-size: 18px;
             display: block;
 
-            &.active,
+            &.active {
+              color: $primary;
+            }
             &:hover {
+              @extend %hover-animation;
+              @extend .hover-text-dark-bg;
               &::before {
                 content: "";
                 position: absolute;
