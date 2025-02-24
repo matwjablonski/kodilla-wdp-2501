@@ -17,7 +17,8 @@
         font-size: 13px;
 
         &:hover {
-          color: $primary;
+          @extend %hover-animation;
+          @extend .hover-text-dark-bg;
           text-decoration: none;
         }
       }

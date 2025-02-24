@@ -10,7 +10,7 @@
     padding: 80% 10px 0 10px;
     background: {
       color: #f4f5f7;
-      size: contain;
+      size: cover;
       position: center;
       repeat: no-repeat;
     }
@@ -29,8 +29,19 @@
     }
 
     .buttons {
+      visibility: hidden;
       display: flex;
       justify-content: space-between;
+    }
+  }
+
+  &:hover {
+    .buttons {
+      visibility: visible;
+    }
+
+    .priceBtn {
+      background-color: $primary;  
     }
   }
 
@@ -74,5 +85,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    .price {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .oldPrice {
+        text-decoration: line-through;
+        color: lighten($text-color, 50%);
+        padding: 0 10px;
+      }
+    }
   }
 }
