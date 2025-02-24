@@ -53,7 +53,7 @@ const ProductBox = ({ id, category, name, oldPrice, price, promo, stars }) => (
       </div>
       <div className={styles.price}>
         {oldPrice && <div className={styles.oldPrice}>$ {oldPrice.toFixed(2)}</div>}
-        <Button noHover variant='small'>
+        <Button noHover variant='small' className={styles.priceBtn}>
           $ {price.toFixed(2)}
         </Button>
       </div>
