@@ -88,3 +88,39 @@ $menuBar-link-border: $grayMedium;
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
 $topBar-link-hover: $orange;
+$form-border-color: #292929;
+
+// ANIMATIONS
+
+// Animation time for different effects
+$hover-animation-time: 250ms;
+$hover-background-time: 250ms;
+$hover-text-time: 250ms;
+
+$hover-text-color: #ffffff;
+$hover-text-color-dark-bg: $primary;
+$hover-background-color: $primary;
+
+// Placeholder
+%hover-animation {
+  transition: $hover-animation-time;
+
+  &.hover-background {
+    transition: background-color $hover-background-time;
+    background-color: $hover-background-color;
+  }
+
+  &.hover-text {
+    transition: color $hover-text-time;
+    color: $hover-text-color;
+  }
+
+  &.hover-text-dark-bg {
+    transition: color $hover-text-time;
+    color: $hover-text-color-dark-bg;
+  }
+
+  &.hover-move {
+    transition: transform $hover-animation-time ease-in-out;
+  }
+}
