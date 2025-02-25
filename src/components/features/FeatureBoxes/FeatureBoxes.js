@@ -20,7 +20,7 @@ const FeatureBoxes = () => {
       <div className='container'>
         <div className='row'>
           <div
-            className='col'
+            className='col-6 col-lg-3 my-3 my-lg-0'
             onMouseEnter={() => setActiveBox('faTruck')}
             onMouseLeave={() => setActiveBox(null)}
           >
@@ -32,7 +32,7 @@ const FeatureBoxes = () => {
             </Link>
           </div>
           <div
-            className='col'
+            className='col-6 col-lg-3 my-3 my-lg-0'
             onMouseEnter={() => setActiveBox('faHeadphones')}
             onMouseLeave={() => setActiveBox(null)}
           >
@@ -44,7 +44,7 @@ const FeatureBoxes = () => {
             </Link>
           </div>
           <div
-            className='col'
+            className='col-6 col-lg-3 my-3 my-lg-0'
             onMouseEnter={() => setActiveBox('faReplyAll')}
             onMouseLeave={() => setActiveBox(null)}
           >
@@ -60,7 +60,7 @@ const FeatureBoxes = () => {
             </Link>
           </div>
           <div
-            className='col'
+            className='col-6 col-lg-3 my-3 my-lg-0'
             onMouseEnter={() => setActiveBox('faBullhorn')}
             onMouseLeave={() => setActiveBox(null)}
           >
