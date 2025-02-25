@@ -8,6 +8,7 @@ $grayDark: #363636;
 $grayMedium: #2a2a2a;
 $formBorderGrayDark: #292929;
 $white: #ffffff;
+$shadow-dark: #010202;;
 $black: #000000;
 $grayLight: #e1e1e1;
 $grayLighter: #f4f5f7;
@@ -79,16 +80,21 @@ $footer-bottom-link-color: $textGrayMedium;
 $footer-bottom-link-hover: $orange;
 
 $menuBar-bg: $white;
+$menuBar-shadow-color: rgba($shadow-dark, 0.2);
 $menuBar-link-color: $grayMedium;
 $menuBar-link-active-bg: $orange;
 $menuBar-link-active-color: $white;
+$menuBar-link-border-top: $white;
 $menuBar-link-active-border: $orange;
 $menuBar-link-border: $grayMedium;
+$menuBar-menuButton-bg: transparent;
+$menuBar-menuButton-color: $orange;
+$menuBar-dropDownMenu-hover-bg: rgba($orange, 0.7);
 
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
 $topBar-link-hover: $orange;
-$form-border-color: #292929;
+$form-border-color: $formBorderGrayDark;
 
 // ANIMATIONS
 

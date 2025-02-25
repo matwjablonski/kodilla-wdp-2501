@@ -20,7 +20,7 @@ const MenuBar = ({ children }) => {
             <ProductSearch />
             <div className='d-md-none'>
               <button onClick={toggleMenu} className={styles.menuButton}>
-                <FontAwesomeIcon icon={faBars} />
+                <FontAwesomeIcon icon={faBars} className={styles.mobileButton} />
               </button>
             </div>
           </div>
