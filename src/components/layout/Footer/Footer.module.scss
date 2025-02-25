@@ -1,6 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  min-width: 320px;
+
   .footerMenu {
     background-color: $footer-bg;
     padding: 3rem 0;

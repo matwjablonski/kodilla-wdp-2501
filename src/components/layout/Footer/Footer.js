@@ -17,7 +17,7 @@ const Footer = ({ children }) => (
     <div className={styles.footerMenu}>
       <div className='container'>
         <div className='row'>
-          <div className='col'>
+          <div className='col-lg-3 col-md-6 col-6'>
             <div className={styles.menuWrapper}>
               <h6>Information</h6>
               <ul>
@@ -36,7 +36,7 @@ const Footer = ({ children }) => (
               </ul>
             </div>
           </div>
-          <div className='col'>
+          <div className='col-lg-3 col-md-6 col-6'>
             <div className={styles.menuWrapper}>
               <h6>My account</h6>
               <ul>
@@ -55,7 +55,7 @@ const Footer = ({ children }) => (
               </ul>
             </div>
           </div>
-          <div className='col'>
+          <div className='col-lg-3 col-md-6 col-6'>
             <div className={styles.menuWrapper}>
               <h6>Information</h6>
               <ul>
@@ -73,8 +73,11 @@ const Footer = ({ children }) => (
                 </li>
               </ul>
             </div>
+            <div className='d-md-block d-lg-none order-md-1 mt-5'>
+              <img src='./images/cards.png' alt='Supported credit cards' />
+            </div>
           </div>
-          <div className='col'>
+          <div className='col-lg-3 col-md-6 col-6'>
             <div className={styles.menuWrapper}>
               <h6>Orders</h6>
               <ul>
@@ -92,7 +95,9 @@ const Footer = ({ children }) => (
                 </li>
               </ul>
             </div>
-            <img src='./images/cards.png' alt='Supported credit cards' />
+            <div className='d-none d-md-none d-lg-block'>
+              <img src='./images/cards.png' alt='Supported credit cards' />
+            </div>
           </div>
         </div>
       </div>
@@ -100,11 +105,11 @@ const Footer = ({ children }) => (
     <div className={styles.bottomBar}>
       <div className='container'>
         <div className='row align-items-center'>
-          <div className='col'></div>
-          <div className={'col text-center ' + styles.copyright}>
+          <div className='col-12 col-md-4 '></div>
+          <div className={'col-6 col-md-4 text-center ' + styles.copyright}>
             <p>©Copyright 2016 Bazar | All Rights Reserved</p>
           </div>
-          <div className={'col text-right ' + styles.socialMedia}>
+          <div className={'col-6 col-md-4 text-right fs-3 ' + styles.socialMedia}>
             <ul>
               <li>
                 <a href='#'>
@@ -121,6 +126,7 @@ const Footer = ({ children }) => (
                   <FontAwesomeIcon icon={faYoutube}>YouTube</FontAwesomeIcon>
                 </a>
               </li>
+              <br className='d-md-none'></br>
               <li>
                 <a href='#'>
                   <FontAwesomeIcon icon={faGooglePlusG}>Google Plus</FontAwesomeIcon>
