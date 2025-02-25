@@ -1,15 +1,18 @@
 @import "../../../styles/settings.scss";
 @import "../CompanyClaim/CompanyClaim.module.scss";
 
-@media (max-width: 768px) {
+.root {
+  min-width: 420px;
+  overflow: hidden;
 
   img {
     margin-bottom: -40px;
   }
 
-  .phoneNumber p {
+  .phoneNumber p{
     font-size: 14px;
     padding-bottom: 15px;
+    margin-right: 30px;
   }
 
   .cart {

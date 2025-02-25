@@ -2,7 +2,7 @@
 
 .root {
   background-color: $header-topbar-bg;
-  min-width: 450px;
+  min-width: 420px;
 
   ul {
     list-style: none;
@@ -45,8 +45,6 @@ a {
 @media (max-width: 768px) {
   .topMenu {
     padding: 0 10px 0 0;
-    display: flex;
-    justify-content: flex-end;
   }
 
   .textHidden{
@@ -61,11 +59,4 @@ a {
     padding: 0 0 0 10px;
   }
 
-}
-
-@media (max-width: 480px) {
-  .topMenu {
-    display: flex;
-    justify-content: flex-end;
-  }
 }
