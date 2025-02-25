@@ -1,0 +1,19 @@
+@import "../../../styles/settings.scss";
+
+.compareBar {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: $header-topbar-bg;
+
+    .compareBtn {
+        background-color: $primary;
+        font-weight: bold;
+        text-transform: uppercase;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+}
