@@ -2,16 +2,127 @@ $base-padding: 24px;
 $main-bg-color: #ffffff;
 $main-border-color: #e1e1e1;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+// List of variables with colors - !ONLY FOR USE IN THIS FILE!
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+$orange: #d58e32;
+$grayDarker: #434343;
+$grayDark: #363636;
+$grayMedium: #2a2a2a;
+$formBorderGrayDark: #292929;
+$white: #ffffff;
+$black: #000000;
+$grayLight: #e1e1e1;
+$grayLighter: #f4f5f7;
+$grayDarkest: #2a2a2a;
+$textGrayLight: #d8d8d8;
+$textGrayMedium: #a9a9a9;
+$textGrayBlue: #e0e3ed;
 
-$primary: #d58e32;
+// List of variables with colors - !TO BE REMOVED AFTER ALL CHANGES!
 
-$text-color: #2a2a2a;
-$white-text-color: #ffffff;
-$white-text-color-secondary: #f4f5f7;
+$primary: $orange;
+$form-border-color: $formBorderGrayDark;
+$text-color: $grayDarkest;
 
+// List of variables with colors - !FOR USE IN COMPONENTS!
+
+$header-topbar-bg: $grayDarker;
+$header-bg: $grayDark;
+
+$footer-claim-bg: $grayMedium;
+$footer-bg: $grayDark;
+
+$button-bg: $orange;
+$button-border-color: $grayMedium;
+$button-text-color: $white;
+$button-hover-text-color: $white;
+$button-hover-bg: $grayDark;
+
+$featureBox-bg: $white;
+$featureBox-text-transform-color: $grayMedium;
+$featureBox-icon-color: $white;
+$featureBox-bg-after: $orange;
+$featureBox-border-color: $orange;
+$featureBox-content-color: $orange;
+
+$productBox-bg: $white;
+$productBox-border: $grayLight;
+$productBox-overlay-bg: $grayLighter;
+$productBox-icon-bg: $formBorderGrayDark;
+$productBox-icon-color: $white;
+$productBox-title-color: $orange;
+$productBox-link-color: $grayDarkest;
+
+$newFurniture-title-color: $orange;
+$newFurniture-link-color: $grayDarkest;
+$newFurniture-bg: $white;
+$newFurniture-button-bg: $grayLight;
+$newFurniture-button-bg-hover: $orange;
+
+$productSearch-border: $formBorderGrayDark;
+$productSearch-text-color: $grayMedium;
+$productSearch-placeholder-color: $grayMedium;
+$productSearch-button-bg: transparent;
+
+$companyClaim-text-color: $textGrayLight;
+$companyClaim-icon-bg: $orange;
+$companyClaim-cart-bg: $orange;
+$companyClaim-cart-bg-hover: lighten($orange, 10%);
+$companyClaim-bottom-bg: $grayDark;
+$companyClaim-bottom-text-color: $textGrayBlue;
+
+$footer-menu-bg: $grayDark;
+$footer-menu-title-color: $white;
+$footer-menu-link-color: $textGrayMedium;
+$footer-menu-link-hover: $white;
+$footer-bottom-bg: $grayMedium;
+$footer-bottom-text-color: $textGrayMedium;
+$footer-bottom-link-color: $textGrayMedium;
+$footer-bottom-link-hover: $orange;
+
+$menuBar-bg: $white;
+$menuBar-link-color: $grayMedium;
+$menuBar-link-active-bg: $orange;
+$menuBar-link-active-color: $white;
+$menuBar-link-active-border: $orange;
+$menuBar-link-border: $grayMedium;
+
+$topBar-bg: $grayDarker;
+$topBar-link-color: $white;
+$topBar-link-hover: $orange;
 $form-border-color: #292929;
+
+// ANIMATIONS
+
+// Animation time for different effects
+$hover-animation-time: 250ms;
+$hover-background-time: 250ms;
+$hover-text-time: 250ms;
+
+$hover-text-color: #ffffff;
+$hover-text-color-dark-bg: $primary;
+$hover-background-color: $primary;
+
+// Placeholder
+%hover-animation {
+  transition: $hover-animation-time;
+
+  &.hover-background {
+    transition: background-color $hover-background-time;
+    background-color: $hover-background-color;
+  }
+
+  &.hover-text {
+    transition: color $hover-text-time;
+    color: $hover-text-color;
+  }
+
+  &.hover-text-dark-bg {
+    transition: color $hover-text-time;
+    color: $hover-text-color-dark-bg;
+  }
+
+  &.hover-move {
+    transition: transform $hover-animation-time ease-in-out;
+  }
+}
