@@ -9,7 +9,9 @@ import Promoted from '../../features/Promoted/Promoted';
 
 const Homepage = () => (
   <div className={styles.root}>
-    <Promoted />
+    <section>
+      <Promoted />
+    </section>
     <FeatureBoxes />
     <NewFurniture />
   </div>
