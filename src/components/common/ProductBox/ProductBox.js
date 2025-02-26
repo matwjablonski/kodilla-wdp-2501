@@ -52,7 +52,7 @@ const ProductBox = ({ id, category, name, oldPrice, price, promo, stars, action 
           <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' onClick={handleClick}>
+          <Button variant='outline' data-testid='compare-test' onClick={handleClick}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
@@ -70,7 +70,7 @@ const ProductBox = ({ id, category, name, oldPrice, price, promo, stars, action 
 ProductBox.propTypes = {
   children: PropTypes.node,
   id: PropTypes.string,
-  category: PropTypes,
+  category: PropTypes.string,
   name: PropTypes.string,
   oldPrice: PropTypes.number,
   price: PropTypes.number,
