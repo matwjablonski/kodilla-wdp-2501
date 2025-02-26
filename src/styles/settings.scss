@@ -9,6 +9,7 @@ $grayDarker: #434343;
 $grayDark: #363636;
 $grayMedium: #2a2a2a;
 $formBorderGrayDark: #292929;
+$featureBorderGrayLight: #b6b6b6;
 $white: #ffffff;
 $black: #000000;
 $grayLight: #e1e1e1;
@@ -39,11 +40,12 @@ $button-hover-text-color: $white;
 $button-hover-bg: $grayDark;
 
 $featureBox-bg: $white;
-$featureBox-text-transform-color: $grayMedium;
+$featureBox-text-color: $grayMedium;
 $featureBox-icon-color: $white;
 $featureBox-bg-after: $orange;
-$featureBox-border-color: $orange;
 $featureBox-content-color: $orange;
+$featureBox-border-color: $featureBorderGrayLight;
+$featureBox-border-color-after: $orange;
 
 $productBox-bg: $white;
 $productBox-border: $grayLight;
