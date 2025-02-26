@@ -19,57 +19,61 @@ const FeatureBoxes = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div
-            className='col-6 col-lg-3 my-3 my-lg-0'
-            onMouseEnter={() => setActiveBox('faTruck')}
-            onMouseLeave={() => setActiveBox(null)}
-          >
-            <Link to='/' className='text-decoration-none'>
-              <FeatureBox icon={faTruck} active={activeBox === 'faTruck'}>
-                <h5>Free shipping</h5>
-                <p>All orders</p>
-              </FeatureBox>
-            </Link>
-          </div>
-          <div
-            className='col-6 col-lg-3 my-3 my-lg-0'
-            onMouseEnter={() => setActiveBox('faHeadphones')}
-            onMouseLeave={() => setActiveBox(null)}
-          >
-            <Link to='/' className='text-decoration-none'>
-              <FeatureBox icon={faHeadphones} active={activeBox === 'faHeadphones'}>
-                <h5>24/7 customer</h5>
-                <p>support</p>
-              </FeatureBox>
-            </Link>
-          </div>
-          <div
-            className='col-6 col-lg-3 my-3 my-lg-0'
-            onMouseEnter={() => setActiveBox('faReplyAll')}
-            onMouseLeave={() => setActiveBox(null)}
-          >
-            <Link to='/' className='text-decoration-none'>
-              <FeatureBox
-                icon={faReplyAll}
-                link={Link}
-                active={activeBox === 'faReplyAll'}
+          <div className='col-lg-6'>
+            <div className='row'>
+              <div
+                className='col-6 col-lg-6 my-3 my-lg-0'
+                onMouseEnter={() => setActiveBox('faTruck')}
+                onMouseLeave={() => setActiveBox(null)}
               >
-                <h5>Money back</h5>
-                <p>guarantee</p>
-              </FeatureBox>
-            </Link>
+                <Link to='/' className='text-decoration-none'>
+                  <FeatureBox icon={faTruck} active={activeBox === 'faTruck'}>
+                    <h5>Free shipping</h5>
+                    <p>All orders</p>
+                  </FeatureBox>
+                </Link>
+              </div>
+              <div
+                className='col-6 col-lg-6 my-3 my-lg-0'
+                onMouseEnter={() => setActiveBox('faHeadphones')}
+                onMouseLeave={() => setActiveBox(null)}
+              >
+                <Link to='/' className='text-decoration-none'>
+                  <FeatureBox icon={faHeadphones} active={activeBox === 'faHeadphones'}>
+                    <h5>24/7 customer</h5>
+                    <p>support</p>
+                  </FeatureBox>
+                </Link>
+              </div>
+            </div>
           </div>
-          <div
-            className='col-6 col-lg-3 my-3 my-lg-0'
-            onMouseEnter={() => setActiveBox('faBullhorn')}
-            onMouseLeave={() => setActiveBox(null)}
-          >
-            <Link to='/' className='text-decoration-none'>
-              <FeatureBox icon={faBullhorn} active={activeBox === 'faBullhorn'}>
-                <h5>Member discount</h5>
-                <p>First order</p>
-              </FeatureBox>
-            </Link>
+          <div className='col-lg-6'>
+            <div className='row'>
+              <div
+                className='col-6 col-lg-6 my-3 my-lg-0'
+                onMouseEnter={() => setActiveBox('faReplyAll')}
+                onMouseLeave={() => setActiveBox(null)}
+              >
+                <Link to='/' className='text-decoration-none'>
+                  <FeatureBox icon={faReplyAll} active={activeBox === 'faReplyAll'}>
+                    <h5>Money back</h5>
+                    <p>guarantee</p>
+                  </FeatureBox>
+                </Link>
+              </div>
+              <div
+                className='col-6 col-lg-6 my-3 my-lg-0'
+                onMouseEnter={() => setActiveBox('faBullhorn')}
+                onMouseLeave={() => setActiveBox(null)}
+              >
+                <Link to='/' className='text-decoration-none'>
+                  <FeatureBox icon={faBullhorn} active={activeBox === 'faBullhorn'}>
+                    <h5>Member discount</h5>
+                    <p>First order</p>
+                  </FeatureBox>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
