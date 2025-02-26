@@ -11,8 +11,19 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 
-const ProductBox = ({ id, category, name, oldPrice, price, promo, stars, isFavorite, isCompared }) => (
-    const handleClick = e => {
+const ProductBox = ({
+  id,
+  category,
+  name,
+  oldPrice,
+  price,
+  promo,
+  stars,
+  action,
+  isFavorite,
+  isCompared,
+}) => {
+  const handleClick = e => {
     e.preventDefault();
     action({ id, category });
   };
@@ -45,32 +56,33 @@ const ProductBox = ({ id, category, name, oldPrice, price, promo, stars, isFavor
             </a>
           ))}
         </div>
-    </div>
-    <div className={styles.line}></div>
-    <div className={styles.actions}>
-      <div className={styles.outlines}>
-        <Button variant='outline' className={isFavorite ? styles.active : ''}>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
-        <Button variant='outline' className={isCompared ? styles.active : ''}>
-          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-        </Button>
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline'>
+          <Button variant='outline' className={isFavorite ? styles.active : ''}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' data-testid='compare-test' onClick={handleClick}>
+          <Button variant='outline' className={isCompared ? styles.active : ''}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div className={styles.price}>
-          {oldPrice && <div className={styles.oldPrice}>$ {oldPrice.toFixed(2)}</div>}
-          <Button noHover variant='small' className={styles.priceBtn}>
-            $ {price.toFixed(2)}
-          </Button>
+        <div className={styles.line}></div>
+        <div className={styles.actions}>
+          <div className={styles.outlines}>
+            <Button variant='outline'>
+              <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+            </Button>
+            <Button variant='outline' data-testid='compare-test' onClick={handleClick}>
+              <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+            </Button>
+          </div>
+          <div className={styles.price}>
+            {oldPrice && <div className={styles.oldPrice}>$ {oldPrice.toFixed(2)}</div>}
+            <Button noHover variant='small' className={styles.priceBtn}>
+              $ {price.toFixed(2)}
+            </Button>
+          </div>
         </div>
       </div>
     </div>
