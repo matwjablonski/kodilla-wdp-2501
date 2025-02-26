@@ -12,7 +12,6 @@ const Promoted = () => {
     <section className={styles.promoted}>
       <div className='container'>
         <div className='row'>
-          {/* Lewa sekcja - Hot Deals */}
           <div className='col-lg-6'>
             <div className={styles.hotDeals}>
               <h2>
@@ -46,8 +45,6 @@ const Promoted = () => {
               </div>
             </div>
           </div>
-
-          {/* Prawa sekcja - Featured Product */}
           <div className='col-lg-6'>
             <div className={styles.featured}>
               <img src='/images/product-large.jpg' alt='Featured product' />
