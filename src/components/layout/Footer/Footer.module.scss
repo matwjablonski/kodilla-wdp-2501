@@ -49,6 +49,9 @@
 
     :global(.container) > :global(.row) {
       height: 95px;
+      @media (max-width: 768px){
+        height: 150px;
+      }
     }
 
     .copyright {
@@ -62,17 +65,26 @@
 
     .socialMedia {
       ul {
-        margin: 0;
+        margin: 0 -40px 0 0;
         padding: 0;
         list-style: none;
+        @media (max-width:768px){
+          padding-right: 1.5rem;
+        }
 
         li {
           display: inline-block;
           margin-left: 1rem;
+          @media (max-width:768px){
+            margin: 0.3rem 1.5rem 0.5rem 0;
+          }
 
           a {
             color: rgb(169, 169, 169);
             text-decoration: none;
+            @media(max-width: 768px){
+              font-size: 25px;
+            }
 
             &:hover {
               @extend %hover-animation;
