@@ -1,0 +1,25 @@
+@import "../../../styles/settings.scss";
+
+.imageWrapper {
+    position: relative;
+
+    &:hover .imageBtn {
+        display: block;
+    }
+}
+
+.imageBtn {
+    display: none;
+    color: $text-color;
+    font-size: 3rem;
+    font-weight: 600;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate((-50%, -50%));
+    padding: 5px 15px;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
