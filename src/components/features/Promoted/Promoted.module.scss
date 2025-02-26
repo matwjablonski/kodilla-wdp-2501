@@ -1,0 +1,207 @@
+@import '../../../styles/settings.scss';
+
+.promoted {
+  display: flex;
+  gap: 2rem;
+  padding: 3rem 0;
+
+  .hot-deals {
+    flex: 1;
+    background-color: $white;
+    padding: 1.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: $grayDark;
+    }
+
+    .dots {
+      display: flex;
+      gap: 0.5rem;
+      margin-left: auto;
+
+      .dot {
+        width: 10px;
+        height: 10px;
+        background-color: $grayDark;
+        border-radius: 50%;
+        transition: background-color 0.3s;
+
+        &:hover,
+        &.active {
+          background-color: $orange;
+        }
+      }
+    }
+
+    .product-image {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: auto;
+        transition: transform 0.3s;
+      }
+
+      .hover-buttons {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: opacity 0.3s;
+        display: flex;
+        gap: 0.5rem;
+
+        button {
+          background-color: $white;
+          border: 1px solid $grayDark;
+          padding: 0.5rem 1rem;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: $orange;
+            color: $white;
+            border-color: $orange;
+          }
+        }
+      }
+
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+
+        .hover-buttons {
+          opacity: 1;
+        }
+      }
+    }
+
+    .price-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+
+      .old-price {
+        text-decoration: line-through;
+        color: $grayDark;
+      }
+
+      .new-price {
+        color: $orange;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .actions {
+        display: flex;
+        gap: 0.5rem;
+
+        button {
+          background-color: $white;
+          border: 1px solid $grayDark;
+          padding: 0.5rem;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: $orange;
+            color: $white;
+            border-color: $orange;
+          }
+        }
+      }
+    }
+  }
+
+  .featured-product {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: $white;
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      h3 {
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
+
+      .shop-now {
+        background-color: $orange;
+        color: $white;
+        padding: 0.5rem 1rem;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: darken($orange, 10%);
+        }
+      }
+    }
+
+    .nav-buttons {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 1rem;
+
+      button {
+        background-color: $white;
+        border: 1px solid $grayDark;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+          background-color: $orange;
+          color: $white;
+          border-color: $orange;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .promoted {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
