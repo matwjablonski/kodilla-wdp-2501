@@ -15,7 +15,7 @@ const CompareBarItem = ({ id, category, action }) => {
       <img
         className='h-100 img-thumbnail'
         alt='product-image'
-        src={`${process.env.PUBLIC_URL}/images/products/beds/${category}-${id}.jpg`}
+        src={`${process.env.PUBLIC_URL}/images/products/${category}/${category}-${id}.jpg`}
       />
       <Button className={styles.imageBtn} onClick={remove}>
         <span>x</span>
