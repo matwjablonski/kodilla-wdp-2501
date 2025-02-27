@@ -1,0 +1,120 @@
+@import "../../../styles/settings.scss";
+
+.hotDeals {
+  background-color: #ffffff;
+  border: 1px solid #e1e1e1;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 24px;
+    color: $primary;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .dots {
+      display: flex;
+      justify-content: space-between;
+      width: 30px;
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        background-color: $primary;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  .product {
+    display: flex;
+    padding: 20px;
+
+    .productImage {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-right: 20px;
+    }
+
+    .productDetails {
+      flex-grow: 1;
+
+      h3 {
+        font-size: 18px;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      .price {
+        font-size: 16px;
+        color: $primary;
+
+        .oldPrice {
+          text-decoration: line-through;
+          color: lighten($text-color, 50%);
+        }
+
+        .newPrice {
+          font-size: 18px;
+          color: $primary;
+          font-weight: bold;
+          margin-left: 10px;
+        }
+      }
+
+      .actions {
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          background-color: transparent;
+          border: 1px solid #e1e1e1;
+          padding: 8px 12px;
+          border-radius: 50%;
+          cursor: pointer;
+          transition: background-color 0.3s;
+
+          &:hover {
+            background-color: $primary;
+            color: #fff;
+          }
+
+          &.actionButton {
+            font-size: 16px;
+            padding: 8px;
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  .line {
+    margin: 20px 0;
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 50%;
+      width: 30px;
+      border-bottom: 4px solid $primary;
+      transform: translateX(-50%);
+    }
+  }
+
+  .noHotDeals {
+    text-align: center;
+    font-size: 16px;
+    color: #999;
+    margin: 20px 0;
+  }
+}
+

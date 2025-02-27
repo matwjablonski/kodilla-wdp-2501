@@ -12,6 +12,7 @@ const initialState = {
       name: 'Aenean Ru Bristique 1',
       category: 'bed',
       image: 'images/products/beds/bed-aenean-ru-bristique-1.jpg',
+      oldPrice: 65,
       price: 30,
       stars: 2,
       promo: null,
