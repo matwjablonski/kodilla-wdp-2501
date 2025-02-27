@@ -71,8 +71,7 @@ class NewFurniture extends React.Component {
   handlePageChange(newPage) {
     this.setState({ isFade: true }, () => {
       setTimeout(() => {
-        this.setState({ activePage: newPage });
-        this.setState({ isFade: false });
+        this.setState({ activePage: newPage, isFade: false });
       }, 300);
     });
   }
@@ -80,8 +79,7 @@ class NewFurniture extends React.Component {
   handleCategoryChange(newCategory) {
     this.setState({ isFade: true }, () => {
       setTimeout(() => {
-        this.setState({ activeCategory: newCategory });
-        this.setState({ isFade: false });
+        this.setState({ activeCategory: newCategory, isFade: false });
       }, 300);
     });
   }
