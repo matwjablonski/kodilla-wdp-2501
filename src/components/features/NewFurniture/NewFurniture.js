@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import Swipeable from '../../common/Swipeable/Swipeable';
+import clsx from 'clsx';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import CompareBar from '../CompareBar/CompareBar';
 
@@ -12,6 +13,7 @@ class NewFurniture extends React.Component {
     productsSelected: [],
     showAlert: false,
     messageAlert: '',
+    isFade: false,
   };
 
   setShowAlert = (showAlert, messageAlert = '') => {
@@ -67,11 +69,21 @@ class NewFurniture extends React.Component {
   };
 
   handlePageChange(newPage) {
-    this.setState({ activePage: newPage });
+    this.setState({ isFade: true }, () => {
+      setTimeout(() => {
+        this.setState({ activePage: newPage });
+        this.setState({ isFade: false });
+      }, 300);
+    });
   }
 
   handleCategoryChange(newCategory) {
-    this.setState({ activeCategory: newCategory });
+    this.setState({ isFade: true }, () => {
+      setTimeout(() => {
+        this.setState({ activeCategory: newCategory });
+        this.setState({ isFade: false });
+      }, 300);
+    });
   }
 
   render() {
@@ -123,7 +135,13 @@ class NewFurniture extends React.Component {
             </div>
           </div>
           <Swipeable swipeLeft={this.swipeLeftMove} swipeRight={this.swipeRightMove}>
-            <div className='row'>
+            <div
+              className={clsx(
+                styles.productsWrapper,
+                this.state.isFade ? styles.fadeOut : '',
+                'row'
+              )}
+            >
               {categoryProducts
                 .slice(activePage * 8, (activePage + 1) * 8)
                 .map(item => (
