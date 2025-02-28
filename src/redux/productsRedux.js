@@ -5,7 +5,7 @@ export const getCount = ({ products }) => products.length;
 export const getNew = ({ products }) =>
   products.filter(item => item.newFurniture === true);
 
-export const hotDeals = ({ products }) =>
+export const hotDealsProducts = ({ products }) =>
   products.filter(
     item =>
       item.hotDeals &&
@@ -13,7 +13,7 @@ export const hotDeals = ({ products }) =>
       new Date(item.hotDealsEndTime) > new Date()
   );
 
-export const featured = ({ products }) =>
+export const featuredProducts = ({ products }) =>
   products.filter(item => item.featured === true);
 
 /* reducer */

@@ -1,207 +1,122 @@
-@import '../../../styles/settings.scss';
-
 .promoted {
-  display: flex;
-  gap: 2rem;
-  padding: 3rem 0;
+  /* Ewentualne style sekcji głównej */
+}
 
-  .hot-deals {
-    flex: 1;
-    background-color: $white;
-    padding: 1.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+/* Ustawiamy .row jako flex, aby obie kolumny miały tę samą wysokość */
+.row {
+  display: flex;
+  align-items: stretch; /* wyrównanie w pionie */
+}
+
+/* Lewa kolumna z PromotedBox */
+.colLeft {
+  flex: 0 0 40%; /* przykładowy rozkład: 40% vs 60% */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Prawa kolumna z featured product */
+.colRight {
+  flex: 1; /* reszta dostępnego miejsca */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Kontener z obrazkiem w tle i overlayem */
+.featuredWrapper {
+  position: relative;
+  flex: 1; /* wypełnia całą wysokość kolumny */
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Używamy flex:1 i height:100%, żeby dopasować się do wysokości lewej kolumny */
+  height: 100%;
+  overflow: hidden; /* aby ewentualne elementy nie wychodziły poza obszar */
+
+  /* Czarne półprzezroczyste tło na środku wysokości */
+  .overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 25%;     /* początek paska w 25% wysokości */
+    height: 50%;  /* zajmuje środkowe 50% */
+    background-color: rgba(0, 0, 0, 0.8);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    position: relative;
+    color: #fff;
 
     h2 {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-size: 1.5rem;
+      font-size: 2rem;
       text-transform: uppercase;
-      font-weight: bold;
-      color: $grayDark;
-    }
+      margin-bottom: 1rem;
+      letter-spacing: 1px;
 
-    .dots {
-      display: flex;
-      gap: 0.5rem;
-      margin-left: auto;
-
-      .dot {
-        width: 10px;
-        height: 10px;
-        background-color: $grayDark;
-        border-radius: 50%;
-        transition: background-color 0.3s;
-
-        &:hover,
-        &.active {
-          background-color: $orange;
-        }
+      span {
+        color: #fff; /* Ewentualnie inny kolor, jeśli chcesz wyróżnić */
       }
     }
 
-    .product-image {
-      position: relative;
-      width: 100%;
-      overflow: hidden;
+    p {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
 
-      img {
-        width: 100%;
-        height: auto;
-        transition: transform 0.3s;
-      }
-
-      .hover-buttons {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        opacity: 0;
-        transition: opacity 0.3s;
-        display: flex;
-        gap: 0.5rem;
-
-        button {
-          background-color: $white;
-          border: 1px solid $grayDark;
-          padding: 0.5rem 1rem;
-          cursor: pointer;
-          transition: background-color 0.3s;
-
-          &:hover {
-            background-color: $orange;
-            color: $white;
-            border-color: $orange;
-          }
-        }
-      }
+    .shopNow {
+      background-color: #fff;
+      color: #000;
+      border: none;
+      padding: 0.8rem 1.2rem;
+      cursor: pointer;
+      text-transform: uppercase;
+      transition: background-color 0.3s;
 
       &:hover {
-        img {
-          transform: scale(1.05);
-        }
-
-        .hover-buttons {
-          opacity: 1;
-        }
-      }
-    }
-
-    .price-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 1rem;
-      margin-top: 1rem;
-
-      .old-price {
-        text-decoration: line-through;
-        color: $grayDark;
-      }
-
-      .new-price {
-        color: $orange;
-        font-size: 1.5rem;
-        font-weight: bold;
-      }
-
-      .actions {
-        display: flex;
-        gap: 0.5rem;
-
-        button {
-          background-color: $white;
-          border: 1px solid $grayDark;
-          padding: 0.5rem;
-          cursor: pointer;
-          transition: background-color 0.3s;
-
-          &:hover {
-            background-color: $orange;
-            color: $white;
-            border-color: $orange;
-          }
-        }
+        background-color: #333;
+        color: #fff;
       }
     }
   }
 
-  .featured-product {
-    flex: 1;
-    position: relative;
-    overflow: hidden;
+  /* Kontener strzałek na dole (wyśrodkowane) */
+  .arrows {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
 
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
+    button {
+      /* Zwiększamy szerokość dla wydłużonego efektu */
+      width: 60px;
+      height: 35px;
+      border: none;
+      background-color: #000;
+      color: #fff;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      border-radius: 4px;
 
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: $white;
-      padding: 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-
-      h3 {
-        font-size: 1.2rem;
-        text-transform: uppercase;
+      &:hover {
+        background-color: #333;
       }
 
-      .shop-now {
-        background-color: $orange;
-        color: $white;
-        padding: 0.5rem 1rem;
-        text-transform: uppercase;
-        border: none;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: darken($orange, 10%);
-        }
+      /* Prawy przycisk ma na stałe klasę active -> kolor pomarańczowy */
+      &.active {
+        background-color: orange;
       }
     }
 
-    .nav-buttons {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 1rem;
-
-      button {
-        background-color: $white;
-        border: 1px solid $grayDark;
-        padding: 0.5rem 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s;
-
-        &:hover {
-          background-color: $orange;
-          color: $white;
-          border-color: $orange;
-        }
-      }
+    .arrowLeft,
+    .arrowRight {
+      /* Możesz dodać osobne style, np. ikony, marginesy, itp. */
     }
-  }
-}
-
-@media (max-width: 768px) {
-  .promoted {
-    flex-direction: column;
-    gap: 1.5rem;
   }
 }
