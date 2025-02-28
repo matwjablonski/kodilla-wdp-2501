@@ -1,14 +1,11 @@
 .root {
-  /* Dodajemy obramowanie dla całego komponentu */
   border: 1px solid #ccc;
   width: 100%;
   max-width: 350px;
   margin: 0 auto;
-  font-family: Arial, sans-serif;
   color: #333;
 }
 
-/* Nagłówek z czarnym tłem i kropkami */
 .header {
   background-color: #000;
   padding: 1rem;
@@ -45,7 +42,6 @@
   }
 }
 
-/* Sekcja zdjęcia i elementów hover */
 .imageWrapper {
   position: relative;
   width: 100%;
@@ -60,14 +56,12 @@
     position: absolute;
     top: 10px;
     left: 10px;
-    background-color: red;
     color: #fff;
     padding: 5px 8px;
     border-radius: 2px;
     font-size: 0.8rem;
   }
 
-  /* Elementy pojawiające się na hover (ADD TO CART, countdown) */
   .hoverElements {
     position: absolute;
     top: 50%;
@@ -85,7 +79,6 @@
   }
 }
 
-/* Przycisk ADD TO CART */
 .addToCartBtn {
   background-color: #000;
   color: #fff;
@@ -98,7 +91,6 @@
   }
 }
 
-/* Sekcja licznika */
 .countdown {
   display: flex;
   gap: 0.5rem;
@@ -107,7 +99,7 @@
     background-color: #000;
     color: #fff;
     padding: 0.4rem 0.6rem;
-    border-radius: 2px;
+    border-radius: 50%;
     font-size: 0.8rem;
     min-width: 50px;
     text-align: center;

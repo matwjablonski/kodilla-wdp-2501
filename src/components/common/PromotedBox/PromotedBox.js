@@ -22,12 +22,9 @@ const calculateTimeLeft = endTime => {
 };
 
 const PromotedBox = ({ hotDeal }) => {
-  // Stan licznika, domyślnie null – pojawi się dopiero po hoverze
   const [timeLeft, setTimeLeft] = useState(null);
 
-  // Funkcja obliczająca czas tylko raz – przy pierwszym hoverze
   const handleMouseEnter = () => {
-    // Jeśli timeLeft jest już ustawione, nie nadpisujemy go
     if (!timeLeft) {
       setTimeLeft(calculateTimeLeft(hotDeal.hotDealsEndTime));
     }
@@ -35,9 +32,8 @@ const PromotedBox = ({ hotDeal }) => {
 
   return (
     <div className={styles.root}>
-      {/* Nagłówek z czarnym tłem i kropkami */}
       <div className={styles.header}>
-        <h2>HOT DEALS</h2>
+        <h2>Hot deals</h2>
         <div className={styles.dots}>
           <span className={styles.dot}></span>
           <span className={`${styles.dot} ${styles.active}`}></span>
@@ -45,18 +41,15 @@ const PromotedBox = ({ hotDeal }) => {
         </div>
       </div>
 
-      {/* Sekcja zdjęcia i elementów hover */}
       <div className={styles.imageWrapper} onMouseEnter={handleMouseEnter}>
         <img src={hotDeal.image} alt={hotDeal.name} />
         {hotDeal.promo && <div className={styles.sale}>{hotDeal.promo}</div>}
 
-        {/* Elementy pojawiające się na hover */}
         <div className={styles.hoverElements}>
           <Button variant='small' className={styles.addToCartBtn}>
-            <FontAwesomeIcon icon={faShoppingBasket} /> ADD TO CART
+            <FontAwesomeIcon icon={faShoppingBasket} /> Add to cart
           </Button>
 
-          {/* Statyczny licznik wyświetlany tylko wtedy, gdy timeLeft !== null */}
           {timeLeft && (
             <div className={styles.countdown}>
               <div className={styles.timerBox}>
