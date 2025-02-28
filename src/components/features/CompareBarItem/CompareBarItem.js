@@ -13,7 +13,7 @@ const CompareBarItem = ({ id, category, action }) => {
   return (
     <div className={clsx(styles.imageWrapper, 'py-2 col-3')}>
       <img
-        className='h-100 img-thumbnail'
+        className='img-thumbnail'
         alt='product-image'
         src={`${process.env.PUBLIC_URL}/images/products/${category}/${category}-${id}.jpg`}
       />
