@@ -18,6 +18,7 @@ const ProductBox = ({
   action,
   isFavorite,
   isCompared,
+  myRating,
 }) => {
   const handleClick = e => {
     e.preventDefault();
@@ -41,7 +42,7 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <StarRating stars={stars} />
+        <StarRating stars={stars} myRating={myRating} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -51,6 +52,7 @@ const ProductBox = ({
           </Button>
           <Button
             variant='outline'
+            data-testid='compare-test'
             className={isCompared ? styles.active : ''}
             onClick={handleClick}
           >
@@ -79,6 +81,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   isFavorite: PropTypes.bool,
   isCompared: PropTypes.bool,
+  myRating: PropTypes.number,
   action: PropTypes.func,
 };
 

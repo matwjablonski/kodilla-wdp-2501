@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
 
-const StarRating = ({ stars }) => {
-  const [myRating, setMyRating] = useState(null);
+const StarRating = ({ stars, myRating }) => {
+  const [newRating, setnewRating] = useState(null || myRating);
   const [isHovered, setIsHovered] = useState(null);
 
-  if (myRating && myRating > 0 && myRating <= 5) stars = myRating;
+  if (newRating && newRating > 0 && newRating <= 5) stars = newRating;
   if (isHovered && isHovered > 0 && isHovered <= 5) stars = isHovered;
 
   return (
@@ -22,12 +22,12 @@ const StarRating = ({ stars }) => {
           onMouseLeave={() => setIsHovered(null)}
           onClick={e => {
             e.preventDefault();
-            setMyRating(i);
+            setnewRating(i);
           }}
         >
           {i <= stars ? (
             <FontAwesomeIcon
-              className={myRating || isHovered ? styles.setRating : ''}
+              className={newRating || isHovered ? styles.setRating : ''}
               icon={faStar}
             >
               {i} stars
@@ -43,6 +43,7 @@ const StarRating = ({ stars }) => {
 
 StarRating.propTypes = {
   stars: PropTypes.number,
+  myRating: PropTypes.number,
 };
 
 export default StarRating;
