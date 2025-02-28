@@ -2,121 +2,94 @@
   /* Ewentualne style sekcji głównej */
 }
 
-/* Ustawiamy .row jako flex, aby obie kolumny miały tę samą wysokość */
-.row {
-  display: flex;
-  align-items: stretch; /* wyrównanie w pionie */
-}
-
-/* Lewa kolumna z PromotedBox */
-.colLeft {
-  flex: 0 0 40%; /* przykładowy rozkład: 40% vs 60% */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Prawa kolumna z featured product */
-.colRight {
-  flex: 1; /* reszta dostępnego miejsca */
-  display: flex;
-  flex-direction: column;
-}
-
-/* Kontener z obrazkiem w tle i overlayem */
+/* Kontener z obrazkiem w tle i overlayem po prawej stronie */
 .featuredWrapper {
   position: relative;
-  flex: 1; /* wypełnia całą wysokość kolumny */
+  flex: 1; /* wypełnia całą wysokość .col-md-8 */
   width: 100%;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* Używamy flex:1 i height:100%, żeby dopasować się do wysokości lewej kolumny */
-  height: 100%;
-  overflow: hidden; /* aby ewentualne elementy nie wychodziły poza obszar */
+  overflow: hidden;
+}
 
-  /* Czarne półprzezroczyste tło na środku wysokości */
-  .overlay {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 25%;     /* początek paska w 25% wysokości */
-    height: 50%;  /* zajmuje środkowe 50% */
-    background-color: rgba(0, 0, 0, 0.8);
+/* Pasek overlay na środku wysokości */
+.overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 25%;     /* początek w 25% wysokości */
+  height: 50%;  /* zajmuje środkowe 50% */
+  background-color: rgba(0, 0, 0, 0.8);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+
+  h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .shopNow {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  }
+}
+
+/* Strzałki na dole */
+.arrows {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 1rem;
+
+  button {
+    width: 60px;  /* wydłużone */
+    height: 35px;
+    border: none;
+    background-color: #000;
     color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 4px;
 
-    h2 {
-      font-size: 2rem;
-      text-transform: uppercase;
-      margin-bottom: 1rem;
-      letter-spacing: 1px;
-
-      span {
-        color: #fff; /* Ewentualnie inny kolor, jeśli chcesz wyróżnić */
-      }
+    &:hover {
+      background-color: #333;
     }
 
-    p {
-      font-size: 1rem;
-      margin-bottom: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .shopNow {
-      background-color: #fff;
-      color: #000;
-      border: none;
-      padding: 0.8rem 1.2rem;
-      cursor: pointer;
-      text-transform: uppercase;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: #333;
-        color: #fff;
-      }
+    /* Prawy przycisk ma na stałe klasę active -> kolor pomarańczowy */
+    &.active {
+      background-color: orange;
     }
   }
 
-  /* Kontener strzałek na dole (wyśrodkowane) */
-  .arrows {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 1rem;
-
-    button {
-      /* Zwiększamy szerokość dla wydłużonego efektu */
-      width: 60px;
-      height: 35px;
-      border: none;
-      background-color: #000;
-      color: #fff;
-      cursor: pointer;
-      transition: background-color 0.3s;
-      border-radius: 4px;
-
-      &:hover {
-        background-color: #333;
-      }
-
-      /* Prawy przycisk ma na stałe klasę active -> kolor pomarańczowy */
-      &.active {
-        background-color: orange;
-      }
-    }
-
-    .arrowLeft,
-    .arrowRight {
-      /* Możesz dodać osobne style, np. ikony, marginesy, itp. */
-    }
+  .arrowLeft,
+  .arrowRight {
+    /* ewentualne dodatkowe style */
   }
 }
