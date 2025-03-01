@@ -3,16 +3,15 @@ $base-padding: 24px;
 // List of variables with colors - !ONLY FOR USE IN THIS FILE!
 
 $orange: #d58e32;
-$grayDarker: #434343;
+$grayDarker: #2a2a2a;
 $grayDark: #363636;
-$grayMedium: #2a2a2a;
-$formBorderGrayDark: #292929;
-$featureBorderGrayLight: #b6b6b6;
+$grayMedium: #434343;;
+$borderGrayDark: #292929;
+$borderGrayLight: #b6b6b6;
 $white: #ffffff;
 $black: #000000;
 $grayLight: #e1e1e1;
 $grayLighter: #f4f5f7;
-$grayDarkest: #2a2a2a;
 $textGrayLight: #d8d8d8;
 $textGrayMedium: #a9a9a9;
 $textGrayBlue: #e0e3ed;
@@ -20,8 +19,8 @@ $textGrayBlue: #e0e3ed;
 // List of variables with colors - !TO BE REMOVED AFTER ALL CHANGES!
 
 $primary: $orange;
-$form-border-color: $formBorderGrayDark;
-$text-color: $grayDarkest;
+$form-border-color: $borderGrayDark;
+$text-color: $grayDarker;
 
 // List of variables with colors - !FOR USE IN COMPONENTS!
 
@@ -42,24 +41,24 @@ $featureBox-text-color: $grayMedium;
 $featureBox-icon-color: $white;
 $featureBox-bg-after: $orange;
 $featureBox-content-color: $orange;
-$featureBox-border-color: $featureBorderGrayLight;
+$featureBox-border-color: $borderGrayLight;
 $featureBox-border-color-after: $orange;
 
 $productBox-bg: $white;
 $productBox-border: $grayLight;
 $productBox-overlay-bg: $grayLighter;
-$productBox-icon-bg: $formBorderGrayDark;
+$productBox-icon-bg: $borderGrayDark;
 $productBox-icon-color: $white;
 $productBox-title-color: $orange;
-$productBox-link-color: $grayDarkest;
+$productBox-link-color: $grayDarker;
 
 $newFurniture-title-color: $orange;
-$newFurniture-link-color: $grayDarkest;
+$newFurniture-link-color: $grayDarker;
 $newFurniture-bg: $white;
 $newFurniture-button-bg: $grayLight;
 $newFurniture-button-bg-hover: $orange;
 
-$productSearch-border: $formBorderGrayDark;
+$productSearch-border: $borderGrayDark;
 $productSearch-text-color: $grayMedium;
 $productSearch-placeholder-color: $grayMedium;
 $productSearch-button-bg: transparent;
@@ -90,7 +89,15 @@ $menuBar-link-border: $grayMedium;
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
 $topBar-link-hover: $orange;
-$form-border-color: #292929;
+$form-border-color: $borderGrayDark;
+
+$brands-bg: $white;
+$brands-line-color: $borderGrayLight;
+$brands-arrow-bg: $black;
+$brands-arrow-color: $borderGrayLight;
+$brands-arrow-hover-color: $grayMedium;
+$brands-box-bg: $white;
+$brands-box-border: $borderGrayLight;
 
 // ANIMATIONS
 
