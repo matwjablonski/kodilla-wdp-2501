@@ -2,15 +2,22 @@
 
 .imageWrapper {
     position: relative;
+    height: 150px;
+    width: 350px;
 
     &:hover .imageBtn {
         display: block;
+    }
+
+    img {
+        height: 100%;
+        width: 100%;
     }
 }
 
 .imageBtn {
     display: none;
-    color: $text-color;
+    color: $compareBarItem-btn-text;
     font-size: 3rem;
     font-weight: 600;
     position: absolute;
