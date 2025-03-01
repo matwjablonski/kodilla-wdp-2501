@@ -20,14 +20,14 @@
   right: 0;
   top: 25%;
   height: 50%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba($featured-overlay-bg, 0.4);
 
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: #fff;
+  color: $featured-overlay-text-color;
 
   h2 {
     font-size: 2rem;
@@ -44,8 +44,8 @@
   }
 
   .shopNow {
-    background-color: #fff;
-    color: #000;
+    background-color: $featured-shopNow-bg;
+    color: $featured-shopNow-text-color;
     border: none;
     padding: 0.8rem 1.2rem;
     cursor: pointer;
@@ -53,8 +53,8 @@
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: orange;
-      color: #fff;
+      background-color: $featured-shopNow-bg-hover;
+      color: $featured-shopNow-text-color-hover;
     }
   }
 }
@@ -71,18 +71,17 @@
     width: 50%;
     height: 35px;
     border: none;
-    background-color: #000;
-    color: #fff;
+    background-color: $featured-arrow-bg;
+    color: $featured-overlay-text-color;
     cursor: pointer;
     transition: background-color 0.3s;
-    border-radius: 4px;
 
     &:hover {
-      background-color: orange;
+      background-color: $featured-arrow-bg-hover;
     }
 
     &.active {
-      background-color: orange;
+      background-color: $featured-arrow-bg-hover;
     }
   }
 }

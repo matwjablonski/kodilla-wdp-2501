@@ -8,7 +8,7 @@ import {
   faStar as fasStar,
   faEye,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar } from '@fortawesome/free-regular-svg-icons';
+import { faStar } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import styles from './PromotedBox.module.scss';
 
@@ -23,7 +23,6 @@ const calculateTimeLeft = endTime => {
 
 const PromotedBox = ({ hotDeal }) => {
   const [timeLeft, setTimeLeft] = useState(null);
-
   const handleMouseEnter = () => {
     if (!timeLeft) {
       setTimeLeft(calculateTimeLeft(hotDeal.hotDealsEndTime));
@@ -40,16 +39,13 @@ const PromotedBox = ({ hotDeal }) => {
           <span className={styles.dot}></span>
         </div>
       </div>
-
       <div className={styles.imageWrapper} onMouseEnter={handleMouseEnter}>
         <img src={hotDeal.image} alt={hotDeal.name} />
         {hotDeal.promo && <div className={styles.sale}>{hotDeal.promo}</div>}
-
         <div className={styles.hoverElements}>
           <Button variant='small' className={styles.addToCartBtn}>
             <FontAwesomeIcon icon={faShoppingBasket} /> Add to cart
           </Button>
-
           {timeLeft && (
             <div className={styles.countdown}>
               <div className={styles.timerBox}>
@@ -68,8 +64,6 @@ const PromotedBox = ({ hotDeal }) => {
           )}
         </div>
       </div>
-
-      {/* Nazwa i gwiazdki */}
       <div className={styles.content}>
         <h5>{hotDeal.name}</h5>
         <div className={styles.stars}>
@@ -78,17 +72,13 @@ const PromotedBox = ({ hotDeal }) => {
               {i <= (hotDeal.stars || 0) ? (
                 <FontAwesomeIcon icon={fasStar} />
               ) : (
-                <FontAwesomeIcon icon={farStar} />
+                <FontAwesomeIcon icon={faStar} />
               )}
             </a>
           ))}
         </div>
       </div>
-
-      {/* Pomarańczowa linia na środku */}
       <div className={styles.line}></div>
-
-      {/* Ikony akcji i ceny */}
       <div className={styles.actions}>
         <div className={styles.icons}>
           <Button variant='outline'>

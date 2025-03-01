@@ -88,7 +88,37 @@ $menuBar-link-border: $grayMedium;
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
 $topBar-link-hover: $orange;
-$form-border-color: #292929;
+$form-border-color: $formBorderGrayDark;
+$featured-overlay-bg: $black;
+$featured-overlay-text-color: $white;
+$featured-shopNow-bg: $white;
+$featured-shopNow-text-color: $black;
+$featured-shopNow-bg-hover: $orange;
+$featured-shopNow-text-color-hover: $white;
+$featured-arrow-bg: $black;
+$featured-arrow-bg-hover: $orange;
+
+$promotedBox-border: $grayLight;
+$promotedBox-text-color: #333;
+$promotedBox-header-bg: $black;
+$promotedBox-header-text: $white;
+$promotedBox-dots-bg: $white;
+$promotedBox-dots-active: $primary;
+$promotedBox-sale-text: $white;
+$promotedBox-addToCart-bg: $black;
+$promotedBox-addToCart-text: $white;
+$promotedBox-addToCart-hover-bg: lighten($black, 20%);
+$promotedBox-timer-bg: $black;
+$promotedBox-timer-text: $white;
+$promotedBox-stars-color: gold;
+$promotedBox-line-bg: $grayLight;
+$promotedBox-line-active-bg: $primary;
+$promotedBox-icon-hover-bg: #f0f0f0;
+$promotedBox-icon-hover-border: #ccc;
+$promotedBox-icon-hover-color: #333;
+$promotedBox-oldPrice-color: #999;
+$promotedBox-newPrice-bg: $black;
+$promotedBox-newPrice-text: $white;
 
 // ANIMATIONS
 
