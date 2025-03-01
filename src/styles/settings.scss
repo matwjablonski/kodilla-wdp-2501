@@ -52,8 +52,14 @@ $productBox-border: $grayLight;
 $productBox-overlay-bg: $grayLighter;
 $productBox-icon-bg: $formBorderGrayDark;
 $productBox-icon-color: $white;
-$productBox-title-color: $orange;
+$productBox-title-hover-color: $orange;
+$productBox-active: $orange;
+$productBox-title-color: $black;
 $productBox-link-color: $grayDarkest;
+$productBox-price-hover-bg: $orange;
+$productBox-long-line-horizontal: $grayMedium;
+$productBox-short-line-horizontal: $orange;
+$productBox-oldPrice: $featureBorderGrayLight;
 
 $newFurniture-title-color: $orange;
 $newFurniture-link-color: $grayDarkest;
