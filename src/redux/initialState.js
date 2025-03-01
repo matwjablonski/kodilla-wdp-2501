@@ -241,6 +241,21 @@ const initialState = {
       newFurniture: true,
     },
   ],
+  deals: [
+    {
+      id: 'aenean-ru-bristique-1',
+      category: 'bed',
+    },
+    {
+      id: 'aenean-ru-bristique-2',
+      image: 'url("~/public/images/products/beds/bed-aenean-ru-bristique-1.jpg")',
+    },
+    {
+      id: 'aenean-ru-bristique-3',
+      image: 'url("~/public/images/products/beds/bed-aenean-ru-bristique-1.jpg")',
+    },
+  ],
+
   cart: {
     products: [],
   },
