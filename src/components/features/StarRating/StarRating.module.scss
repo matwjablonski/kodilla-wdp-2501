@@ -3,10 +3,10 @@
 .stars {
     a {
       text-decoration: none;
-      color: $grayDarkest;
+      color: $starRating-star;
     }
 
     .setRating {
-        color: $orange;
+        color: $starRating-star-myRating;
     }
 }
