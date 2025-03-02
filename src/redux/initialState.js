@@ -244,6 +244,33 @@ const initialState = {
   cart: {
     products: [],
   },
+  brands: [
+    {
+      id: 'brand-1',
+      image: '/images/brands/brand-1.png',
+      name: 'Brand 1',
+    },
+    {
+      id: 'brand-2',
+      image: '/images/brands/brand-2.png',
+      name: 'Brand 2',
+    },
+    {
+      id: 'brand-3',
+      image: '/images/brands/brand-3.png',
+      name: 'Brand 3',
+    },
+    {
+      id: 'brand-4',
+      image: '/images/brands/brand-4.png',
+      name: 'Brand 4',
+    },
+    {
+      id: 'brand-5',
+      image: '/images/brands/brand-5.png',
+      name: 'Brand 5',
+    },
+  ],
 };
 
 export default initialState;
