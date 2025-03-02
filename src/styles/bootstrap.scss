@@ -1,3 +1,14 @@
 @import "./settings.scss";
 
 @import "~bootstrap/scss/bootstrap.scss";
+
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    color: $tableItem-active-link-color;
+    background-color: $tableItem-bg;
+    border-top: 2px solid $tableItem-active-link-color;
+    border-bottom: none;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid $grayLight;
+}
