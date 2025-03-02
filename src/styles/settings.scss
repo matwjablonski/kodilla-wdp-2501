@@ -109,13 +109,15 @@ $menuBar-menuButton-bg: transparent;
 $menuBar-menuButton-color: $orange;
 $menuBar-dropDownMenu-hover-bg: rgba($orange, 0.7);
 
-$sectionHeader-title: $orange;
-$sectionHeader-horizontal-short-line: $orange;
+$menuBar-shadow-color: rgba($shadow-dark, 0.2);
+$menuBar-link-border-top: $white;
+$menuBar-menuButton-bg: transparent;
+$menuBar-menuButton-color: $orange;
+$menuBar-dropDownMenu-hover-bg: rgba($orange, 0.7);
 
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
 $topBar-link-hover: $orange;
-
 $form-border-color: $formBorderGrayDark;
 
 $featured-overlay-bg: $black;
@@ -175,7 +177,38 @@ $feedback-author-description-text-color: $textGrayMedium;
 
 $tableItem-link-color: $black;
 
-$form-border-color: #292929;
+$sectionHeader-title: $orange;
+$sectionHeader-horizontal-short-line: $orange;
+
+$tableItem-link-color: $black;
+$tableItem-active-link-color: $orange;
+$tableItem-bg: $grayLighter;
+
+$tabContent-bg: $grayLighter;
+
+$compareBar-bg: $grayDarker;
+$compareBar-btn-bg: $orange;
+$compareBarItem-btn-text: $grayDarker;
+
+$brands-bg: $white;
+$brands-line-color: $borderBottomGrayLight;
+$brands-arrow-bg: $black;
+$brands-arrow-color: $borderBottomGrayLight;
+$brands-arrow-hover-color: $orange;
+$brands-box-bg: $white;
+$brands-box-border: $borderBottomGrayLight;
+
+$feedback-border-bottom-color: $borderBottomGrayLight;
+$feedback-header-border-bottom-color: $orange;
+$feedback-header-text-color: $orange;
+$feedback-dots-bg: $white;
+$feedback-dots-non-active: $grayLight;
+$feedback-dots-active: $orange;
+$feedback-quoteIcon-color: $black;
+$feedback-text-color: $grayMedium;
+$feedback-img-border-color: $grayLight;
+$feedback-author-header-text-color: $grayDark;
+$feedback-author-description-text-color: $textGrayMedium;
 
 // ANIMATIONS
 
