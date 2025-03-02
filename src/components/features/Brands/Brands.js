@@ -7,6 +7,10 @@ import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons
 
 const Brands = () => {
   const brands = useSelector(getAllBrands);
+  let repeatedBrands = brands;
+  if (brands.length === 5) {
+    repeatedBrands = [...brands, brands[0]];
+  }
 
   return (
     <section className={styles.root}>
@@ -15,7 +19,7 @@ const Brands = () => {
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <div className={styles.brandsWrapper}>
-          {brands.map(brand => (
+          {repeatedBrands.map(brand => (
             <div className={styles.brandBox} key={brand.id}>
               <img src={brand.image} alt={brand.name} />
             </div>

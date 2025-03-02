@@ -270,11 +270,6 @@ const initialState = {
       image: '/images/brands/brand-5.png',
       name: 'Brand 5',
     },
-    {
-      id: 'brand-6',
-      image: '/images/brands/brand-6.png',
-      name: 'Brand 6',
-    },
   ],
 };
 
