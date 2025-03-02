@@ -1,0 +1,14 @@
+@import "../../../styles/settings.scss";
+
+.tabItem {
+    a {
+        color: $tableItem-link-color;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}
+
+.tabItem a.activeLink {
+    color: $orange;
+    background-color: lightblue;
+}
