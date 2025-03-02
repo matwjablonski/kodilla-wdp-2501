@@ -63,26 +63,19 @@ const ProductBox = ({
           <Button variant='outline' className={isFavorite ? styles.active : ''}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' className={isCompared ? styles.active : ''}>
+          <Button
+            variant='outline'
+            className={isCompared ? styles.active : ''}
+            onClick={handleClick}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>
-        <div className={styles.line}></div>
-        <div className={styles.actions}>
-          <div className={styles.outlines}>
-            <Button variant='outline'>
-              <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-            </Button>
-            <Button variant='outline' data-testid='compare-test' onClick={handleClick}>
-              <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-            </Button>
-          </div>
-          <div className={styles.price}>
-            {oldPrice && <div className={styles.oldPrice}>$ {oldPrice.toFixed(2)}</div>}
-            <Button noHover variant='small' className={styles.priceBtn}>
-              $ {price.toFixed(2)}
-            </Button>
-          </div>
+        <div className={styles.price}>
+          {oldPrice && <div className={styles.oldPrice}>$ {oldPrice.toFixed(2)}</div>}
+          <Button noHover variant='small' className={styles.priceBtn}>
+            $ {price.toFixed(2)}
+          </Button>
         </div>
       </div>
     </div>
