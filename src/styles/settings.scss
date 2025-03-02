@@ -53,6 +53,11 @@ $productBox-icon-bg: $formBorderGrayDark;
 $productBox-icon-color: $white;
 $productBox-title-color: $orange;
 $productBox-link-color: $grayDarkest;
+$productBox-title-hover-color: $orange;
+$productBox-price-hover-bg: $orange;
+$productBox-long-line-horizontal: $grayMedium;
+$productBox-short-line-horizontal: $orange;
+$productBox-oldPrice: $featureBorderGrayLight;
 
 $newFurniture-title-color: $orange;
 $newFurniture-link-color: $grayDarkest;
@@ -64,6 +69,10 @@ $productSearch-border: $formBorderGrayDark;
 $productSearch-text-color: $grayMedium;
 $productSearch-placeholder-color: $grayMedium;
 $productSearch-button-bg: transparent;
+$productSearch-button-category-hover-select-color: $orange;
+
+$starRating-star: $grayDarkest;
+$starRating-star-myRating: $orange;
 
 $companyClaim-text-color: $textGrayLight;
 $companyClaim-icon-bg: $orange;
@@ -91,7 +100,46 @@ $menuBar-link-border: $grayMedium;
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
 $topBar-link-hover: $orange;
-$form-border-color: #292929;
+$form-border-color: $formBorderGrayDark;
+
+$featured-overlay-bg: $black;
+$featured-overlay-text-color: $white;
+$featured-shopNow-bg: $white;
+$featured-shopNow-text-color: $black;
+$featured-shopNow-bg-hover: $orange;
+$featured-shopNow-text-color-hover: $white;
+$featured-arrow-bg: $black;
+$featured-arrow-bg-hover: $orange;
+
+$promotedBox-border: $grayLight;
+$promotedBox-text-color: $grayDarkest;
+$promotedBox-header-bg: $black;
+$promotedBox-header-text: $white;
+$promotedBox-dots-bg: $white;
+$promotedBox-dots-active: $orange;
+$promotedBox-sale-text: $white;
+$promotedBox-addToCart-bg: $black;
+$promotedBox-addToCart-text: $white;
+$promotedBox-addToCart-hover-bg: lighten($black, 20%);
+$promotedBox-timer-bg: $black;
+$promotedBox-timer-text: $white;
+$promotedBox-stars-color: $black;
+$promotedBox-line-bg: $grayLight;
+$promotedBox-line-active-bg: $orange;
+$promotedBox-icon-hover-bg: $grayLighter;
+$promotedBox-icon-hover-border: $grayLight;
+$promotedBox-icon-hover-color: $grayDarkest;
+$promotedBox-oldPrice-color: $grayLight;
+$promotedBox-newPrice-bg: $black;
+$promotedBox-newPrice-text: $white;
+
+$brands-bg: $white;
+$brands-line-color: $borderBottomGrayLight;
+$brands-arrow-bg: $black;
+$brands-arrow-color: $borderBottomGrayLight;
+$brands-arrow-hover-color: $orange;
+$brands-box-bg: $white;
+$brands-box-border: $borderBottomGrayLight;
 
 $feedback-border-bottom-color: $borderBottomGrayLight;
 $feedback-header-border-bottom-color: $orange;
@@ -107,7 +155,6 @@ $feedback-author-description-text-color: $textGrayMedium;
 
 // ANIMATIONS
 
-// Animation time for different effects
 $hover-animation-time: 250ms;
 $hover-background-time: 250ms;
 $hover-text-time: 250ms;
@@ -116,7 +163,6 @@ $hover-text-color: #ffffff;
 $hover-text-color-dark-bg: $primary;
 $hover-background-color: $primary;
 
-// Placeholder
 %hover-animation {
   transition: $hover-animation-time;
 
@@ -139,4 +185,3 @@ $hover-background-color: $primary;
     transition: transform $hover-animation-time ease-in-out;
   }
 }
-
