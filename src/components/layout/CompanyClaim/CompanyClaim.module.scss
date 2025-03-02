@@ -1,7 +1,9 @@
 @import "../../../styles/settings.scss";
 
 .root {
+  min-width: 420px;
   background-color: $header-bg;
+  overflow: hidden;
 
   :global(.container) > :global(.row) {
     height: 145px;
@@ -14,7 +16,9 @@
       line-height: 42px;
       color: rgb(216, 216, 216);
       font-weight: 500;
-
+      @media (max-width: 460px) {
+        font-size: 14px;
+      }
       .icon {
         font-size: 32px;
         color: $primary;
@@ -26,6 +30,8 @@
   }
 
   .cart {
+    padding-right: 50px;
+
     .cartBox {
       display: inline-block;
       position: relative;
@@ -45,29 +51,28 @@
           margin-right: 5px;
         }
       }
+    }
+    
+    .cartCounter {
+      width: 28px;
+      height: 27px;
+      border-radius: 14px;
+      background-color: $header-bg;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: rgb(224, 227, 237);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(50%, -50%);
+    }
 
-      .cartCounter {
-        width: 28px;
-        height: 27px;
-        border-radius: 14px;
-        background-color: $header-bg;
-        display: flex;
-        align-items: center;
-        justify-content: left;
-        font-size: 14px;
-        color: rgb(224, 227, 237);
-        position: absolute;
-        top: 50%;
-        right: 0;
-        transform: translate(50%, -50%);
-        padding-left: 10px;
-      }
-
-      &:hover {
-        .cartIcon {
-          @extend %hover-animation;
-          background-color: lighten($hover-background-color, 10%);
-        }
+    &:hover {
+      .cartIcon {
+        @extend %hover-animation;
+        background-color: lighten($hover-background-color, 10%);
       }
     }
   }

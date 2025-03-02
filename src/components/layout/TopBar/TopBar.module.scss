@@ -2,6 +2,7 @@
 
 .root {
   background-color: $header-topbar-bg;
+  min-width: 420px;
 
   ul {
     list-style: none;
@@ -11,22 +12,11 @@
     li {
       display: inline-block;
       line-height: 55px;
-
-      a {
-        color: #ffffff;
-        font-size: 13px;
-
-        &:hover {
-          @extend %hover-animation;
-          @extend .hover-text-dark-bg;
-          text-decoration: none;
-        }
-      }
     }
   }
 
   .topOptions ul li {
-    margin-right: 1.5rem;
+    margin-right: 1rem;
 
     .icon {
       margin-left: 5px;
@@ -40,4 +30,33 @@
       margin-right: 5px;
     }
   }
+}
+
+a {
+  color: #ffffff;
+  font-size: 13px;
+
+  &:hover {
+    color: $primary;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .topMenu {
+    padding: 0 10px 0 0;
+  }
+
+  .textHidden{
+    font-size: 0;
+  }
+
+  .topMenu ul li .icon {
+    font-size: 20px;
+  }
+
+  .topOptions {
+    padding: 0 0 0 10px;
+  }
+
 }

@@ -1,13 +1,69 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './NewFurniture.module.scss';
+import Swipeable from '../../common/Swipeable/Swipeable';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import CompareBar from '../CompareBar/CompareBar';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
+    productsSelected: [],
+    showAlert: false,
+    messageAlert: '',
+  };
+
+  setShowAlert = (showAlert, messageAlert = '') => {
+    this.setState({ showAlert, messageAlert });
+  };
+
+  addToCompare = newProduct => {
+    if (
+      newProduct &&
+      !this.state.productsSelected.find(product => product.id === newProduct.id)
+    ) {
+      if (this.state.productsSelected.length < 4) {
+        this.setState({
+          productsSelected: [...this.state.productsSelected, newProduct],
+        });
+      } else {
+        this.setState({
+          showAlert: true,
+          messageAlert: 'Only 4 products to compare!',
+        });
+      }
+    } else {
+      this.setState({
+        showAlert: true,
+        messageAlert: 'This product is already selected!',
+      });
+    }
+  };
+
+  removeProductFromCompare = productId => {
+    this.setState(prevState => ({
+      productsSelected: prevState.productsSelected.filter(
+        product => product.id !== productId
+      ),
+    }));
+  };
+
+  swipeLeftMove = () => {
+    const categoryProducts = this.props.products.filter(
+      item => item.category === this.state.activeCategory
+    );
+    const totalPages = Math.ceil(categoryProducts.length / 8);
+
+    if (this.state.activePage < totalPages - 1) {
+      this.setState({ activePage: this.state.activePage + 1 });
+    }
+  };
+
+  swipeRightMove = () => {
+    if (this.state.activePage > 0) {
+      this.setState({ activePage: this.state.activePage - 1 });
+    }
   };
 
   handlePageChange(newPage) {
@@ -66,13 +122,26 @@ class NewFurniture extends React.Component {
               </div>
             </div>
           </div>
-          <div className='row'>
-            {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-              <div key={item.id} className='col-3'>
-                <ProductBox {...item} />
-              </div>
-            ))}
-          </div>
+          <Swipeable swipeLeft={this.swipeLeftMove} swipeRight={this.swipeRightMove}>
+            <div className='row'>
+              {categoryProducts
+                .slice(activePage * 8, (activePage + 1) * 8)
+                .map(item => (
+                  <div key={item.id} className='col-3'>
+                    <ProductBox action={this.addToCompare} {...item} />
+                  </div>
+                ))}
+            </div>
+          </Swipeable>
+          {this.state.productsSelected.length >= 1 && (
+            <CompareBar
+              showAlert={this.state.showAlert}
+              messageAlert={this.state.messageAlert}
+              productsSelected={this.state.productsSelected}
+              setShowAlert={this.setShowAlert}
+              action={this.removeProductFromCompare}
+            />
+          )}
         </div>
       </div>
     );

@@ -1,0 +1,21 @@
+@import "../../../styles/settings.scss";
+@import "../CompanyClaim/CompanyClaim.module.scss";
+
+.root {
+  min-width: 420px;
+  overflow: hidden;
+
+  img {
+    margin-bottom: -40px;
+  }
+
+  .phoneNumber p{
+    font-size: 14px;
+    padding-bottom: 15px;
+    margin-right: 30px;
+  }
+
+  .cart {
+    margin-top: 20px;
+  }
+}
