@@ -8,6 +8,7 @@ $grayDark: #363636;
 $grayMedium: #2a2a2a;
 $formBorderGrayDark: #292929;
 $featureBorderGrayLight: #b6b6b6;
+$borderBottomGrayLight: #e2e2e2;
 $white: #ffffff;
 $black: #000000;
 $grayLight: #e1e1e1;
@@ -92,6 +93,18 @@ $topBar-link-color: $white;
 $topBar-link-hover: $orange;
 $form-border-color: #292929;
 
+$feedback-border-bottom-color: $borderBottomGrayLight;
+$feedback-header-border-bottom-color: $orange;
+$feedback-header-text-color: $orange;
+$feedback-dots-bg: $white;
+$feedback-dots-non-active: $grayLight;
+$feedback-dots-active: $orange;
+$feedback-quoteIcon-color: $black;
+$feedback-text-color: $grayMedium;
+$feedback-img-border-color: $grayLight;
+$feedback-author-header-text-color: $grayDark;
+$feedback-author-description-text-color: $textGrayMedium;
+
 // ANIMATIONS
 
 // Animation time for different effects
@@ -126,3 +139,4 @@ $hover-background-color: $primary;
     transition: transform $hover-animation-time ease-in-out;
   }
 }
+
