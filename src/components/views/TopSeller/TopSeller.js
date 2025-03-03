@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TopSeller.module.scss';
 import Button from '../../common/Button/Button';
-import clsx from 'clsx';
+import StarRating from '../../features/StarRating/StarRating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import {
@@ -46,7 +46,8 @@ const TopSeller = () => {
           <div className={styles.oldPrice}>$60.00</div>
         </div>
         <div className={styles.product}>
-          <div>Name</div>
+          <h5>Aenean Ru Bristique 2</h5>
+          <StarRating stars={2} myRating={3} />
         </div>
       </div>
       <div className='carousel'></div>
