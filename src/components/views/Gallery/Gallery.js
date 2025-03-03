@@ -2,6 +2,7 @@ import React from 'react';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import TabItem from '../../common/TabItem/TabItem';
 import TabContent from '../../common/TabContent/TabContent';
+import TopSeller from '../TopSeller/TopSeller';
 
 const Gallery = () => {
   return (
@@ -22,7 +23,7 @@ const Gallery = () => {
               <div>Content</div>
             </TabContent>
             <TabContent id='top-seller' activeLink={'top-seller'}>
-              <div>Content</div>
+              <TopSeller />
             </TabContent>
             <TabContent id='sale-off'>
               <div>Content</div>
