@@ -1,0 +1,53 @@
+@import "../../../styles/settings.scss";
+
+.photo {
+    padding: 80% 10px 0 10px;
+    background: $tableItem-bg center/cover no-repeat;
+    position: relative;
+
+    .outlines {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        position: absolute;
+        top: 30%;
+
+        > div {
+            margin-bottom: 5px;
+        }
+    }
+
+    .sale {
+        color: $topSeller-sale-price;
+        background-color: $topSeller-sale-bg;
+        padding-top: 25px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50%;
+        text-align: center;
+        opacity: .8;
+        position: absolute;
+        top: 50%;
+        right: 10%;
+
+
+        .price {
+            font-size: 15px;
+            line-height: 1.2;
+        }
+
+        .oldPrice {
+            text-decoration: line-through;
+            font-size: 12px;
+            line-height: 1.2;
+        }
+    }
+
+    .product {
+        background-color: $topSeller-product-bg;
+        width: 40%;
+        height: 30%;
+    }
+}
