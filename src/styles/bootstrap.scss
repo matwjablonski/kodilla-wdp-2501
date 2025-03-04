@@ -10,5 +10,10 @@
 }
 
 .nav-tabs .nav-link {
-    border: 1px solid $grayLight;
+    border: 1px solid $tabContent-bg;
+}
+
+.tab-content > .active {
+    display: block;
+    background-color: $tabContent-bg;
 }
