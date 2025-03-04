@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux';
 import styles from './TopSeller.module.scss';
+import clsx from 'clsx';
 import Button from '../../common/Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -16,6 +17,14 @@ import {
 
 const TopSeller = () => {
   const products = useSelector(getAll);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeImage, setActiveImage] = useState(products[0]);
+  const [isOldPrice, setOldPrice] = useState(false);
+
+  useEffect(() => {
+    if (!activeImage.oldPrice) setOldPrice(false);
+    else setOldPrice(true);
+  }, [activeImage.oldPrice]);
 
   const partOfImages = images => {
     const selectedImages = [];
@@ -26,8 +35,6 @@ const TopSeller = () => {
   };
 
   const imageParts = partOfImages(products);
-
-  const [activeIndex, setActiveIndex] = useState(0);
 
   const nextSlide = () => {
     if (activeIndex < imageParts.length - 1) {
@@ -49,7 +56,7 @@ const TopSeller = () => {
       <div
         className={styles.photo}
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/beds/bed-aenean-ru-bristique-2.jpg)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/beds/${activeImage.category}-${activeImage.id}.jpg)`,
         }}
       >
         <div className={styles.outlines}>
@@ -75,12 +82,13 @@ const TopSeller = () => {
           </div>
         </div>
         <div className={styles.sale}>
-          <div className={styles.price}>$30.00</div>
-          <div className={styles.oldPrice}>$60.00</div>
+          <div className={styles.price}>${activeImage.price}</div>
+          {isOldPrice && <div className={styles.oldPrice}>${activeImage.oldPrice}</div>}
+          {!isOldPrice && <div className={styles.slogan}>Hot price!</div>}
         </div>
         <div className={styles.product}>
-          <h5>Aenean Ru Bristique 2</h5>
-          <StarRating stars={2} myRating={3} />
+          <h5>{activeImage.name}</h5>
+          <StarRating stars={activeImage.stars} myRating={activeImage.myRating} />
         </div>
       </div>
       <div className='my-2'>
@@ -93,12 +101,20 @@ const TopSeller = () => {
               <div className='d-flex flex-row flex-nowrap justify-content-center'>
                 {index === activeIndex &&
                   part.map((image, i) => (
-                    <div className={styles.imageCarousel} key={i}>
+                    <div
+                      className={clsx(
+                        styles.imageCarousel,
+                        activeImage ? styles.activeImage : ''
+                      )}
+                      key={i}
+                      onClick={() => setActiveImage(part[i])}
+                    >
                       <img
                         className='d-block w-100 h-100'
                         src={`${process.env.PUBLIC_URL}/images/products/beds/${image.category}-${image.id}.jpg`}
                         alt={`slide-image ${index * 6 + i}`}
                       />
+                      <div className={styles.layer}></div>
                     </div>
                   ))}
               </div>
