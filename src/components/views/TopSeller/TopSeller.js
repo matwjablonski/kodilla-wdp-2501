@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
+import { getAll } from '../../../redux/productsRedux';
 import styles from './TopSeller.module.scss';
 import Button from '../../common/Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
@@ -8,9 +10,40 @@ import {
   faExchangeAlt,
   faShoppingBasket,
   faEye,
+  faChevronLeft,
+  faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 const TopSeller = () => {
+  const products = useSelector(getAll);
+
+  const partOfImages = images => {
+    const selectedImages = [];
+    for (let i = 0; i < images.length; i += 6) {
+      selectedImages.push(images.slice(i, i + 6));
+    }
+    return selectedImages;
+  };
+
+  const imageParts = partOfImages(products);
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  const nextSlide = () => {
+    if (activeIndex < imageParts.length - 1) {
+      setActiveIndex(activeIndex + 1);
+      setActiveIndex(0);
+    }
+  };
+
+  const prevSlide = () => {
+    if (activeIndex > 0) {
+      setActiveIndex(activeIndex - 1);
+    } else {
+      setActiveIndex(imageParts.length - 1);
+    }
+  };
+
   return (
     <div>
       <div
@@ -50,7 +83,32 @@ const TopSeller = () => {
           <StarRating stars={2} myRating={3} />
         </div>
       </div>
-      <div className='carousel'></div>
+      <div className='my-2'>
+        <div className='row d-flex flex-row flex-nowrap justify-content-center'>
+          <button className={styles.prevBtn} onClick={prevSlide}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          {imageParts.map((part, index) => (
+            <div key={index} className={`image-slide ${index === 0 ? 'active' : ''}`}>
+              <div className='d-flex flex-row flex-nowrap justify-content-center'>
+                {index === activeIndex &&
+                  part.map((image, i) => (
+                    <div className={styles.imageCarousel} key={i}>
+                      <img
+                        className='d-block w-100 h-100'
+                        src={`${process.env.PUBLIC_URL}/images/products/beds/${image.category}-${image.id}.jpg`}
+                        alt={`slide-image ${index * 6 + i}`}
+                      />
+                    </div>
+                  ))}
+              </div>
+            </div>
+          ))}
+          <button className={styles.nextBtn} onClick={nextSlide}>
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      </div>
     </div>
   );
 };
