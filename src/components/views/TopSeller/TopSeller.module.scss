@@ -89,10 +89,19 @@ button {
 
     .layer {
         position: absolute;
+        content: '';
+        background-color: white;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        opacity: .7;
+        opacity: .5;
+        transition: opacity 0.3s ease;
+    }
+
+    &.activeImage {
+        .layer {
+            opacity: 0;
+        }
     }
 }

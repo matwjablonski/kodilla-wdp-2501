@@ -39,6 +39,7 @@ const TopSeller = () => {
   const nextSlide = () => {
     if (activeIndex < imageParts.length - 1) {
       setActiveIndex(activeIndex + 1);
+    } else {
       setActiveIndex(0);
     }
   };
@@ -104,7 +105,7 @@ const TopSeller = () => {
                     <div
                       className={clsx(
                         styles.imageCarousel,
-                        activeImage ? styles.activeImage : ''
+                        activeImage === part[i] ? styles.activeImage : ''
                       )}
                       key={i}
                       onClick={() => setActiveImage(part[i])}
