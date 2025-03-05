@@ -5,14 +5,13 @@ import styles from './TopSeller.module.scss';
 import clsx from 'clsx';
 import Button from '../../common/Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
+import Slider from '../../common/Slider/Silder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import {
   faExchangeAlt,
   faShoppingBasket,
   faEye,
-  faChevronLeft,
-  faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
 
 const TopSeller = () => {
@@ -36,22 +35,6 @@ const TopSeller = () => {
 
   const imageParts = partOfImages(products);
 
-  const nextSlide = () => {
-    if (activeIndex < imageParts.length - 1) {
-      setActiveIndex(activeIndex + 1);
-    } else {
-      setActiveIndex(0);
-    }
-  };
-
-  const prevSlide = () => {
-    if (activeIndex > 0) {
-      setActiveIndex(activeIndex - 1);
-    } else {
-      setActiveIndex(imageParts.length - 1);
-    }
-  };
-
   return (
     <div>
       <div
@@ -61,7 +44,7 @@ const TopSeller = () => {
         }}
       >
         <div className={styles.outlines}>
-          <div>
+          <div data-toggle='tooltip' data-placement='right' title='Tooltip on right'>
             <Button variant='outline'>
               <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
             </Button>
@@ -92,40 +75,36 @@ const TopSeller = () => {
           <StarRating stars={activeImage.stars} myRating={activeImage.myRating} />
         </div>
       </div>
-      <div className='my-2'>
-        <div className='row d-flex flex-row flex-nowrap justify-content-center'>
-          <button className={styles.prevBtn} onClick={prevSlide}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-          {imageParts.map((part, index) => (
-            <div key={index} className={`image-slide ${index === 0 ? 'active' : ''}`}>
-              <div className='d-flex flex-row flex-nowrap justify-content-center'>
-                {index === activeIndex &&
-                  part.map((image, i) => (
-                    <div
-                      className={clsx(
-                        styles.imageCarousel,
-                        activeImage === part[i] ? styles.activeImage : ''
-                      )}
-                      key={i}
-                      onClick={() => setActiveImage(part[i])}
-                    >
-                      <img
-                        className='d-block w-100 h-100'
-                        src={`${process.env.PUBLIC_URL}/images/products/beds/${image.category}-${image.id}.jpg`}
-                        alt={`slide-image ${index * 6 + i}`}
-                      />
-                      <div className={styles.layer}></div>
-                    </div>
-                  ))}
-              </div>
+      <Slider
+        imageParts={imageParts}
+        activePart={activeIndex}
+        setActivePart={setActiveIndex}
+      >
+        {imageParts.map((part, index) => (
+          <div key={index} className={`image-slide ${index === 0 ? 'active' : ''}`}>
+            <div className='d-flex flex-row flex-nowrap justify-content-center'>
+              {index === activeIndex &&
+                part.map((image, i) => (
+                  <div
+                    className={clsx(
+                      styles.imageCarousel,
+                      activeImage === part[i] ? styles.activeImage : ''
+                    )}
+                    key={i}
+                    onClick={() => setActiveImage(part[i])}
+                  >
+                    <img
+                      className='d-block w-100 h-100'
+                      src={`${process.env.PUBLIC_URL}/images/products/beds/${image.category}-${image.id}.jpg`}
+                      alt={`slide-image ${index * 6 + i}`}
+                    />
+                    <div className={styles.layer}></div>
+                  </div>
+                ))}
             </div>
-          ))}
-          <button className={styles.nextBtn} onClick={nextSlide}>
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-        </div>
-      </div>
+          </div>
+        ))}
+      </Slider>
     </div>
   );
 };

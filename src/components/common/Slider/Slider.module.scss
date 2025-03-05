@@ -1,0 +1,9 @@
+@import "../../../styles/settings.scss";
+
+.sliderBtn {
+    width: 30px;
+    height: auto;
+    color: $slider-btn-icon-color;
+    background-color: $slider-btn-bg;
+    border: none;
+}
