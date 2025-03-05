@@ -12,6 +12,7 @@ $formBorderGrayDark: #292929;
 $featureBorderGrayLight: #b6b6b6;
 $borderBottomGrayLight: #e2e2e2;
 $white: #ffffff;
+$green: #2ed573;
 $black: #000000;
 $shadow-dark: #010202;
 $grayLight: #e1e1e1;
@@ -177,6 +178,11 @@ $feedback-author-description-text-color: $textGrayMedium;
 
 $tableItem-link-color: $black;
 
+$gallery-text-light: $white;
+$gallery-text-dark: $black;
+$gallery-text-orange: $orange;
+$gallery-text-grass: $green;
+
 $sectionHeader-title: $orange;
 $sectionHeader-horizontal-short-line: $orange;
 
@@ -185,7 +191,8 @@ $topSeller-sale-bg: $grayDarkest;
 $topSeller-product-bg-gradient-light: $white;
 $topSeller-product-bg-gradient-dark: $black;
 $topSeller-product-border: $grayDarkest;
-
+$topSeller-tooltip-color: $white;
+$topSeller-tooltip-bg: $black;
 
 $tableItem-link-color: $black;
 $tableItem-active-link-color: $orange;
