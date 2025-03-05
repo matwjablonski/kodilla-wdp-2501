@@ -14,7 +14,7 @@ describe('Component CompareBarItem', () => {
     const component = shallow(<CompareBarItem {...props} />);
     const img = component.find('img');
     expect(img.prop('src')).toBe(
-      `${process.env.PUBLIC_URL}/images/products/beds/bed-1.jpg`
+      `${process.env.PUBLIC_URL}/images/products/bed/bed-1.jpg`
     );
     expect(component).toBeTruthy();
   });
