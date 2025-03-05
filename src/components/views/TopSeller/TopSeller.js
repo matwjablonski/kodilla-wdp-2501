@@ -5,6 +5,7 @@ import styles from './TopSeller.module.scss';
 import clsx from 'clsx';
 import Button from '../../common/Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
+import { setPartsWithImages } from '../../../utils/setPartWithImages';
 import Slider from '../../common/Slider/Silder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
@@ -25,15 +26,7 @@ const TopSeller = () => {
     else setOldPrice(true);
   }, [activeImage.oldPrice]);
 
-  const partOfImages = images => {
-    const selectedImages = [];
-    for (let i = 0; i < images.length; i += 6) {
-      selectedImages.push(images.slice(i, i + 6));
-    }
-    return selectedImages;
-  };
-
-  const imageParts = partOfImages(products);
+  const imageParts = setPartsWithImages(products, 6);
 
   return (
     <div>
