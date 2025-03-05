@@ -301,6 +301,22 @@ const initialState = {
       position: 'Furniture client',
       image: 'images/clients/john_smith.png',
     },
+    {
+      id: 'feedback-2',
+      text:
+        'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.',
+      author: 'Jane Doe',
+      position: 'Interior Designer',
+      image: 'images/clients/jane_doe.png',
+    },
+    {
+      id: 'feedback-3',
+      text:
+        'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.',
+      author: 'Robert Brown',
+      position: 'Architect',
+      image: 'images/clients/robert_brown.png',
+    },
   ],
 };
 
