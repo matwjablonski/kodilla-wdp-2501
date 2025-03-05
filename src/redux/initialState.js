@@ -21,6 +21,8 @@ const initialState = {
       hotDeals: true,
       hotDealsEndTime: '2025-03-30T23:59:59Z',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-2',
@@ -35,6 +37,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: true,
+      isFavorite: true,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-3',
@@ -48,6 +52,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: true,
     },
     {
       id: 'bd-aenean-ru-bristique-4',
@@ -62,6 +68,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: true,
+      isCompared: true,
     },
     {
       id: 'bd-aenean-ru-bristique-5',
@@ -75,6 +83,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-6',
@@ -89,6 +99,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-7',
@@ -103,6 +115,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-8',
@@ -117,6 +131,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-9',
@@ -131,6 +147,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-10',
@@ -145,6 +163,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-11',
@@ -159,6 +179,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-12',
@@ -173,6 +195,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-13',
@@ -187,6 +211,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-14',
@@ -201,6 +227,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-15',
@@ -215,6 +243,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-16',
@@ -228,6 +258,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-17',
@@ -242,6 +274,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-18',
@@ -255,6 +289,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-19',
@@ -268,6 +304,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-20',
@@ -282,6 +320,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-21',
@@ -296,6 +336,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-22',
@@ -310,6 +352,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-23',
@@ -323,6 +367,8 @@ const initialState = {
       hotDeals: false,
       hotDealsEndTime: '',
       featured: false,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'bd-aenean-ru-bristique-24',
@@ -356,6 +402,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      isFavorite: false,
+      isCompared: false,
     },
     {
       id: 'chr-aenean-ru-bristique-3',
