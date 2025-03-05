@@ -1,0 +1,43 @@
+.dealRow {
+  display: flex;
+  height: 350px;
+  gap: 5px;
+  margin-bottom: 5rem;
+  min-width: 360px;
+}
+
+.photo {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.smallContainer {
+  gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+  .dealRow {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dealRow {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dealRow {
+    height: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  .dealRow {
+    height: 150px;
+  }
+}
