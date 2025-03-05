@@ -40,29 +40,23 @@ const TopSeller = () => {
           <Button variant='outline' data-title='Add to favorite'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <div>
-            <Button
-              variant='outline'
-              data-testid='compare-test'
-              data-title='Add to compare'
-            >
-              <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-            </Button>
-          </div>
-          <div>
-            <Button
-              variant='outline'
-              data-tooltip-id='Add to cart'
-              data-title='Add to cart'
-            >
-              <FontAwesomeIcon icon={faShoppingBasket}>Add to cart</FontAwesomeIcon>
-            </Button>
-          </div>
-          <div>
-            <Button variant='outline' className={styles.topBtn} data-title='View'>
-              <FontAwesomeIcon icon={faEye}>View</FontAwesomeIcon>
-            </Button>
-          </div>
+          <Button
+            variant='outline'
+            data-testid='compare-test'
+            data-title='Add to compare'
+          >
+            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+          </Button>
+          <Button
+            variant='outline'
+            data-tooltip-id='Add to cart'
+            data-title='Add to cart'
+          >
+            <FontAwesomeIcon icon={faShoppingBasket}>Add to cart</FontAwesomeIcon>
+          </Button>
+          <Button variant='outline' className={styles.topBtn} data-title='View'>
+            <FontAwesomeIcon icon={faEye}>View</FontAwesomeIcon>
+          </Button>
         </div>
         <div className={styles.sale}>
           <div className={styles.price}>${activeImage.price}</div>
