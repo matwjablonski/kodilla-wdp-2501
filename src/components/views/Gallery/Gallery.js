@@ -11,7 +11,7 @@ const Gallery = () => {
     <div className='container d-flex flex-row justify-content-center align-items-stretch my-4 p-2'>
       <div className='col-6'>
         <SectionHeader>Furniture Gallery</SectionHeader>
-        <div>
+        <div className='pt-4'>
           <ul className='nav nav-tabs' role='tablist'>
             <TabItem id='featured'>Featured</TabItem>
             <TabItem id='top-seller' activeLink={'top-seller'}>

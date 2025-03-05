@@ -2,6 +2,7 @@
 
 .heading {
     position: relative;
+    border-bottom: 4px solid $sectionHeader-horizontal-long-line;
 
     h3 {
       color: $sectionHeader-title;
