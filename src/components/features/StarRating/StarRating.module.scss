@@ -1,0 +1,12 @@
+@import "../../../styles/settings.scss";
+
+.stars {
+    a {
+      text-decoration: none;
+      color: $starRating-star;
+    }
+
+    .setRating {
+        color: $starRating-star-myRating;
+    }
+}
