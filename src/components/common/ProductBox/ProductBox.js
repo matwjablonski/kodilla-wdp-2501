@@ -32,7 +32,7 @@ const ProductBox = ({
       <div
         className={styles.photo}
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/beds/${category}-${id}.jpg)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/${category}/${category}-${id}.jpg)`,
         }}
       >
         {promo && <div className={styles.sale}>{promo}</div>}
