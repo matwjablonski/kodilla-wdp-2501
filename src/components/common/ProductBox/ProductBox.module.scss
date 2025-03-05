@@ -35,6 +35,16 @@
     }
   }
 
+  &:hover {
+    .buttons {
+      visibility: visible;
+    }
+
+    .priceBtn {
+      background-color: $primary;
+    }
+  }
+
   .content {
     text-align: center;
     padding: 20px;
