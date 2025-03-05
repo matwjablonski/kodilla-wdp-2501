@@ -5,10 +5,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: $header-topbar-bg;
+    background-color: $compareBar-bg;
 
     .compareBtn {
-        background-color: $primary;
+        background-color: $compareBar-btn-bg;
         font-weight: bold;
         text-transform: uppercase;
 

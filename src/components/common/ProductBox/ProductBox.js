@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faStar,
-  faExchangeAlt,
-  faShoppingBasket,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import StarRating from '../../features/StarRating/StarRating';
 
 const ProductBox = ({
   id,
@@ -22,6 +18,7 @@ const ProductBox = ({
   action,
   isFavorite,
   isCompared,
+  myRating,
 }) => {
   const handleClick = e => {
     e.preventDefault();
@@ -32,7 +29,7 @@ const ProductBox = ({
       <div
         className={styles.photo}
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/beds/${category}-${id}.jpg)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/${category}/${category}-${id}.jpg)`,
         }}
       >
         {promo && <div className={styles.sale}>{promo}</div>}
@@ -45,17 +42,7 @@ const ProductBox = ({
       </div>
       <div className={styles.content}>
         <h5>{name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= stars ? (
-                <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-              ) : (
-                <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-              )}
-            </a>
-          ))}
-        </div>
+        <StarRating stars={stars} myRating={myRating} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -65,6 +52,7 @@ const ProductBox = ({
           </Button>
           <Button
             variant='outline'
+            data-testid='compare-test'
             className={isCompared ? styles.active : ''}
             onClick={handleClick}
           >
@@ -93,6 +81,7 @@ ProductBox.propTypes = {
   stars: PropTypes.number,
   isFavorite: PropTypes.bool,
   isCompared: PropTypes.bool,
+  myRating: PropTypes.number,
   action: PropTypes.func,
 };
 
