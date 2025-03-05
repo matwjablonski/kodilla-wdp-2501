@@ -16,6 +16,35 @@
         > div {
             margin-bottom: 5px;
         }
+
+        [data-title] {
+            position: relative;
+        
+            &:hover::after {
+                content: attr(data-title);
+                position: absolute;
+                border: none;
+                font-size: 10px;
+                top: 0;
+                left: 38px;
+                background-color: black;
+                color: white;
+                padding: 3px 8px;
+                border-radius: 4px;
+                white-space: nowrap;
+            }
+        
+            &:hover::before {
+                content: '';
+                position: absolute;
+                top: 48%;
+                left: 28px;
+                transform: translateY(-50%);
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent black transparent transparent;
+            }
+        }
     }
 
     .sale {

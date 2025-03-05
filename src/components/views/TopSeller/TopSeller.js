@@ -37,23 +37,29 @@ const TopSeller = () => {
         }}
       >
         <div className={styles.outlines}>
-          <div data-toggle='tooltip' data-placement='right' title='Tooltip on right'>
-            <Button variant='outline'>
-              <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-            </Button>
-          </div>
+          <Button variant='outline' data-title='Add to favorite'>
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          </Button>
           <div>
-            <Button variant='outline' data-testid='compare-test'>
+            <Button
+              variant='outline'
+              data-testid='compare-test'
+              data-title='Add to compare'
+            >
               <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
             </Button>
           </div>
           <div>
-            <Button variant='outline'>
+            <Button
+              variant='outline'
+              data-tooltip-id='Add to cart'
+              data-title='Add to cart'
+            >
               <FontAwesomeIcon icon={faShoppingBasket}>Add to cart</FontAwesomeIcon>
             </Button>
           </div>
           <div>
-            <Button variant='outline' className={styles.topBtn}>
+            <Button variant='outline' className={styles.topBtn} data-title='View'>
               <FontAwesomeIcon icon={faEye}>View</FontAwesomeIcon>
             </Button>
           </div>
@@ -74,7 +80,7 @@ const TopSeller = () => {
         setActivePart={setActiveIndex}
       >
         {imageParts.map((part, index) => (
-          <div key={index} className={`image-slide ${index === 0 ? 'active' : ''}`}>
+          <div key={index}>
             <div className='d-flex flex-row flex-nowrap justify-content-center'>
               {index === activeIndex &&
                 part.map((image, i) => (
