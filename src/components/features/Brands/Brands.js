@@ -39,12 +39,11 @@ const Brands = () => {
       setAnimationClass(styles.slideInRight);
       setTimeout(() => {
         setAnimationClass('');
-      }, 300); // czas trwania animacji slideIn
-    }, 300); // czas trwania animacji slideOut
+      }, 300);
+    }, 300);
   };
 
   const prevSlide = () => {
-    // Rozpoczynamy animację przesuwania w prawo
     setAnimationClass(styles.slideOutRight);
     setTimeout(() => {
       setCurrentIndex(
@@ -52,7 +51,6 @@ const Brands = () => {
           (((prevIndex - visibleSlides) % brands.length) + brands.length) %
           brands.length
       );
-      // Po zmianie indeksu, uruchamiamy animację przesuwania z lewej
       setAnimationClass(styles.slideInLeft);
       setTimeout(() => {
         setAnimationClass('');
