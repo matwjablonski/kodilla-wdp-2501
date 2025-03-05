@@ -13,6 +13,8 @@ describe('Component ProductBox', () => {
     promo: 'sale',
     stars: 4,
     action: addToCompareTest,
+    isFavorite: false,
+    isCompared: false,
   };
   it('should render without crashing', () => {
     const component = shallow(<ProductBox {...props} />);
