@@ -243,16 +243,16 @@ const initialState = {
   ],
   deals: [
     {
-      id: 'aenean-ru-bristique-1',
+      id: 'deal-1',
       image: '/images/products/beds/bed-aenean-ru-bristique-1.jpg',
     },
     {
-      id: 'aenean-ru-bristique-2',
-      image: '/images/products/beds/bed-aenean-ru-bristique-1.jpg',
+      id: 'deal-2',
+      image: '/images/products/beds/bed-aenean-ru-bristique-2.jpg',
     },
     {
-      id: 'aenean-ru-bristique-3',
-      image: '/images/products/beds/bed-aenean-ru-bristique-1.jpg',
+      id: 'deal-3',
+      image: '/images/products/beds/bed-aenean-ru-bristique-3.jpg',
     },
   ],
 

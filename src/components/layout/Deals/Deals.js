@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import initialState from '../../../redux/initialState';
 import styles from './Deals.module.scss';
-// import DealBox from '../../common/DealBox/DealBox';
 
 const Deals = ({ id, category }) => {
   return (
@@ -17,15 +16,13 @@ const Deals = ({ id, category }) => {
           <div className={`${styles.smallContainer} w-50`}>
             <div
               className={`${styles.smallDealFirst} ${styles.photo} h-50`}
-              style={{ backgroundImage: `url('${initialState.deals[0]?.image}')` }}
+              style={{ backgroundImage: `url('${initialState.deals[1]?.image}')` }}
             >
-              {/* <DealBox {...deals[1]} /> */}
             </div>
             <div
               className={`${styles.smallDealSecond} ${styles.photo} h-50`}
-              style={{ backgroundImage: `url('${initialState.deals[0]?.image}')` }}
+              style={{ backgroundImage: `url('${initialState.deals[2]?.image}')` }}
             >
-              {/* <DealBox {...deals[2]} /> */}
             </div>
           </div>
         </div>
