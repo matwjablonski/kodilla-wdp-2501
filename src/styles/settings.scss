@@ -1,4 +1,6 @@
 $base-padding: 24px;
+$main-bg-color: #ffffff;
+$main-border-color: #e1e1e1;
 
 // List of variables with colors - !ONLY FOR USE IN THIS FILE!
 
@@ -11,6 +13,7 @@ $featureBorderGrayLight: #b6b6b6;
 $borderBottomGrayLight: #e2e2e2;
 $white: #ffffff;
 $black: #000000;
+$shadow-dark: #010202;
 $grayLight: #e1e1e1;
 $grayLighter: #f4f5f7;
 $grayDarkest: #2a2a2a;
@@ -46,12 +49,16 @@ $featureBox-content-color: $orange;
 $featureBox-border-color: $featureBorderGrayLight;
 $featureBox-border-color-after: $orange;
 
+$featureBox-text-transform-color: $grayMedium;
+
 $productBox-bg: $white;
 $productBox-border: $grayLight;
 $productBox-overlay-bg: $grayLighter;
 $productBox-icon-bg: $formBorderGrayDark;
 $productBox-icon-color: $white;
-$productBox-title-color: $orange;
+$productBox-title-hover-color: $orange;
+$productBox-active: $orange;
+$productBox-title-color: $black;
 $productBox-link-color: $grayDarkest;
 $productBox-title-hover-color: $orange;
 $productBox-price-hover-bg: $orange;
@@ -97,6 +104,12 @@ $menuBar-link-active-color: $white;
 $menuBar-link-active-border: $orange;
 $menuBar-link-border: $grayMedium;
 
+$menuBar-shadow-color: rgba($shadow-dark, 0.2);
+$menuBar-link-border-top: $white;
+$menuBar-menuButton-bg: transparent;
+$menuBar-menuButton-color: $orange;
+$menuBar-dropDownMenu-hover-bg: rgba($orange, 0.7);
+
 $topBar-bg: $grayDarker;
 $topBar-link-color: $white;
 $topBar-link-hover: $orange;
@@ -132,6 +145,10 @@ $promotedBox-icon-hover-color: $grayDarkest;
 $promotedBox-oldPrice-color: $grayLight;
 $promotedBox-newPrice-bg: $black;
 $promotedBox-newPrice-text: $white;
+
+$compareBar-bg: $grayDarker;
+$compareBar-btn-bg: $orange;
+$compareBarItem-btn-text: $grayDarker;
 
 $brands-bg: $white;
 $brands-line-color: $borderBottomGrayLight;
