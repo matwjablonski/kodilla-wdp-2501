@@ -1,0 +1,116 @@
+@import "../../../styles/settings.scss";
+
+.root {
+  padding: 40px 0;
+  text-align: center;
+
+  :global(.row) > :not(.dots) {
+    border-bottom: 4px solid $feedback-border-bottom-color;
+  }
+}
+
+.panelBar {
+  margin-bottom: 30px;
+  position: relative;
+
+  .heading {
+    position: relative;
+
+    h3 {
+      color: $feedback-header-text-color;
+      text-transform: uppercase;
+      font-size: 20px;
+      line-height: 38px;
+      margin: 0;
+      letter-spacing: 1px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 45px;
+      border-bottom: 4px solid $feedback-header-border-bottom-color;
+    }
+  }
+
+  .dots {
+    border-bottom: none;
+    position: absolute;
+    right: 0;
+    bottom: -10px;
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 1rem;
+      list-style: none;
+      background-color: $feedback-dots-bg;
+    }
+
+    ul li {
+      display: inline-block;
+      margin-left: 0.5rem;
+    }
+
+    ul li a {
+      display: block;
+      width: 13px;
+      height: 13px;
+      border-radius: 6px;
+      background-color: $feedback-dots-non-active;
+      font-size: 0;
+      transition: background-color 0.3s;
+
+      &.active,
+      &:hover {
+        background-color: $feedback-dots-active;
+      }
+    }
+  }
+}
+
+.quoteIcon {
+  font-size: 2rem;
+  color: $feedback-quoteIcon-color;
+  margin-bottom: 1rem;
+}
+
+.text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $feedback-text-color;
+  margin: 0 auto 2rem;
+  max-width: 600px;
+}
+
+.authorBox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+
+  img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border: 2px solid $feedback-img-border-color;
+  }
+
+  .authorInfo {
+    text-align: left;
+
+    h3 {
+      margin: 0;
+      font-size: 1rem;
+      color: $feedback-author-header-text-color;
+    }
+
+    p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: $feedback-author-description-text-color;
+    }
+  }
+}

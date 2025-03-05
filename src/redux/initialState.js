@@ -992,6 +992,16 @@ const initialState = {
   cart: {
     products: [],
   },
+  feedback: [
+    {
+      id: 'feedback-1',
+      text:
+        'Chwalebar nodeipsung elit, sed diam voluptu tempor incididunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam.',
+      author: 'John Smith',
+      position: 'Furniture client',
+      image: 'images/clients/john_smith.png',
+    },
+  ],
 };
 
 export default initialState;
