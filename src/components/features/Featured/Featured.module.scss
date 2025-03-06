@@ -85,3 +85,27 @@
     }
   }
 }
+
+.hotDealDots {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $promotedBox-dots-bg;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $promotedBox-dots-active;
+    }
+  }
+
+  .active {
+    background-color: $promotedBox-dots-active;
+  }
+}
