@@ -103,3 +103,15 @@
     }
   }
 }
+
+.productsWrapper{
+  transition: all $hover-animation-time ease-in-out;
+}
+
+.fadeOut {
+  opacity: 0;  
+}
+
+.fadeIn {
+  opacity: 1;
+}
