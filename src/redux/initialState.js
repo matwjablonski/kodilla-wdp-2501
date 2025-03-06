@@ -1,10 +1,6 @@
 const initialState = {
   compareFull: false,
-  alert: {
-    showAlert: false,
-    alertMessage: '',
-  },
-  comparedProducts: [{ id: 'bd-aenean-ru-bristique-1', category: 'bed' }],
+  comparedProducts: [],
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },

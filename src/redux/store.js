@@ -1,7 +1,6 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import initialState from './initialState';
 import compareFullReducer from './compareFullReducer';
-import alertReducer from './alertReducer';
 import compareReducer from './compareReducer';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
@@ -36,7 +35,6 @@ const saveStateToLocalStorage = store => next => action => {
 const persistedState = loadState();
 
 const reducers = {
-  alert: alertReducer,
   compareFull: compareFullReducer,
   comparedProducts: compareReducer,
   cart: cartReducer,
