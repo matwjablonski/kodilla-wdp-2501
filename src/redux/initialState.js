@@ -17,7 +17,7 @@ const initialState = {
       stars: 2,
       promo: null,
       newFurniture: true,
-      isCompared: true,
+      isCompared: false,
       myRating: 4,
       image: 'images/products/bed/bed-bd-aenean-ru-bristique-1.jpg',
       oldPrice: 65,
