@@ -1,3 +1,4 @@
+/* eslint-disable indent */
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import initialState from './initialState';
 import compareFullReducer from './compareFullReducer';
