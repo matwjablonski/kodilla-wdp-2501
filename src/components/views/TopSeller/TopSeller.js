@@ -33,7 +33,7 @@ const TopSeller = () => {
       <div
         className={styles.photo}
         style={{
-          backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/beds/${activeImage.category}-${activeImage.id}.jpg)`,
+          backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/${activeImage.category}/${activeImage.category}-${activeImage.id}.jpg)`,
         }}
       >
         <div className={styles.outlines}>
@@ -88,7 +88,7 @@ const TopSeller = () => {
                   >
                     <img
                       className='d-block w-100 h-100'
-                      src={`${process.env.PUBLIC_URL}/images/products/beds/${image.category}-${image.id}.jpg`}
+                      src={`${process.env.PUBLIC_URL}/images/products/${image.category}/${image.category}-${image.id}.jpg`}
                       alt={`slide-image ${index * 6 + i}`}
                     />
                     <div className={styles.layer}></div>

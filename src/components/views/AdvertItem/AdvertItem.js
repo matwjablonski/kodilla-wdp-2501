@@ -7,7 +7,7 @@ const AdvertItem = () => {
     <div className={clsx(styles.advertWrapper, 'col-6 py-2')}>
       <img
         className={styles.advertImage}
-        src={`${process.env.PUBLIC_URL}/images/products/beds/bed-aenean-ru-bristique-18.jpg`}
+        src={`${process.env.PUBLIC_URL}/images/products/bed/bed-bd-aenean-ru-bristique-18.jpg`}
         alt='bedroom'
       />
       <div className={styles.advertItem}>
