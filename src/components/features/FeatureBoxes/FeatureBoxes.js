@@ -6,39 +6,14 @@ import {
   faReplyAll,
   faBullhorn,
 } from '@fortawesome/free-solid-svg-icons';
-import ReactDOM from 'react-dom';
 import FeatureBox from '../../common/FeatureBox/FeatureBox';
 import styles from './FeatureBoxes.module.scss';
-
-const Modal = ({ title, description, onClose }) => {
-  return ReactDOM.createPortal(
-    <div className={styles.modalBackdrop} onClick={onClose}>
-      <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
-        <button className={styles.modalClose} onClick={onClose}>
-          X
-        </button>
-        <h2>{title}</h2>
-        <p>{description}</p>
-        <button className={styles.modalButton} onClick={onClose}>
-          Zapoznałem się
-        </button>
-      </div>
-    </div>,
-    document.getElementById('modal-root')
-  );
-};
-
-Modal.propTypes = {
-  title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  onClose: PropTypes.func.isRequired,
-};
+import ModalBox from '../../common/ModalBox/ModalBox';
 
 const FeatureBoxes = () => {
   const [activeBox, setActiveBox] = useState(null);
   const [modalData, setModalData] = useState(null);
 
-  // Mapowanie benefitów na dane do modala
   const modalInfo = {
     faTruck: {
       title: 'Free shipping',
@@ -137,7 +112,7 @@ const FeatureBoxes = () => {
         </div>
       </div>
       {modalData && (
-        <Modal
+        <ModalBox
           title={modalData.title}
           description={modalData.description}
           onClose={closeModal}
