@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { getAllBrands } from '../../../redux/brandsRedux';
 import styles from './Brands.module.scss';
@@ -61,6 +62,9 @@ const Brands = () => {
   const slidesToDisplay = [];
   for (let i = 0; i < visibleSlides; i++) {
     slidesToDisplay.push(brands[(currentIndex + i) % brands.length]);
+  let repeatedBrands = brands;
+  if (brands.length === 5) {
+    repeatedBrands = [...brands, brands[0]];
   }
 
   return (
@@ -79,6 +83,17 @@ const Brands = () => {
           </div>
         </div>
         <button className={`${styles.arrow} ${styles.right}`} onClick={nextSlide}>
+        <button className={styles.arrow}>
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        <div className={styles.brandsWrapper}>
+          {repeatedBrands.map(brand => (
+            <div className={styles.brandBox} key={brand.id}>
+              <img src={brand.image} alt={brand.name} />
+            </div>
+          ))}
+        </div>
+        <button className={styles.arrow}>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
