@@ -49,6 +49,13 @@
   width: 100%;
   height: 300px;
   overflow: hidden;
+}
+
+.imageContent {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
 
   img {
     width: 100%;
@@ -56,32 +63,34 @@
     object-fit: cover;
     display: block;
   }
+}
 
-  .sale {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: $promotedBox-sale-text;
-    padding: 5px 8px;
-    border-radius: 2px;
-    font-size: 0.8rem;
-  }
+.sale {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: $promotedBox-sale-text;
+  padding: 5px 8px;
+  border-radius: 2px;
+  font-size: 0.8rem;
+  z-index: 2;
+}
 
-  .hoverElements {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: opacity 0.3s ease-in-out;
-  }
+.hoverElements {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 3;
+}
 
-  &:hover .hoverElements {
-    opacity: 1;
-  }
+.imageWrapper:hover .hoverElements {
+  opacity: 1;
 }
 
 .addToCartBtn {
@@ -191,4 +200,14 @@
       border-radius: 2px;
     }
   }
+}
+
+.fadeIn {
+  opacity: 1;
+  transition: opacity $hover-animation-time ease-in-out;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity $hover-animation-time ease-in-out;
 }

@@ -56,19 +56,28 @@ const Featured = () => {
       : null;
 
   const [activeArrow, setActiveArrow] = useState(null);
+  const [fade, setFade] = useState(true);
 
   const handleFeaturedArrowLeftClick = () => {
-    setActiveFeaturedIndex(prev =>
-      prev > 0 ? prev - 1 : featuredProductsArray.length - 1
-    );
     setActiveArrow('left');
+    setFade(false);
+    setTimeout(() => {
+      setActiveFeaturedIndex(prev =>
+        prev > 0 ? prev - 1 : featuredProductsArray.length - 1
+      );
+      setFade(true);
+    }, 300);
   };
 
   const handleFeaturedArrowRightClick = () => {
-    setActiveFeaturedIndex(prev =>
-      prev < featuredProductsArray.length - 1 ? prev + 1 : 0
-    );
     setActiveArrow('right');
+    setFade(false);
+    setTimeout(() => {
+      setActiveFeaturedIndex(prev =>
+        prev < featuredProductsArray.length - 1 ? prev + 1 : 0
+      );
+      setFade(true);
+    }, 300);
   };
 
   return (
@@ -89,16 +98,20 @@ const Featured = () => {
           </div>
           <div className='col-md-8 d-flex flex-column'>
             {activeFeaturedProduct ? (
-              <div
-                className={styles.featuredWrapper}
-                style={{ backgroundImage: `url(${activeFeaturedProduct.image})` }}
-              >
-                <div className={styles.overlay}>
-                  <h2>
-                    Indoor <span>furniture</span>
-                  </h2>
-                  <p>Save up to 50% of all furniture</p>
-                  <button className={styles.shopNow}>Shop now</button>
+              <div className={styles.featuredWrapper}>
+                <div
+                  className={`${styles.featuredContent} ${
+                    fade ? styles.fadeIn : styles.fadeOut
+                  }`}
+                  style={{ backgroundImage: `url(${activeFeaturedProduct.image})` }}
+                >
+                  <div className={styles.overlay}>
+                    <h2>
+                      Indoor <span>furniture</span>
+                    </h2>
+                    <p>Save up to 50% of all furniture</p>
+                    <button className={styles.shopNow}>Shop now</button>
+                  </div>
                 </div>
                 <div className={styles.arrows}>
                   <button

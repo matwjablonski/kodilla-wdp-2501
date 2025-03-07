@@ -19,6 +19,7 @@ const calculateTimeLeft = endTime => {
 const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
   const [timeLeft, setTimeLeft] = useState(null);
   const timerRef = useRef(null);
+  const [fade, setFade] = useState(true);
 
   const startTimer = () => {
     setTimeLeft(calculateTimeLeft(hotDeal.hotDealsEndTime));
@@ -40,6 +41,11 @@ const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
       clearInterval(timerRef.current);
       startTimer();
     }
+    setFade(false);
+    const timeout = setTimeout(() => {
+      setFade(true);
+    }, 300);
+    return () => clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hotDeal]);
 
@@ -63,28 +69,32 @@ const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
         onMouseEnter={startTimer}
         onMouseLeave={stopTimer}
       >
-        <img src={hotDeal.image} alt={hotDeal.name} />
-        {hotDeal.promo && <div className={styles.sale}>{hotDeal.promo}</div>}
-        <div className={styles.hoverElements}>
-          <Button variant='small' className={styles.addToCartBtn}>
-            <FontAwesomeIcon icon={faShoppingBasket} /> Add to cart
-          </Button>
-          {timeLeft && (
-            <div className={styles.countdown}>
-              <div className={styles.timerBox}>
-                <span>{timeLeft.days}</span> DAYS
+        <div
+          className={`${styles.imageContent} ${fade ? styles.fadeIn : styles.fadeOut}`}
+        >
+          <img src={hotDeal.image} alt={hotDeal.name} />
+          {hotDeal.promo && <div className={styles.sale}>{hotDeal.promo}</div>}
+          <div className={styles.hoverElements}>
+            <Button variant='small' className={styles.addToCartBtn}>
+              <FontAwesomeIcon icon={faShoppingBasket} /> Add to cart
+            </Button>
+            {timeLeft && (
+              <div className={styles.countdown}>
+                <div className={styles.timerBox}>
+                  <span>{timeLeft.days}</span> DAYS
+                </div>
+                <div className={styles.timerBox}>
+                  <span>{timeLeft.hours}</span> HRS
+                </div>
+                <div className={styles.timerBox}>
+                  <span>{timeLeft.minutes}</span> MINS
+                </div>
+                <div className={styles.timerBox}>
+                  <span>{timeLeft.seconds}</span> SECS
+                </div>
               </div>
-              <div className={styles.timerBox}>
-                <span>{timeLeft.hours}</span> HRS
-              </div>
-              <div className={styles.timerBox}>
-                <span>{timeLeft.minutes}</span> MINS
-              </div>
-              <div className={styles.timerBox}>
-                <span>{timeLeft.seconds}</span> SECS
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
       <div className={styles.content}>
