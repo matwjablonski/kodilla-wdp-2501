@@ -1,13 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faShoppingBasket,
-  faExchangeAlt,
-  faStar as fasStar,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar, faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
+import { faShoppingBasket, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import StarRating from '../../features/StarRating/StarRating';
 import styles from './PromotedBox.module.scss';
 
 const calculateTimeLeft = endTime => {
@@ -92,17 +89,7 @@ const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
       </div>
       <div className={styles.content}>
         <h5>{hotDeal.name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= (hotDeal.stars || 0) ? (
-                <FontAwesomeIcon icon={fasStar} />
-              ) : (
-                <FontAwesomeIcon icon={faStar} />
-              )}
-            </a>
-          ))}
-        </div>
+        <StarRating stars={hotDeal.stars} myRating={hotDeal.myRating} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -138,6 +125,7 @@ PromotedBox.propTypes = {
     promo: PropTypes.string,
     stars: PropTypes.number,
     hotDealsEndTime: PropTypes.string.isRequired,
+    myRating: PropTypes.number,
   }).isRequired,
   dotsCount: PropTypes.number,
   activeDot: PropTypes.number,
