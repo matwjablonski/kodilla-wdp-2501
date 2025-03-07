@@ -2,7 +2,8 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretDown, faUser, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faCaretDown, faLock, faBars } from '@fortawesome/free-solid-svg-icons';
+import Login from '../../features/Login/Login';
 
 import styles from './TopBar.module.scss';
 
@@ -32,9 +33,7 @@ const TopBar = () => (
         <div className={`col text-right ${styles.topMenu}`}>
           <ul>
             <li>
-              <a className={styles.textHidden} href='#'>
-                <FontAwesomeIcon className={styles.icon} icon={faUser} /> Login
-              </a>
+              <Login />
             </li>
             <li>
               <a className={styles.textHidden} href='#'>

@@ -1,0 +1,19 @@
+@import "../../../styles/settings.scss";
+
+.topOptions ul li {
+    margin-right: 1rem;
+
+    .icon {
+      margin-left: 5px;
+    }
+}
+
+@media (max-width: 768px) {
+    .textHidden{
+      font-size: 0;
+    }
+  
+    .topMenu ul li .icon {
+      font-size: 20px;
+    }
+}
