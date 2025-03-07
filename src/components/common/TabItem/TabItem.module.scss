@@ -1,0 +1,9 @@
+@import "../../../styles/settings.scss";
+
+.tabItem {
+    a {
+        color: $tableItem-link-color;
+        text-transform: uppercase;
+        font-weight: 600;
+    }
+}

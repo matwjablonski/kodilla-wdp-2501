@@ -4,6 +4,7 @@ import { getAllBrands } from '../../../redux/brandsRedux';
 import styles from './Brands.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import Swipeable from '../../common/Swipeable/Swipeable';
 
 const Brands = () => {
   const brands = useSelector(getAllBrands);
@@ -70,13 +71,15 @@ const Brands = () => {
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
         <div className={styles.brandsWrapper}>
-          <div className={`${styles.slider} ${animationClass}`}>
-            {slidesToDisplay.map((brand, index) => (
-              <div className={styles.brandBox} key={`${brand.id}-${index}`}>
-                <img src={brand.image} alt={brand.name} />
-              </div>
-            ))}
-          </div>
+          <Swipeable swipeLeft={nextSlide} swipeRight={prevSlide}>
+            <div className={`${styles.slider} ${animationClass}`}>
+              {slidesToDisplay.map((brand, index) => (
+                <div className={styles.brandBox} key={`${brand.id}-${index}`}>
+                  <img src={brand.image} alt={brand.name} />
+                </div>
+              ))}
+            </div>
+          </Swipeable>
         </div>
         <button className={`${styles.arrow} ${styles.right}`} onClick={nextSlide}>
           <FontAwesomeIcon icon={faChevronRight} />
