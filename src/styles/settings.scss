@@ -12,6 +12,7 @@ $formBorderGrayDark: #292929;
 $featureBorderGrayLight: #b6b6b6;
 $borderBottomGrayLight: #e2e2e2;
 $white: #ffffff;
+$green: #2ed573;
 $black: #000000;
 $shadow-dark: #010202;
 $grayLight: #e1e1e1;
@@ -104,6 +105,11 @@ $menuBar-link-active-bg: $orange;
 $menuBar-link-active-color: $white;
 $menuBar-link-active-border: $orange;
 $menuBar-link-border: $grayMedium;
+$menuBar-shadow-color: rgba($shadow-dark, 0.2);
+$menuBar-link-border-top: $white;
+$menuBar-menuButton-bg: transparent;
+$menuBar-menuButton-color: $orange;
+$menuBar-dropDownMenu-hover-bg: rgba($orange, 0.7);
 
 $menuBar-shadow-color: rgba($shadow-dark, 0.2);
 $menuBar-link-border-top: $white;
@@ -173,6 +179,67 @@ $feedback-text-color: $grayMedium;
 $feedback-img-border-color: $grayLight;
 $feedback-author-header-text-color: $grayDark;
 $feedback-author-description-text-color: $textGrayMedium;
+
+$tableItem-link-color: $black;
+
+$gallery-text-light: $white;
+$gallery-text-dark: $black;
+$gallery-text-orange: $orange;
+$gallery-text-grass: $green;
+
+$sectionHeader-title: $orange;
+$sectionHeader-horizontal-short-line: $orange;
+$sectionHeader-horizontal-long-line: $borderBottomGrayLight;
+
+$topSeller-sale-price: $white;
+$topSeller-sale-bg: $grayDarkest;
+$topSeller-product-bg-gradient-light: $white;
+$topSeller-product-bg-gradient-dark: $black;
+$topSeller-product-border: $grayDarkest;
+$topSeller-tooltip-color: $white;
+$topSeller-tooltip-bg: $black;
+
+$tableItem-link-color: $black;
+$tableItem-active-link-color: $orange;
+$tableItem-bg: $grayLighter;
+
+$tabContent-bg: $grayLighter;
+
+$compareBar-bg: $grayDarker;
+$compareBar-btn-bg: $orange;
+$compareBarItem-btn-text: $grayDarker;
+
+$slider-btn-bg: $black;
+$slider-btn-icon-color: $white;
+
+$brands-bg: $white;
+$brands-line-color: $borderBottomGrayLight;
+$brands-arrow-bg: $black;
+$brands-arrow-color: $borderBottomGrayLight;
+$brands-arrow-hover-color: $orange;
+$brands-box-bg: $white;
+$brands-box-border: $borderBottomGrayLight;
+
+$feedback-border-bottom-color: $borderBottomGrayLight;
+$feedback-header-border-bottom-color: $orange;
+$feedback-header-text-color: $orange;
+$feedback-dots-bg: $white;
+$feedback-dots-non-active: $grayLight;
+$feedback-dots-active: $orange;
+$feedback-quoteIcon-color: $black;
+$feedback-text-color: $grayMedium;
+$feedback-img-border-color: $grayLight;
+$feedback-author-header-text-color: $grayDark;
+$feedback-author-description-text-color: $textGrayMedium;
+
+$modal-backdrop-bg: rgba($black, 0.6);
+$modal-content-bg: $white;
+$modal-close-color: $grayDarkest;
+$modal-title-color: $grayDarkest;
+$modal-text-color: $grayDarkest;
+$modal-button-bg: $orange;
+$modal-button-text-color: $white;
+$modal-button-hover-bg: darken($orange, 10%);
 
 // ANIMATIONS
 
