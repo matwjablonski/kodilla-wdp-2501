@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import './FormLogin.module.scss';
 
-const FormLogin = () => {
+const FormLogin = ({ onSubmit }) => {
   const [userEmail, setUserEmail] = useState('');
   const [userPassword, setUserPassword] = useState('');
   return (

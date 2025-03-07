@@ -10,15 +10,18 @@ import FormLogin from '../FormLogin/FormLogin';
 
 const Login = () => {
   const [showModal, setShowModal] = useState(false);
+  const [userEmail, setUserEmail] = useState('');
+  const [userPassword, setUserPassword] = useState('');
   const dispatch = useDispatch();
 
   const openModal = () => {
     setShowModal(true);
   };
 
-  const onSubmit = e => {
+  const handleFormLoginSubmit = e => {
     e.preventDefault();
     dispatch(updateLoggedStatus(true));
+    dispatch(updateUserData(userEmail));
     setShowModal(false);
   };
 
@@ -31,7 +34,7 @@ const Login = () => {
             title='Log in'
             description={<FormLogin />}
             typeBtn='submit'
-            onClose={onSubmit}
+            onClose={handleFormLoginSubmit}
           />
         )}
       </a>

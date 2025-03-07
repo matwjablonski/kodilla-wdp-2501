@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 // import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { getLogStatus, getUserData } from '../../../redux/loggedUserRedux';
@@ -11,6 +11,7 @@ import styles from './TopBar.module.scss';
 const TopBar = () => {
   const isLogged = useSelector(getLogStatus);
   const userData = useSelector(getUserData);
+  console.log(userData);
   return (
     <div className={styles.root}>
       <div className='container'>
