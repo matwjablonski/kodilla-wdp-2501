@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { updateLoggedStatus } from '../../../redux/loggedUserRedux';
+import { updateUserData } from '../../../redux/loggedUserRedux';
 import styles from './Login.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -7,12 +10,15 @@ import FormLogin from '../FormLogin/FormLogin';
 
 const Login = () => {
   const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
 
   const openModal = () => {
     setShowModal(true);
   };
 
-  const onSubmit = () => {
+  const onSubmit = e => {
+    e.preventDefault();
+    dispatch(updateLoggedStatus(true));
     setShowModal(false);
   };
 

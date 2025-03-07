@@ -6,8 +6,10 @@ import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import feedbackReducer from './feedbackRedux';
+import loggedUserReducer from './loggedUserRedux';
 
 const reducers = {
+  logged: loggedUserReducer,
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,

@@ -1,4 +1,8 @@
 const initialState = {
+  logged: {
+    status: false,
+    user: '',
+  },
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },
