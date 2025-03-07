@@ -44,6 +44,7 @@ $button-hover-bg: $grayDark;
 
 $featureBox-bg: $white;
 $featureBox-text-color: $grayMedium;
+$featureBox-text-color: $grayMedium;
 $featureBox-icon-color: $white;
 $featureBox-bg-after: $orange;
 $featureBox-content-color: $orange;
@@ -227,6 +228,15 @@ $feedback-text-color: $grayMedium;
 $feedback-img-border-color: $grayLight;
 $feedback-author-header-text-color: $grayDark;
 $feedback-author-description-text-color: $textGrayMedium;
+
+$modal-backdrop-bg: rgba($black, 0.6);
+$modal-content-bg: $white;
+$modal-close-color: $grayDarkest;
+$modal-title-color: $grayDarkest;
+$modal-text-color: $grayDarkest;
+$modal-button-bg: $orange;
+$modal-button-text-color: $white;
+$modal-button-hover-bg: darken($orange, 10%);
 
 // ANIMATIONS
 
