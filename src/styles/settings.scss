@@ -171,6 +171,15 @@ $feedback-img-border-color: $grayLight;
 $feedback-author-header-text-color: $grayDark;
 $feedback-author-description-text-color: $textGrayMedium;
 
+$modal-backdrop-bg: rgba($black, 0.6);
+$modal-content-bg: $white;
+$modal-close-color: $grayDarkest;
+$modal-title-color: $grayDarkest;
+$modal-text-color: $grayDarkest;
+$modal-button-bg: $orange;
+$modal-button-text-color: $white;
+$modal-button-hover-bg: darken($orange, 10%);
+
 // ANIMATIONS
 
 $hover-animation-time: 250ms;
