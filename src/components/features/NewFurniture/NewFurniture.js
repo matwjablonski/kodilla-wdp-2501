@@ -94,7 +94,7 @@ class NewFurniture extends React.Component {
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
       dots.push(
-        <li>
+        <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
             className={i === activePage && styles.active}
@@ -113,7 +113,7 @@ class NewFurniture extends React.Component {
               <div className={'col-auto ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
-              <div className={'col ' + styles.menu}>
+              <div className={'col-lg col-md-auto ' + styles.menu}>
                 <ul>
                   {categories.map(item => (
                     <li key={item.id}>
@@ -143,7 +143,7 @@ class NewFurniture extends React.Component {
               {categoryProducts
                 .slice(activePage * 8, (activePage + 1) * 8)
                 .map(item => (
-                  <div key={item.id} className='col-3'>
+                  <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-12'>
                     <ProductBox action={this.addToCompare} {...item} />
                   </div>
                 ))}
