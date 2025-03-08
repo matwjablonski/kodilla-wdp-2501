@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styles from './ModalBox.module.scss';
 
-const ModalBox = ({ title, description, typeBtn = 'button', onClose, action }) => {
+const ModalBox = ({ title, description, typeBtn='button', onClose, action }) => {
   return ReactDOM.createPortal(
     <div className={styles.modalBackdrop} onClick={onClose}>
       <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
