@@ -1,15 +1,15 @@
 @import "../../../styles/settings.scss";
 
 .root {
-  background-color: #ffffff;
-  border: 1px solid #e1e1e1;
+  background-color: $productBox-bg;
+  border: 1px solid $productBox-border;
   margin-bottom: 2rem;
 
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
     background: {
-      color: #f4f5f7;
+      color: $productBox-overlay-bg;
       size: cover;
       position: center;
       repeat: no-repeat;
@@ -22,9 +22,9 @@
       top: -30px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: #292929;
+      background-color: $productBox-icon-bg;
       border-radius: 50%;
-      color: #ffffff;
+      color: $productBox-icon-color;
       padding: 30px 15px 5px 15px;
     }
 
@@ -41,7 +41,7 @@
     }
 
     .priceBtn {
-      background-color: $primary;  
+      background-color: $primary;
     }
   }
 
@@ -50,23 +50,30 @@
     padding: 20px;
 
     h5 {
-      color: $primary;
+      color: $productBox-title-color;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
     }
+  }
 
-    .stars {
-      a {
-        text-decoration: none;
-        color: rgb(42, 42, 42);
-      }
+  &:hover {
+    .buttons {
+      visibility: visible;
+    }
+
+    .priceBtn {
+      background-color: $productBox-price-hover-bg;  
+    }
+
+    h5 {
+      color: $productBox-title-hover-color;
     }
   }
 
   .line {
     margin: 0 10px;
-    border-bottom: 1px solid #2a2a2a;
+    border-bottom: 1px solid $productBox-long-line-horizontal;
     position: relative;
 
     &::before {
@@ -75,7 +82,7 @@
       bottom: -1px;
       left: 50%;
       width: 30px;
-      border-bottom: 4px solid $primary;
+      border-bottom: 4px solid $productBox-short-line-horizontal;
       transform: translateX(-50%);
     }
   }
@@ -93,9 +100,14 @@
 
       .oldPrice {
         text-decoration: line-through;
-        color: lighten($text-color, 50%);
+        color: $productBox-oldPrice;
         padding: 0 10px;
       }
     }
   }
+}
+
+.active {
+  background-color: $productBox-active;
+  color: $productBox-bg;
 }

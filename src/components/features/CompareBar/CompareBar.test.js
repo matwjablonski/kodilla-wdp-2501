@@ -1,5 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
+import { Provider } from 'react-redux';
+import store from '../../../redux/store';
 import CompareBar from './CompareBar';
 
 describe('Component CompareBar', () => {
@@ -11,26 +13,10 @@ describe('Component CompareBar', () => {
   ];
   it('should render without crashing', () => {
     const component = shallow(
-      <CompareBar
-        showAlert={false}
-        messageAlert=''
-        productsSelected={products}
-        setShowAlert={() => {}}
-        action={() => {}}
-      />
+      <Provider store={store}>
+        <CompareBar productsSelected={products} />
+      </Provider>
     );
     expect(component).toBeTruthy();
-  });
-  it('should show alert when showAlert is true', () => {
-    const component = shallow(
-      <CompareBar
-        showAlert={true}
-        messageAlert='Alert!'
-        productsSelected={products}
-        setShowAlert={() => {}}
-        action={() => {}}
-      />
-    );
-    expect(component.find('.alert').text()).toContain('Alert!');
   });
 });

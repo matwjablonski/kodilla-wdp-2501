@@ -5,13 +5,7 @@ import styles from './CompareBar.module.scss';
 import CompareBarItem from '../CompareBarItem/CompareBarItem';
 import Button from '../../common/Button/Button';
 
-const CompareBar = ({
-  showAlert,
-  messageAlert,
-  productsSelected,
-  setShowAlert,
-  action,
-}) => {
+const CompareBar = ({ productsSelected }) => {
   return (
     <div
       className={clsx(
@@ -19,23 +13,9 @@ const CompareBar = ({
         'row d-flex flex-md-column flex-lg-row justify-content-center align-items-center pl-3 py-4'
       )}
     >
-      {showAlert && (
-        <div className='alert alert-warning alert-dismissible fade show' role='alert'>
-          {messageAlert}
-          <button
-            type='button'
-            className='close'
-            data-dismiss='alert'
-            aria-label='Close'
-            onClick={() => setShowAlert(false)}
-          >
-            <span>&times;</span>
-          </button>
-        </div>
-      )}
       <div className='col-12 col-md-10 d-flex flex-row mx-auto'>
         {productsSelected.map(product => (
-          <CompareBarItem key={product.id} action={action} {...product} />
+          <CompareBarItem key={product.id} {...product} />
         ))}
       </div>
       <div className='col-2 py-2'>
@@ -49,10 +29,6 @@ const CompareBar = ({
 
 CompareBar.propTypes = {
   productsSelected: PropTypes.array,
-  setShowAlert: PropTypes.func,
-  showAlert: PropTypes.bool,
-  messageAlert: PropTypes.string,
-  action: PropTypes.func,
 };
 
 export default CompareBar;
