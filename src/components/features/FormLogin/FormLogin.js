@@ -23,7 +23,7 @@ const FormLogin = ({
           value={userEmail}
           onChange={e => setUserEmail(e.target.value)}
           onSubmit={() => setUserEmail('')}
-          placeholder='Ener email'
+          placeholder='Email'
         />
         <input
           type='password'
