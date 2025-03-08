@@ -1134,17 +1134,17 @@ const initialState = {
   deals: [
     {
       id: 'deal-1',
-      image: '/images/products/beds/bed-aenean-ru-bristique-1.jpg',
+      image: 'images/products/bed/bed-bd-aenean-ru-bristique-2.jpg',
       descryption: 'Guest room sofa -20%',
     },
     {
       id: 'deal-2',
-      image: '/images/products/beds/bed-aenean-ru-bristique-2.jpg',
+      image: 'images/products/bed/bed-bd-aenean-ru-bristique-3.jpg',
       descryption: 'Office chari collection',
     },
     {
       id: 'deal-3',
-      image: '/images/products/beds/bed-aenean-ru-bristique-3.jpg',
+      image: 'images/products/bed/bed-bd-aenean-ru-bristique-23.jpg',
       descryption: 'Special collection',
     },
   ],
