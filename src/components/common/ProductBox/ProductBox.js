@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
+import CompareBtn from '../../features/CompareBtn/CompareBtn';
 import Button from '../Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
 
@@ -15,15 +16,10 @@ const ProductBox = ({
   price,
   promo,
   stars,
-  action,
   isFavorite,
   isCompared,
   myRating,
 }) => {
-  const handleClick = e => {
-    e.preventDefault();
-    action({ id, category });
-  };
   return (
     <div className={styles.root}>
       <div
@@ -50,14 +46,12 @@ const ProductBox = ({
           <Button variant='outline' className={isFavorite ? styles.active : ''}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button
-            variant='outline'
+          <CompareBtn
             data-testid='compare-test'
-            className={isCompared ? styles.active : ''}
-            onClick={handleClick}
-          >
-            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-          </Button>
+            isCompared={isCompared}
+            id={id}
+            category={category}
+          />
         </div>
         <div className={styles.price}>
           {oldPrice && <div className={styles.oldPrice}>$ {oldPrice.toFixed(2)}</div>}
@@ -82,7 +76,6 @@ ProductBox.propTypes = {
   isFavorite: PropTypes.bool,
   isCompared: PropTypes.bool,
   myRating: PropTypes.number,
-  action: PropTypes.func,
 };
 
 export default ProductBox;
