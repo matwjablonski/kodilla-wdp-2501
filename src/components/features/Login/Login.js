@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateLoggedStatus } from '../../../redux/loggedUserRedux';
-import { updateUserData } from '../../../redux/loggedUserRedux';
-import styles from './Login.module.scss';
+import styles from './../../layout/TopBar/TopBar.module.scss';
+import { updateUserData, updateLoggedStatus } from '../../../redux/loggedUserRedux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import ModalBox from '../../common/ModalBox/ModalBox';
 import FormLogin from '../FormLogin/FormLogin';
+import PropTypes from 'prop-types';
 
-const Login = () => {
+const Login = ({ userEmail, setUserEmail, userPassword, setUserPassword }) => {
   const [showModal, setShowModal] = useState(false);
-  const [userEmail, setUserEmail] = useState('');
-  const [userPassword, setUserPassword] = useState('');
   const dispatch = useDispatch();
 
   const openModal = () => {
@@ -21,7 +19,7 @@ const Login = () => {
   const handleFormLoginSubmit = e => {
     e.preventDefault();
     dispatch(updateLoggedStatus(true));
-    dispatch(updateUserData(userEmail));
+    dispatch(updateUserData({ email: userEmail, password: userPassword }));
     setShowModal(false);
   };
 
@@ -32,7 +30,14 @@ const Login = () => {
         {showModal && (
           <ModalBox
             title='Log in'
-            description={<FormLogin />}
+            description={
+              <FormLogin
+                userEmail={userEmail}
+                setUserEmail={setUserEmail}
+                userPassword={userPassword}
+                setUserPassword={setUserPassword}
+              />
+            }
             typeBtn='submit'
             onClose={handleFormLoginSubmit}
           />
@@ -40,6 +45,13 @@ const Login = () => {
       </a>
     </li>
   );
+};
+
+Login.propTypes = {
+  userEmail: PropTypes.string,
+  userPassword: PropTypes.string,
+  setUserEmail: PropTypes.func,
+  setUserPassword: PropTypes.func,
 };
 
 export default Login;

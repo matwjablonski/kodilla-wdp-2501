@@ -1,7 +1,7 @@
 const initialState = {
   logged: {
     status: false,
-    user: '',
+    user: [],
   },
   categories: [
     { id: 'bed', name: 'Bed' },

@@ -1,0 +1,13 @@
+@import "../../../styles/settings.scss";
+
+.welcome {
+    span {
+        font-weight: 700;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome {
+        font-size: 0;
+    }
+}

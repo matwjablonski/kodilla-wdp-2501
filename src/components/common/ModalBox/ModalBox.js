@@ -12,7 +12,7 @@ const ModalBox = ({ title, description, typeBtn, onClose }) => {
         </button>
         <div className='d-flex flex-column justify-content-center align-items-center'>
           <h2>{title}</h2>
-          <p>{description}</p>
+          <div className={styles.description}>{description}</div>
           <button type={typeBtn} className={styles.modalButton} onClick={onClose}>
             {typeBtn === 'submit' ? 'Submit' : 'I got acquainted'}
           </button>
