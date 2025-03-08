@@ -16,6 +16,12 @@ export const hotDealsProducts = ({ products }) =>
 export const featuredProducts = ({ products }) =>
   products.filter(item => item.featured === true);
 
+export const getBySale = ({ products }) =>
+  products.filter(product => product.promo === 'sale');
+
+export const getByRated = ({ products }) =>
+  products.filter(product => product.stars > 2);
+
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {

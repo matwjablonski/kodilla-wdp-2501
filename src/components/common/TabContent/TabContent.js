@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './TabContent.module.scss';
 import clsx from 'clsx';
 import PropTypes from 'prop-types';

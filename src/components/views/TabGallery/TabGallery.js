@@ -5,6 +5,9 @@ import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import TabItem from '../../common/TabItem/TabItem';
 import TabContent from '../../common/TabContent/TabContent';
 import TopSeller from '../TopSeller/TopSeller';
+import FeaturedBoxGallery from '../FeaturedBoxGallery/FeaturedBoxGallery';
+import SaleOff from '../SaleOff/SaleOff';
+import TopRated from '../TopRated/TopRated';
 
 const TabGallery = () => {
   const [activeTab, setActiveTab] = useState('top-seller');
@@ -40,7 +43,7 @@ const TabGallery = () => {
             setIsFade={setIsFade}
             activeLink={activeTab}
           >
-            <div>Content</div>
+            <FeaturedBoxGallery />
           </TabContent>
           <TabContent
             id='top-seller'
@@ -56,7 +59,7 @@ const TabGallery = () => {
             setIsFade={setIsFade}
             activeLink={activeTab}
           >
-            <div>Content</div>
+            <SaleOff />
           </TabContent>
           <TabContent
             id='top-rated'
@@ -64,7 +67,7 @@ const TabGallery = () => {
             setIsFade={setIsFade}
             activeLink={activeTab}
           >
-            <div>Content</div>
+            <TopRated />
           </TabContent>
         </div>
       </div>
