@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import styles from './NewFurniture.module.scss';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import clsx from 'clsx';
@@ -44,6 +45,20 @@ class NewFurniture extends React.Component {
       }, 300);
     });
   }
+
+  getItemsPerPage = () => {
+    const { deviceMode } = this.props;
+    if (deviceMode === 'desktop') {
+      return 8;
+    }
+    if (deviceMode === 'tablet') {
+      return 6;
+    }
+    if (deviceMode === 'mobile') {
+      return 2;
+    }
+    return 8;
+  };
 
   render() {
     const { categories, products } = this.props;
@@ -102,7 +117,7 @@ class NewFurniture extends React.Component {
               )}
             >
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * 8)
+                .slice(activePage * 8, (activePage + 1) * this.getItemsPerPage())
                 .map(item => (
                   <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-12'>
                     <ProductBox action={this.addToCompare} {...item} />
@@ -135,11 +150,17 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  deviceMode: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
   categories: [],
   products: [],
+  deviceMode: 'desktop',
 };
 
-export default NewFurniture;
+const mapStateToProps = state => ({
+  deviceMode: state.device.mode,
+});
+
+export default connect(mapStateToProps)(NewFurniture);
