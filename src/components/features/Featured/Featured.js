@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import { hotDealsProducts, featuredProducts } from '../../../redux/productsRedux';
 import PromotedBox from '../../common/PromotedBox/PromotedBox';
+import Swipeable from '../../common/Swipeable/Swipeable';
 import styles from './Featured.module.scss';
 
 const Featured = () => {
@@ -98,40 +99,45 @@ const Featured = () => {
           </div>
           <div className='col-lg-8 d-flex flex-column'>
             {activeFeaturedProduct ? (
-              <div className={styles.featuredWrapper}>
-                <div
-                  className={`${styles.featuredContent} ${
-                    fade ? styles.fadeIn : styles.fadeOut
-                  }`}
-                  style={{ backgroundImage: `url(${activeFeaturedProduct.image})` }}
-                >
-                  <div className={styles.overlay}>
-                    <h2>
-                      Indoor <span>furniture</span>
-                    </h2>
-                    <p>Save up to 50% of all furniture</p>
-                    <button className={styles.shopNow}>Shop now</button>
+              <Swipeable
+                swipeLeft={handleFeaturedArrowRightClick}
+                swipeRight={handleFeaturedArrowLeftClick}
+              >
+                <div className={styles.featuredWrapper}>
+                  <div
+                    className={`${styles.featuredContent} ${
+                      fade ? styles.fadeIn : styles.fadeOut
+                    }`}
+                    style={{ backgroundImage: `url(${activeFeaturedProduct.image})` }}
+                  >
+                    <div className={styles.overlay}>
+                      <h2>
+                        Indoor <span>furniture</span>
+                      </h2>
+                      <p>Save up to 50% of all furniture</p>
+                      <button className={styles.shopNow}>Shop now</button>
+                    </div>
+                  </div>
+                  <div className={styles.arrows}>
+                    <button
+                      className={`${styles.arrowLeft} ${
+                        activeArrow === 'left' ? styles.active : ''
+                      }`}
+                      onClick={handleFeaturedArrowLeftClick}
+                    >
+                      &lt;
+                    </button>
+                    <button
+                      className={`${styles.arrowRight} ${
+                        activeArrow === 'right' ? styles.active : ''
+                      }`}
+                      onClick={handleFeaturedArrowRightClick}
+                    >
+                      &gt;
+                    </button>
                   </div>
                 </div>
-                <div className={styles.arrows}>
-                  <button
-                    className={`${styles.arrowLeft} ${
-                      activeArrow === 'left' ? styles.active : ''
-                    }`}
-                    onClick={handleFeaturedArrowLeftClick}
-                  >
-                    &lt;
-                  </button>
-                  <button
-                    className={`${styles.arrowRight} ${
-                      activeArrow === 'right' ? styles.active : ''
-                    }`}
-                    onClick={handleFeaturedArrowRightClick}
-                  >
-                    &gt;
-                  </button>
-                </div>
-              </div>
+              </Swipeable>
             ) : (
               <p>No featured product available.</p>
             )}
