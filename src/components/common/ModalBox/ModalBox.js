@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import styles from './ModalBox.module.scss';
 
-const ModalBox = ({ title, description, typeBtn = 'button', onClose }) => {
+const ModalBox = ({ title, description, typeBtn = 'button', onClose, action }) => {
   return ReactDOM.createPortal(
     <div className={styles.modalBackdrop} onClick={onClose}>
       <div className={styles.modalContent} onClick={e => e.stopPropagation()}>
@@ -13,9 +13,16 @@ const ModalBox = ({ title, description, typeBtn = 'button', onClose }) => {
         <div className='d-flex flex-column justify-content-center align-items-center'>
           <h2>{title}</h2>
           <div className={styles.description}>{description}</div>
-          <button type={typeBtn} className={styles.modalButton} onClick={onClose}>
-            {typeBtn === 'submit' ? 'Submit' : 'I got acquainted'}
-          </button>
+          {typeBtn === 'button' && (
+            <button className={styles.modalButton} onClick={onClose}>
+              I got acquainted
+            </button>
+          )}
+          {typeBtn === 'submit' && (
+            <button className={styles.modalButton} onClick={action}>
+              Submit
+            </button>
+          )}
         </div>
       </div>
     </div>,
