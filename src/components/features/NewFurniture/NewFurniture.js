@@ -4,51 +4,12 @@ import styles from './NewFurniture.module.scss';
 import Swipeable from '../../common/Swipeable/Swipeable';
 import clsx from 'clsx';
 import ProductBox from '../../common/ProductBox/ProductBox';
-import CompareBar from '../CompareBar/CompareBar';
 
 class NewFurniture extends React.Component {
   state = {
     activePage: 0,
     activeCategory: 'bed',
-    productsSelected: [],
-    showAlert: false,
-    messageAlert: '',
     isFade: false,
-  };
-
-  setShowAlert = (showAlert, messageAlert = '') => {
-    this.setState({ showAlert, messageAlert });
-  };
-
-  addToCompare = newProduct => {
-    if (
-      newProduct &&
-      !this.state.productsSelected.find(product => product.id === newProduct.id)
-    ) {
-      if (this.state.productsSelected.length < 4) {
-        this.setState({
-          productsSelected: [...this.state.productsSelected, newProduct],
-        });
-      } else {
-        this.setState({
-          showAlert: true,
-          messageAlert: 'Only 4 products to compare!',
-        });
-      }
-    } else {
-      this.setState({
-        showAlert: true,
-        messageAlert: 'This product is already selected!',
-      });
-    }
-  };
-
-  removeProductFromCompare = productId => {
-    this.setState(prevState => ({
-      productsSelected: prevState.productsSelected.filter(
-        product => product.id !== productId
-      ),
-    }));
   };
 
   swipeLeftMove = () => {
@@ -149,15 +110,6 @@ class NewFurniture extends React.Component {
                 ))}
             </div>
           </Swipeable>
-          {this.state.productsSelected.length >= 1 && (
-            <CompareBar
-              showAlert={this.state.showAlert}
-              messageAlert={this.state.messageAlert}
-              productsSelected={this.state.productsSelected}
-              setShowAlert={this.setShowAlert}
-              action={this.removeProductFromCompare}
-            />
-          )}
         </div>
       </div>
     );

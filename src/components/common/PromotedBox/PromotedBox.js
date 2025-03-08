@@ -1,15 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faShoppingBasket,
-  faHeart,
-  faExchangeAlt,
-  faStar as fasStar,
-  faEye,
-} from '@fortawesome/free-solid-svg-icons';
-import { faStar } from '@fortawesome/free-regular-svg-icons';
+import { faShoppingBasket, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
+import StarRating from '../../features/StarRating/StarRating';
 import styles from './PromotedBox.module.scss';
 
 const calculateTimeLeft = endTime => {
@@ -21,62 +16,90 @@ const calculateTimeLeft = endTime => {
   return { total, days, hours, minutes, seconds };
 };
 
-const PromotedBox = ({ hotDeal }) => {
+const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
   const [timeLeft, setTimeLeft] = useState(null);
-  const handleMouseEnter = () => {
-    if (!timeLeft) {
+  const timerRef = useRef(null);
+  const [fade, setFade] = useState(true);
+
+  const startTimer = () => {
+    setTimeLeft(calculateTimeLeft(hotDeal.hotDealsEndTime));
+    timerRef.current = setInterval(() => {
       setTimeLeft(calculateTimeLeft(hotDeal.hotDealsEndTime));
+    }, 1000);
+  };
+
+  const stopTimer = () => {
+    if (timerRef.current) {
+      clearInterval(timerRef.current);
+      timerRef.current = null;
+      setTimeLeft(null);
     }
   };
+
+  useEffect(() => {
+    if (timerRef.current !== null) {
+      clearInterval(timerRef.current);
+      startTimer();
+    }
+    setFade(false);
+    const timeout = setTimeout(() => {
+      setFade(true);
+    }, 300);
+    return () => clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hotDeal]);
 
   return (
     <div className={styles.root}>
       <div className={styles.header}>
         <h2>Hot deals</h2>
         <div className={styles.dots}>
-          <span className={styles.dot}></span>
-          <span className={`${styles.dot} ${styles.active}`}></span>
-          <span className={styles.dot}></span>
+          {dotsCount &&
+            Array.from({ length: dotsCount }).map((_, index) => (
+              <span
+                key={index}
+                className={`${styles.dot} ${activeDot === index ? styles.active : ''}`}
+                onClick={() => onDotClick(index)}
+              ></span>
+            ))}
         </div>
       </div>
-      <div className={styles.imageWrapper} onMouseEnter={handleMouseEnter}>
-        <img src={hotDeal.image} alt={hotDeal.name} />
-        {hotDeal.promo && <div className={styles.sale}>{hotDeal.promo}</div>}
-        <div className={styles.hoverElements}>
-          <Button variant='small' className={styles.addToCartBtn}>
-            <FontAwesomeIcon icon={faShoppingBasket} /> Add to cart
-          </Button>
-          {timeLeft && (
-            <div className={styles.countdown}>
-              <div className={styles.timerBox}>
-                <span>{timeLeft.days}</span> DAYS
+      <div
+        className={styles.imageWrapper}
+        onMouseEnter={startTimer}
+        onMouseLeave={stopTimer}
+      >
+        <div
+          className={`${styles.imageContent} ${fade ? styles.fadeIn : styles.fadeOut}`}
+        >
+          <img src={hotDeal.image} alt={hotDeal.name} />
+          {hotDeal.promo && <div className={styles.sale}>{hotDeal.promo}</div>}
+          <div className={styles.hoverElements}>
+            <Button variant='small' className={styles.addToCartBtn}>
+              <FontAwesomeIcon icon={faShoppingBasket} /> Add to cart
+            </Button>
+            {timeLeft && (
+              <div className={styles.countdown}>
+                <div className={styles.timerBox}>
+                  <span>{timeLeft.days}</span> DAYS
+                </div>
+                <div className={styles.timerBox}>
+                  <span>{timeLeft.hours}</span> HRS
+                </div>
+                <div className={styles.timerBox}>
+                  <span>{timeLeft.minutes}</span> MINS
+                </div>
+                <div className={styles.timerBox}>
+                  <span>{timeLeft.seconds}</span> SECS
+                </div>
               </div>
-              <div className={styles.timerBox}>
-                <span>{timeLeft.hours}</span> HRS
-              </div>
-              <div className={styles.timerBox}>
-                <span>{timeLeft.minutes}</span> MINS
-              </div>
-              <div className={styles.timerBox}>
-                <span>{timeLeft.seconds}</span> SECS
-              </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
       <div className={styles.content}>
         <h5>{hotDeal.name}</h5>
-        <div className={styles.stars}>
-          {[1, 2, 3, 4, 5].map(i => (
-            <a key={i} href='#'>
-              {i <= (hotDeal.stars || 0) ? (
-                <FontAwesomeIcon icon={fasStar} />
-              ) : (
-                <FontAwesomeIcon icon={faStar} />
-              )}
-            </a>
-          ))}
-        </div>
+        <StarRating stars={hotDeal.stars} myRating={hotDeal.myRating} />
       </div>
       <div className={styles.line}></div>
       <div className={styles.actions}>
@@ -112,7 +135,11 @@ PromotedBox.propTypes = {
     promo: PropTypes.string,
     stars: PropTypes.number,
     hotDealsEndTime: PropTypes.string.isRequired,
+    myRating: PropTypes.number,
   }).isRequired,
+  dotsCount: PropTypes.number,
+  activeDot: PropTypes.number,
+  onDotClick: PropTypes.func,
 };
 
 export default PromotedBox;

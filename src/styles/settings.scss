@@ -149,13 +149,16 @@ $promotedBox-line-active-bg: $orange;
 $promotedBox-icon-hover-bg: $grayLighter;
 $promotedBox-icon-hover-border: $grayLight;
 $promotedBox-icon-hover-color: $grayDarkest;
-$promotedBox-oldPrice-color: $grayLight;
+$promotedBox-oldPrice-color: $featureBorderGrayLight;
 $promotedBox-newPrice-bg: $black;
 $promotedBox-newPrice-text: $white;
 
 $compareBar-bg: $grayDarker;
 $compareBar-btn-bg: $orange;
 $compareBarItem-btn-text: $grayDarker;
+
+$slider-btn-bg: $black;
+$slider-btn-icon-color: $white;
 
 $brands-bg: $white;
 $brands-line-color: $borderBottomGrayLight;
