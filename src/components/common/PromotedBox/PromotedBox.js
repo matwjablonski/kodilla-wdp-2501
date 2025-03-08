@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CompareBtn from '../../features/CompareBtn/CompareBtn';
 import { faShoppingBasket, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
@@ -72,7 +73,10 @@ const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
         <div
           className={`${styles.imageContent} ${fade ? styles.fadeIn : styles.fadeOut}`}
         >
-          <img src={hotDeal.image} alt={hotDeal.name} />
+          <img
+            src={`${process.env.PUBLIC_URL}/images/products/${hotDeal.category}/${hotDeal.category}-${hotDeal.id}.jpg`}
+            alt={hotDeal.name}
+          />
           {hotDeal.promo && <div className={styles.sale}>{hotDeal.promo}</div>}
           <div className={styles.hoverElements}>
             <Button variant='small' className={styles.addToCartBtn}>
@@ -110,9 +114,11 @@ const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
           <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart} />
           </Button>
-          <Button variant='outline'>
-            <FontAwesomeIcon icon={faExchangeAlt} />
-          </Button>
+          <CompareBtn
+            isCompared={hotDeal.isCompared}
+            id={hotDeal.id}
+            category={hotDeal.category}
+          />
         </div>
         <div className={styles.prices}>
           {hotDeal.oldPrice && (
@@ -128,12 +134,14 @@ const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
 PromotedBox.propTypes = {
   hotDeal: PropTypes.shape({
     id: PropTypes.string.isRequired,
+    category: PropTypes.string,
     image: PropTypes.string,
     name: PropTypes.string,
     oldPrice: PropTypes.number,
     price: PropTypes.number.isRequired,
     promo: PropTypes.string,
     stars: PropTypes.number,
+    isCompared: PropTypes.bool,
     hotDealsEndTime: PropTypes.string.isRequired,
     myRating: PropTypes.number,
   }).isRequired,

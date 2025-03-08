@@ -103,7 +103,9 @@ const Featured = () => {
                   className={`${styles.featuredContent} ${
                     fade ? styles.fadeIn : styles.fadeOut
                   }`}
-                  style={{ backgroundImage: `url(${activeFeaturedProduct.image})` }}
+                  style={{
+                    backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/${activeFeaturedProduct.category}/${activeFeaturedProduct.category}-${activeFeaturedProduct.id}.jpg)`,
+                  }}
                 >
                   <div className={styles.overlay}>
                     <h2>
