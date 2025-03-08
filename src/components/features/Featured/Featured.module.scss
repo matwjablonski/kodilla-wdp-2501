@@ -132,3 +132,9 @@
   opacity: 0;
   transition: opacity $hover-animation-time ease-in-out;
 }
+
+@media (max-width: 991.98px) {
+  .featuredWrapper {
+    min-height: 400px;
+  }
+}

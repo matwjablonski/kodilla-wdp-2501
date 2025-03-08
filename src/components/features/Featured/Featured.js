@@ -84,7 +84,7 @@ const Featured = () => {
     <section className={styles.promoted}>
       <div className='container'>
         <div className='row d-flex align-items-stretch'>
-          <div className='col-md-4 d-flex flex-column'>
+          <div className='col-lg-4 d-none d-lg-flex flex-column'>
             {activeHotDeal ? (
               <PromotedBox
                 hotDeal={activeHotDeal}
@@ -96,7 +96,7 @@ const Featured = () => {
               <p>No hot deals available.</p>
             )}
           </div>
-          <div className='col-md-8 d-flex flex-column'>
+          <div className='col-lg-8 d-flex flex-column'>
             {activeFeaturedProduct ? (
               <div className={styles.featuredWrapper}>
                 <div
