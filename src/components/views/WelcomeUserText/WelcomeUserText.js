@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 const WelcomeUserText = ({ userName }) => {
   return (
     <li className={styles.welcome}>
-      Hello, <span>{userName}!</span>
+      Hello, <span>{userName}</span>!
     </li>
   );
 };
