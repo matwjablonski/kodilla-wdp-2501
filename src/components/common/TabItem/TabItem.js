@@ -14,7 +14,10 @@ const TabItem = ({ id, activeLink, action, children }) => {
         aria-controls={id}
         role='tab'
         data-toggle='tab'
-        onClick={() => action(id)}
+        onClick={e => {
+          e.preventDefault();
+          action(id);
+        }}
       >
         {children}
       </a>

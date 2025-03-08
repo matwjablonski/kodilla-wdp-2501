@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import clsx from 'clsx';
+import styles from './TabGallery.module.scss';
 import SectionHeader from '../../common/SectionHeader/SectionHeader';
 import TabItem from '../../common/TabItem/TabItem';
 import TabContent from '../../common/TabContent/TabContent';
@@ -12,7 +14,7 @@ const TabGallery = () => {
   };
 
   return (
-    <div className='col-6'>
+    <div className={clsx(styles.tabGallery, 'col-6')}>
       <SectionHeader>Furniture Gallery</SectionHeader>
       <div className='pt-4'>
         <ul className='nav nav-tabs' role='tablist'>
