@@ -1,6 +1,8 @@
 @import "../../../styles/settings.scss";
 
 .welcome {
+  color: $topBar-link-hover;
+  
     span {
         font-weight: 700;
     }
