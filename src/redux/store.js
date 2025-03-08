@@ -1,6 +1,7 @@
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import initialState from './initialState';
-
+import compareFullReducer from './compareFullReducer';
+import compareReducer from './compareReducer';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
@@ -34,8 +35,36 @@ const saveStateToLocalStorage = store => next => action => {
 
 const persistedState = loadState();
 
+const loadState = () => {
+  try {
+    const serializedState = localStorage.getItem('reduxState');
+    if (serializedState) {
+      return JSON.parse(serializedState);
+    }
+  } catch (err) {
+    console.error('Something went wrong...', err);
+  }
+  return {};
+};
+
+const saveStateToLocalStorage = store => next => action => {
+  const result = next(action);
+  const state = store.getState();
+  try {
+    const serializedState = JSON.stringify(state);
+    localStorage.setItem('reduxState', serializedState);
+  } catch (err) {
+    console.error('Something went wrong...', err);
+  }
+  return result;
+};
+
+const persistedState = loadState();
+
 const reducers = {
   logged: loggedUserReducer,
+  compareFull: compareFullReducer,
+  comparedProducts: compareReducer,
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,

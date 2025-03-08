@@ -60,44 +60,4 @@ describe('Component NewFurniture', () => {
     const component = shallow(<NewFurniture />);
     expect(component).toBeTruthy();
   });
-  it('should show alert when more than 4 products selected to compare', () => {
-    const component = shallow(
-      <NewFurniture categories={categories} products={products} />
-    );
-    component.instance().addToCompare(products[0]);
-    component.instance().addToCompare(products[1]);
-    component.instance().addToCompare(products[2]);
-    component.instance().addToCompare(products[3]);
-    expect(component.state().showAlert).toBe(false);
-    component.instance().addToCompare(products[4]);
-    expect(component.state().showAlert).toBe(true);
-    expect(component.state().messageAlert).toBe('Only 4 products to compare!');
-  });
-  it('should show alert when the same product added to compare', () => {
-    const component = shallow(
-      <NewFurniture categories={categories} products={products} />
-    );
-    component.instance().addToCompare(products[0]);
-    expect(component.state().showAlert).toBe(false);
-    component.instance().addToCompare(products[0]);
-    expect(component.state().showAlert).toBe(true);
-    expect(component.state().messageAlert).toBe('This product is already selected!');
-  });
-  it('should add product to compare list', () => {
-    const component = shallow(
-      <NewFurniture categories={categories} products={products} />
-    );
-    expect(component.state().productsSelected).toHaveLength(0);
-    component.instance().addToCompare(products[0]);
-    expect(component.state().productsSelected).toHaveLength(1);
-  });
-  it('should remove product from compare list', () => {
-    const component = shallow(
-      <NewFurniture categories={categories} products={products} />
-    );
-    expect(component.state().productsSelected).toHaveLength(0);
-    component.instance().addToCompare(products[0]);
-    component.instance().removeProductFromCompare('1');
-    expect(component.state().productsSelected).toHaveLength(0);
-  });
 });
