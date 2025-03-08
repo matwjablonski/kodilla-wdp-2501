@@ -3,17 +3,14 @@ import { useSelector } from 'react-redux';
 import { getAll } from '../../../redux/productsRedux';
 import styles from './TopSeller.module.scss';
 import clsx from 'clsx';
+import CompareBtn from '../../features/CompareBtn/CompareBtn';
 import Button from '../../common/Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
 import { setPartsWithImages } from '../../../utils/setPartWithImages';
 import Slider from '../../common/Slider/Silder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import {
-  faExchangeAlt,
-  faShoppingBasket,
-  faEye,
-} from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket, faEye } from '@fortawesome/free-solid-svg-icons';
 
 const TopSeller = () => {
   const products = useSelector(getAll);
@@ -40,13 +37,11 @@ const TopSeller = () => {
           <Button variant='outline' data-title='Add to favorite'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button
-            variant='outline'
-            data-testid='compare-test'
-            data-title='Add to compare'
-          >
-            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-          </Button>
+          <CompareBtn
+            isCompared={activeImage.isCompared}
+            id={activeImage.id}
+            category={activeImage.category}
+          />
           <Button
             variant='outline'
             data-tooltip-id='Add to cart'

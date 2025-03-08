@@ -11,9 +11,11 @@
         background-color: $compareBar-btn-bg;
         font-weight: bold;
         text-transform: uppercase;
+        padding: 10px 20px;
 
         &:hover {
             text-decoration: none;
+            color: $compareBarItem-btn-text;
         }
     }
 }
