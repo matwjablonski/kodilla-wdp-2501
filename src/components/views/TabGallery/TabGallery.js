@@ -8,8 +8,10 @@ import TopSeller from '../TopSeller/TopSeller';
 
 const TabGallery = () => {
   const [activeTab, setActiveTab] = useState('top-seller');
+  const [isFade, setIsFade] = useState(false);
 
   const handleTabClick = tabId => {
+    setIsFade(true);
     setActiveTab(tabId);
   };
 
@@ -32,16 +34,36 @@ const TabGallery = () => {
           </TabItem>
         </ul>
         <div className='tab-content'>
-          <TabContent id='featured' activeLink={activeTab}>
+          <TabContent
+            id='featured'
+            isFade={isFade}
+            setIsFade={setIsFade}
+            activeLink={activeTab}
+          >
             <div>Content</div>
           </TabContent>
-          <TabContent id='top-seller' activeLink={activeTab}>
+          <TabContent
+            id='top-seller'
+            isFade={isFade}
+            setIsFade={setIsFade}
+            activeLink={activeTab}
+          >
             <TopSeller />
           </TabContent>
-          <TabContent id='sale-off' activeLink={activeTab}>
+          <TabContent
+            id='sale-off'
+            isFade={isFade}
+            setIsFade={setIsFade}
+            activeLink={activeTab}
+          >
             <div>Content</div>
           </TabContent>
-          <TabContent id='top-rated' activeLink={activeTab}>
+          <TabContent
+            id='top-rated'
+            isFade={isFade}
+            setIsFade={setIsFade}
+            activeLink={activeTab}
+          >
             <div>Content</div>
           </TabContent>
         </div>

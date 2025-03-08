@@ -1,5 +1,6 @@
 @import "../../../styles/settings.scss";
 
+
 .photo {
     padding: 80% 10px 0 10px;
     background: $tableItem-bg center/cover no-repeat;
@@ -50,7 +51,7 @@
     .sale {
         color: $topSeller-sale-price;
         background-color: $topSeller-sale-bg;
-        padding-top: 25px;
+        padding-top: 20px;
         width: 80px;
         height: 80px;
         line-height: 80px;
@@ -70,7 +71,11 @@
         }
 
         .price {
-            font-size: 15px;
+            font-size: 20px;
+
+            span {
+                font-weight: 500;
+            }
         }
 
         .oldPrice {
@@ -93,6 +98,14 @@
             font-size: 14px;
             font-weight: 600;
         }
+    }
+}
+
+.tabContent{
+    transition: all $hover-animation-time ease-in-out;
+    
+    .fadeOut {
+        opacity: 0;
     }
 }
 

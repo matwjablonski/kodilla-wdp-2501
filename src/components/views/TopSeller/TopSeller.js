@@ -20,18 +20,27 @@ const TopSeller = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeImage, setActiveImage] = useState(products[0]);
   const [isOldPrice, setOldPrice] = useState(false);
+  const [isFade, setIsFade] = useState(false);
 
   useEffect(() => {
     if (!activeImage.oldPrice) setOldPrice(false);
     else setOldPrice(true);
   }, [activeImage.oldPrice]);
 
+  const showProduct = part => {
+    setIsFade(true);
+    setActiveImage(part);
+    setTimeout(() => {
+      setIsFade(false);
+    }, 300);
+  };
+
   const imageParts = setPartsWithImages(products, 6);
 
   return (
-    <div>
+    <div className={styles.tabContent}>
       <div
-        className={styles.photo}
+        className={clsx(styles.photo, isFade && styles.fadeOut)}
         style={{
           backgroundImage: `url(${process.env.PUBLIC_URL}/images/products/${activeImage.category}/${activeImage.category}-${activeImage.id}.jpg)`,
         }}
@@ -59,8 +68,21 @@ const TopSeller = () => {
           </Button>
         </div>
         <div className={styles.sale}>
-          <div className={styles.price}>${activeImage.price}</div>
-          {isOldPrice && <div className={styles.oldPrice}>${activeImage.oldPrice}</div>}
+          <div className={styles.price}>
+            $
+            <span>
+              {activeImage.price && !isNaN(activeImage.price)
+                ? activeImage.price.toFixed(2)
+                : 'N/A'}
+            </span>
+          </div>
+          {isOldPrice && (
+            <div className={styles.oldPrice}>
+              {activeImage.oldPrice && !isNaN(activeImage.oldPrice)
+                ? activeImage.oldPrice.toFixed(2)
+                : ''}
+            </div>
+          )}
           {!isOldPrice && <div className={styles.slogan}>Hot price!</div>}
         </div>
         <div className={styles.product}>
@@ -84,7 +106,7 @@ const TopSeller = () => {
                       activeImage === part[i] ? styles.activeImage : ''
                     )}
                     key={i}
-                    onClick={() => setActiveImage(part[i])}
+                    onClick={() => showProduct(part[i])}
                   >
                     <img
                       className='d-block w-100 h-100'
