@@ -1,0 +1,142 @@
+@import "../../../styles/settings.scss";
+
+.dealRow {
+  display: flex;
+  height: 400px;
+  gap: 20px;
+  margin-bottom: 5rem;
+  min-width: 360px;
+}
+
+.photo {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.dealDescryption {
+  position: relative;
+  color: $deals-text-color;
+  margin-top: 2.5rem;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8);
+
+  p {
+    z-index: 1;
+    position: absolute;
+    top: 1.5rem;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 5px 0;
+    font-size: 22px;
+    letter-spacing: 1px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      font-size: 16px;
+      top: 1rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 10px;
+      top: -0.5rem
+    }
+  }
+
+  p + p {
+    top: 5rem;
+    border: 2px solid white;
+    @media (max-width: 768px) {
+      font-size: 16px;
+      top: 4rem;
+    }
+
+    @media (max-width: 576px) {
+      font-size: 10px;
+      top: 2rem
+    }
+  }
+
+  p span {
+    margin: 0 2px;
+  }
+
+  p .bold {
+    font-weight: 700;
+    font-size: 22px;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+    @media (max-width: 576px) {
+      font-size: 10px;
+    }
+
+  }
+
+  p .thin {
+    font-weight: 300;
+    font-size: 16px;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+    @media (max-width: 576px) {
+      font-size: 10px;
+    }
+
+  }
+
+  p .changeColor {
+    color: $deals-highlight-color;
+    font-weight: 600;
+  }
+
+  p .price {
+    font-size: 20px;
+    font-weight: 700;
+    color: $deals-highlight-color;
+    @media (max-width: 768px) {
+      font-size: 14px;
+    }
+
+  }
+}
+
+.smallContainer {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+  .dealRow {
+    height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .dealRow {
+    height: 250px;
+  }
+}
+
+@media (max-width: 576px) {
+  .dealRow {
+    height: 200px;
+  }
+}
+
+@media (max-width: 360px) {
+  .dealRow {
+    height: 150px;
+  }
+}
