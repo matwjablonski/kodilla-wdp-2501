@@ -1,4 +1,8 @@
 const initialState = {
+  logged: {
+    status: false,
+    user: [],
+  },
   compareFull: false,
   comparedProducts: [],
   categories: [
