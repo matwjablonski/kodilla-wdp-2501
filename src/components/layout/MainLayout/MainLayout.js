@@ -2,12 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Header from '../Header/Header';
+import Feedback from '../../features/Feedback/Feedback';
 import Footer from '../Footer/Footer';
 
 const MainLayout = ({ children }) => (
   <div>
     <Header />
     {children}
+    <Feedback />
     <Footer />
   </div>
 );

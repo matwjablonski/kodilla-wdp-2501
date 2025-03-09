@@ -9,7 +9,6 @@ import NewFurniture from '../../features/NewFurniture/NewFurnitureContainer';
 import Featured from '../../features/Featured/Featured';
 import Gallery from '../Gallery/Gallery';
 import Brands from '../../features/Brands/Brands';
-import Feedback from '../../features/Feedback/Feedback';
 import CompareBar from '../../features/CompareBar/CompareBar';
 
 const Homepage = () => {
@@ -22,7 +21,6 @@ const Homepage = () => {
       <NewFurniture />
       <Gallery />
       <Brands />
-      <Feedback />
       {comparedProducts.length >= 1 && (
         <CompareBar productsSelected={comparedProducts} />
       )}
