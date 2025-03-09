@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import styles from './TabItem.module.scss';
 import PropTypes from 'prop-types';
 
-const TabItem = ({ id, activeLink, children }) => {
+const TabItem = ({ id, activeLink, action, children }) => {
   const isActive = activeLink === id;
 
   return (
@@ -14,6 +14,10 @@ const TabItem = ({ id, activeLink, children }) => {
         aria-controls={id}
         role='tab'
         data-toggle='tab'
+        onClick={e => {
+          e.preventDefault();
+          action(id);
+        }}
       >
         {children}
       </a>
@@ -25,6 +29,7 @@ TabItem.propTypes = {
   id: PropTypes.string,
   activeLink: PropTypes.string,
   children: PropTypes.node,
+  action: PropTypes.func,
 };
 
 export default TabItem;
