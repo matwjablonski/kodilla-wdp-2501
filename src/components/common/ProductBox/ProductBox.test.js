@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import ProductBox from './ProductBox';
 
 describe('Component ProductBox', () => {
-  const addToCompareTest = jest.fn();
   const props = {
     id: '1',
     category: 'bed',
