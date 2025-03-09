@@ -19,9 +19,7 @@ const CompareBar = ({ productsSelected }) => {
         ))}
       </div>
       <div className='col-2 py-2'>
-        <Button className={styles.compareBtn} variant='outline'>
-          Compare
-        </Button>
+        <Button className={styles.compareBtn}>Compare</Button>
       </div>
     </div>
   );

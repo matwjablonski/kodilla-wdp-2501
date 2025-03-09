@@ -46,12 +46,7 @@ const ProductBox = ({
           <Button variant='outline' className={isFavorite ? styles.active : ''}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <CompareBtn
-            data-testid='compare-test'
-            isCompared={isCompared}
-            id={id}
-            category={category}
-          />
+          <CompareBtn isCompared={isCompared} id={id} category={category} />
         </div>
         <div className={styles.price}>
           {oldPrice && <div className={styles.oldPrice}>$ {oldPrice.toFixed(2)}</div>}
