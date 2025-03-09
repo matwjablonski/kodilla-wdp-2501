@@ -19,6 +19,35 @@ const TabContentItem = ({ products }) => {
   const [activeImage, setActiveImage] = useState(products[0]);
   const [isOldPrice, setOldPrice] = useState(false);
   const [isFade, setIsFade] = useState(false);
+  const [imagesInRow, setImagesInRow] = useState(6);
+
+  useEffect(() => {
+    const calculateItemsInRow = () => {
+      const width = window.innerWidth;
+
+      if (width < 460) {
+        setImagesInRow(3);
+      } else if (width < 500) {
+        setImagesInRow(5);
+      } else if (width < 600) {
+        setImagesInRow(5);
+      } else if (width < 768) {
+        setImagesInRow(6);
+      } else if (width < 1024) {
+        setImagesInRow(4);
+      } else if (width < 1200) {
+        setImagesInRow(5);
+      } else {
+        setImagesInRow(6);
+      }
+    };
+
+    calculateItemsInRow();
+
+    window.addEventListener('resize', calculateItemsInRow);
+
+    return () => window.removeEventListener('resize', calculateItemsInRow);
+  }, []);
 
   useEffect(() => {
     if (!activeImage.oldPrice) setOldPrice(false);
@@ -33,7 +62,7 @@ const TabContentItem = ({ products }) => {
     }, 300);
   };
 
-  const imageParts = setPartsWithImages(products, 6);
+  const imageParts = setPartsWithImages(products, imagesInRow);
 
   return (
     <div className={styles.tabContent}>
