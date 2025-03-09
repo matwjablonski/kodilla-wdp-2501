@@ -5,6 +5,7 @@ const initialState = {
   },
   compareFull: false,
   comparedProducts: [],
+  favorites: [],
   categories: [
     { id: 'bed', name: 'Bed' },
     { id: 'chair', name: 'Chair' },

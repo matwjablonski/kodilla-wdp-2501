@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import CompareBtn from '../../features/CompareBtn/CompareBtn';
+import FavoriteBtn from '../../features/FavoriteBtn/FavoriteBtn';
 import Button from '../Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
 
@@ -43,9 +43,7 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' className={isFavorite ? styles.active : ''}>
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-          </Button>
+          <FavoriteBtn id={id} name={name} price={price} category={category} />
           <CompareBtn
             data-testid='compare-test'
             isCompared={isCompared}
