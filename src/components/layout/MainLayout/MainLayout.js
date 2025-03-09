@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setDeviceMode } from '../../../redux/deviceRedux';
 
 import Header from '../Header/Header';
+import Feedback from '../../features/Feedback/Feedback';
 import Footer from '../Footer/Footer';
 
 const getDeviceMode = (width) => {
@@ -30,6 +31,7 @@ const MainLayout = ({ children }) => {
     <div>
       <Header />
       {children}
+      <Feedback />
       <Footer />
     </div>
   );
