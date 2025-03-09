@@ -17,3 +17,9 @@
     display: block;
     background-color: $tabContent-bg;
 }
+
+@media (max-width: 500px) {
+    .nav-tabs .nav-link {
+        font-size: 8px;
+    }
+}
