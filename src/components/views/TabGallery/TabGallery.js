@@ -19,7 +19,7 @@ const TabGallery = () => {
   };
 
   return (
-    <div className={clsx(styles.tabGallery, 'col-6')}>
+    <div className={clsx(styles.tabGallery, 'col-12 col-md-6')}>
       <SectionHeader>Furniture Gallery</SectionHeader>
       <div className='pt-4'>
         <ul className='nav nav-tabs' role='tablist'>
