@@ -2,6 +2,7 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import initialState from './initialState';
 import compareFullReducer from './compareFullReducer';
 import compareReducer from './compareReducer';
+import favoritesReducer from './favoritesRedux';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
@@ -39,6 +40,7 @@ const reducers = {
   logged: loggedUserReducer,
   compareFull: compareFullReducer,
   comparedProducts: compareReducer,
+  favorites: favoritesReducer,
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,
@@ -56,9 +58,9 @@ const combinedReducers = combineReducers(reducers);
 
 const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__
   ? compose(
-    applyMiddleware(saveStateToLocalStorage),
-    window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+      applyMiddleware(saveStateToLocalStorage),
+      window.__REDUX_DEVTOOLS_EXTENSION__()
+    )
   : applyMiddleware(saveStateToLocalStorage);
 
 const store = createStore(
