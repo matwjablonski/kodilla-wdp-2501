@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import initialState from './initialState';
 import compareFullReducer from './compareFullReducer';
@@ -9,6 +8,7 @@ import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import feedbackReducer from './feedbackRedux';
 import deviceReducer from './deviceRedux';
+import loggedUserReducer from './loggedUserRedux';
 
 const loadState = () => {
   try {
@@ -37,6 +37,7 @@ const saveStateToLocalStorage = store => next => action => {
 const persistedState = loadState();
 
 const reducers = {
+  logged: loggedUserReducer,
   compareFull: compareFullReducer,
   comparedProducts: compareReducer,
   cart: cartReducer,
@@ -57,9 +58,9 @@ const combinedReducers = combineReducers(reducers);
 
 const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__
   ? compose(
-      applyMiddleware(saveStateToLocalStorage),
-      window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
+    applyMiddleware(saveStateToLocalStorage),
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
   : applyMiddleware(saveStateToLocalStorage);
 
 const store = createStore(
