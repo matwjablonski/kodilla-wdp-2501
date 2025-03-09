@@ -58,9 +58,9 @@ const combinedReducers = combineReducers(reducers);
 
 const storeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION__
   ? compose(
-      applyMiddleware(saveStateToLocalStorage),
-      window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
+    applyMiddleware(saveStateToLocalStorage),
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
   : applyMiddleware(saveStateToLocalStorage);
 
 const store = createStore(
