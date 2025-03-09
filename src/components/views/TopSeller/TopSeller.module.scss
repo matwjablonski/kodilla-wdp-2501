@@ -1,0 +1,128 @@
+@import "../../../styles/settings.scss";
+
+.photo {
+    padding: 80% 10px 0 10px;
+    background: $tableItem-bg center/cover no-repeat;
+    position: relative;
+
+    .outlines {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        position: absolute;
+        top: 30%;
+
+        > * {
+            margin-bottom: 5px;
+        }
+
+        [data-title] {
+            position: relative;
+
+            &:hover::after {
+                content: attr(data-title);
+                position: absolute;
+                border: none;
+                font-size: 10px;
+                top: 0;
+                left: 38px;
+                background-color: $topSeller-tooltip-bg;
+                color: $topSeller-tooltip-color;
+                padding: 3px 8px;
+                border-radius: 4px;
+                white-space: nowrap;
+            }
+
+            &:hover::before {
+                content: '';
+                position: absolute;
+                top: 48%;
+                left: 28px;
+                transform: translateY(-50%);
+                border-width: 5px;
+                border-style: solid;
+                border-color: transparent $topSeller-tooltip-bg transparent transparent;
+            }
+        }
+    }
+
+    .sale {
+        color: $topSeller-sale-price;
+        background-color: $topSeller-sale-bg;
+        padding-top: 25px;
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50%;
+        text-align: center;
+        position: absolute;
+        top: 48%;
+        right: 10%;
+        z-index: 1;
+
+        .price, .oldPrice, .slogan {
+            line-height: 1.2;
+        }
+
+        .oldPrice, .slogan {
+            font-size: 12px;
+        }
+
+        .price {
+            font-size: 15px;
+        }
+
+        .oldPrice {
+            text-decoration: line-through;
+        }
+    }
+
+    .product {
+        background: repeating-linear-gradient(-45deg, $topSeller-product-bg-gradient-dark 0, $topSeller-product-bg-gradient-dark 10%, $topSeller-product-bg-gradient-light 0, $topSeller-product-bg-gradient-light 90%, $topSeller-product-bg-gradient-dark 0, $topSeller-product-bg-gradient-dark 100%);
+        box-shadow: 1px 1px 3px $topSeller-sale-bg;
+        width: 40%;
+        height: 20%;
+        text-align: center;
+        padding: 20px 10px;
+        position: absolute;
+        top: 65%;
+        right: 0;
+
+        h5 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+    }
+}
+
+.imageCarousel {
+    width: 73px;
+    height: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
+    object-fit: cover;
+    position: relative;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    .layer {
+        position: absolute;
+        content: '';
+        background-color: white;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .5;
+        transition: opacity 0.3s ease;
+    }
+
+    &.activeImage {
+        .layer {
+            opacity: 0;
+        }
+    }
+}
