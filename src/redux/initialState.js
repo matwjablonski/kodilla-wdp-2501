@@ -1,4 +1,8 @@
 const initialState = {
+  logged: {
+    status: false,
+    user: [],
+  },
   compareFull: false,
   comparedProducts: [],
   categories: [
@@ -1131,6 +1135,24 @@ const initialState = {
       isCompared: false,
     },
   ],
+  deals: [
+    {
+      id: 'deal-1',
+      image: 'images/products/bed/bed-bd-aenean-ru-bristique-2.jpg',
+      descryption: 'Guest room sofa -20%',
+    },
+    {
+      id: 'deal-2',
+      image: 'images/products/bed/bed-bd-aenean-ru-bristique-3.jpg',
+      descryption: 'Office chari collection',
+    },
+    {
+      id: 'deal-3',
+      image: 'images/products/bed/bed-bd-aenean-ru-bristique-23.jpg',
+      descryption: 'Special collection',
+    },
+  ],
+
   cart: {
     products: [],
   },
@@ -1187,6 +1209,14 @@ const initialState = {
       image: 'images/clients/robert_brown.png',
     },
   ],
+  device: {
+    mode: 'desktop',
+    breakpoints: {
+      desktop: 1024,
+      tablet: 768,
+      mobile: 576,
+    },
+  },
 };
 
 export default initialState;

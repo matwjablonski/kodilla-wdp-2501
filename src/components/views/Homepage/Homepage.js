@@ -2,6 +2,7 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 
 import styles from './Homepage.module.scss';
+import DealsSection from '../../layout/Deals/Deals';
 import { useSelector } from 'react-redux';
 import { getComparedProducts } from '../../../redux/compareReducer';
 import FeatureBoxes from '../../features/FeatureBoxes/FeatureBoxes';
@@ -18,6 +19,7 @@ const Homepage = () => {
     <div className={styles.root}>
       <Featured />
       <FeatureBoxes />
+      <DealsSection />
       <NewFurniture />
       <Gallery />
       <Brands />

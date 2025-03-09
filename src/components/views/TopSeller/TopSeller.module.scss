@@ -19,7 +19,7 @@
 
         [data-title] {
             position: relative;
-        
+
             &:hover::after {
                 content: attr(data-title);
                 position: absolute;
@@ -33,7 +33,7 @@
                 border-radius: 4px;
                 white-space: nowrap;
             }
-        
+
             &:hover::before {
                 content: '';
                 position: absolute;
@@ -94,14 +94,6 @@
             font-weight: 600;
         }
     }
-}
-
-button {
-    width: 30px;
-    height: 50px;
-    color: white;
-    background-color: black;
-    border: none;
 }
 
 .imageCarousel {
