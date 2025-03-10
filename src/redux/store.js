@@ -8,6 +8,7 @@ import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
 import brandsReducer from './brandsRedux';
 import feedbackReducer from './feedbackRedux';
+import deviceReducer from './deviceRedux';
 import loggedUserReducer from './loggedUserRedux';
 
 const loadState = () => {
@@ -46,6 +47,7 @@ const reducers = {
   products: productsReducer,
   brands: brandsReducer,
   feedback: feedbackReducer,
+  device: deviceReducer,
 };
 
 Object.keys(initialState).forEach(item => {

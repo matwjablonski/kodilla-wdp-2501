@@ -9,7 +9,7 @@ const Deals = ({ id, category, descryption }) => {
       <div className='container'>
         <div className={styles.dealRow}>
           <div
-            className={`${styles.bigDeal} ${styles.photo} w-50`}
+            className={`${styles.bigDealContainer} ${styles.photo}`}
             style={{ backgroundImage: `url('${initialState.deals[0]?.image}')` }}
           >
             <div className={styles.dealDescryption}>
@@ -22,9 +22,9 @@ const Deals = ({ id, category, descryption }) => {
             </div>
           </div>
 
-          <div className={`${styles.smallContainer} w-50`}>
+          <div className={`${styles.smallDealContainer}`}>
             <div
-              className={`${styles.smallDealFirst} ${styles.photo} h-50`}
+              className={`${styles.smallDealFirst} ${styles.photo}`}
               style={{ backgroundImage: `url('${initialState.deals[1]?.image}')` }}
             >
               <div className={styles.dealDescryption}>
@@ -36,7 +36,7 @@ const Deals = ({ id, category, descryption }) => {
               </div>
             </div>
             <div
-              className={`${styles.smallDealSecond} ${styles.photo} h-50`}
+              className={`${styles.smallDealSecond} ${styles.photo}`}
               style={{ backgroundImage: `url('${initialState.deals[2]?.image}')` }}
             >
               <div className={styles.dealDescryption}>

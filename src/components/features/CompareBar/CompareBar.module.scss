@@ -6,14 +6,17 @@
     left: 0;
     right: 0;
     background-color: $compareBar-bg;
+    z-index: 10;
 
     .compareBtn {
         background-color: $compareBar-btn-bg;
         font-weight: bold;
         text-transform: uppercase;
+        padding: 10px 20px;
 
         &:hover {
             text-decoration: none;
+            color: $compareBarItem-btn-text;
         }
     }
 }
