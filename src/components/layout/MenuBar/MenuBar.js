@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
+import { NavLink } from 'react-router-dom';
 import styles from './MenuBar.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
@@ -11,6 +12,16 @@ const MenuBar = ({ children }) => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const menuItems = [
+    { label: 'Home', to: '/' },
+    { label: 'Furniture', to: '/shop/furniture' },
+    { label: 'Chair', to: '/shop/chair' },
+    { label: 'Table', to: '/shop/table' },
+    { label: 'Sofa', to: '/shop/sofa' },
+    { label: 'Bedroom', to: '/shop/bed' },
+    { label: 'Blog', to: '/blog' },
+  ];
 
   return (
     <div className={styles.root}>
@@ -27,29 +38,13 @@ const MenuBar = ({ children }) => {
           <div className='col-6 col-md-12 col-lg-6 d-flex align-items-center order-2 order-md-1 order-lg-2'>
             <div className={`d-none d-md-block ${styles.menu}`}>
               <ul>
-                <li>
-                  <a href='#' className={styles.active}>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>Furniture</a>
-                </li>
-                <li>
-                  <a href='#'>Chair</a>
-                </li>
-                <li>
-                  <a href='#'>Table</a>
-                </li>
-                <li>
-                  <a href='#'>Sofa</a>
-                </li>
-                <li>
-                  <a href='#'>Bedroom</a>
-                </li>
-                <li>
-                  <a href='#'>Blog</a>
-                </li>
+                {menuItems.map((item, index) => (
+                  <li key={index}>
+                    <NavLink exact to={item.to} activeClassName={styles.active}>
+                      {item.label}
+                    </NavLink>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -57,29 +52,18 @@ const MenuBar = ({ children }) => {
         {isMenuOpen && (
           <div className={`d-md-none ${styles.dropdownMenu}`}>
             <ul>
-              <li>
-                <a href='#' className={styles.active}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href='#'>Furniture</a>
-              </li>
-              <li>
-                <a href='#'>Chair</a>
-              </li>
-              <li>
-                <a href='#'>Table</a>
-              </li>
-              <li>
-                <a href='#'>Sofa</a>
-              </li>
-              <li>
-                <a href='#'>Bedroom</a>
-              </li>
-              <li>
-                <a href='#'>Blog</a>
-              </li>
+              {menuItems.map((item, index) => (
+                <li key={index}>
+                  <NavLink
+                    exact
+                    to={item.to}
+                    activeClassName={styles.active}
+                    onClick={toggleMenu}
+                  >
+                    {item.label}
+                  </NavLink>
+                </li>
+              ))}
             </ul>
           </div>
         )}

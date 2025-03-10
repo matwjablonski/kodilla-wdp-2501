@@ -16,6 +16,9 @@ export const hotDealsProducts = ({ products }) =>
 export const featuredProducts = ({ products }) =>
   products.filter(item => item.featured === true);
 
+export const getProductsByCategory = ({ products }, categoryId) =>
+  products.filter(product => product.category === categoryId);
+
 export const getBySale = ({ products }) =>
   products.filter(product => product.promo === 'sale');
 
