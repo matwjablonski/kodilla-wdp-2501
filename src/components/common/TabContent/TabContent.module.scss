@@ -2,4 +2,10 @@
 
 .activeTabContent {
     background-color: $tabContent-bg;
+    opacity: 1;
+    transition: all $hover-animation-time ease-in-out;
+}
+
+.fadeOut {
+    opacity: 0;  
 }
