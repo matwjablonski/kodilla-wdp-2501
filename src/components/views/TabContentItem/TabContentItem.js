@@ -61,7 +61,7 @@ const TabContentItem = ({ products }) => {
       setIsFade(false);
     }, 300);
   };
-
+  
   const imageParts = setPartsWithImages(products, imagesInRow);
 
   return (
