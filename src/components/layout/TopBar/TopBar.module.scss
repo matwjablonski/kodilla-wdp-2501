@@ -2,7 +2,8 @@
 
 .root {
   background-color: $header-topbar-bg;
-  min-width: 420px;
+  min-width: 320px;
+}
 
   ul {
     list-style: none;
@@ -13,27 +14,33 @@
       display: inline-block;
       line-height: 55px;
     }
-  }
-
-  .topOptions ul li {
-    margin-right: 1rem;
-
-    .icon {
-      margin-left: 5px;
+    a{
+      font-size: 16px;
     }
   }
 
-  .topMenu ul li {
-    margin-left: 1.5rem;
-
-    .icon {
-      margin-right: 5px;
+  .topOptions {
+    padding-left: 1rem;
+    width: 60%;
+    ul {
+      li {
+        margin-right: 2rem;
+      }
     }
   }
-}
+
+  .topMenu {
+    padding-right: 1rem;
+    width: 40%;
+    ul {
+      li {
+        margin-left: 2rem;
+      }
+    }
+  }
 
 a {
-  color: #ffffff;
+  color: $topBar-link-color;
   font-size: 13px;
 
   &:hover {
@@ -43,20 +50,44 @@ a {
 }
 
 @media (max-width: 768px) {
-  .topMenu {
-    padding: 0 10px 0 0;
-  }
-
-  .textHidden{
+  .textHidden {
     font-size: 0;
   }
 
-  .topMenu ul li .icon {
-    font-size: 20px;
+  .topMenu ul {
+    li {
+      .icon {
+        margin-right: 1rem;
+        font-size: 20px;
+      }
+    }
   }
+}
 
+@media (max-width: 576px) {
   .topOptions {
-    padding: 0 0 0 10px;
+    padding-left: 0.5rem;
+    width: 60%;
+    ul {
+      li {
+        margin-right: 1rem;
+      }
+      a {
+        font-size: 12px;
+      }
+    }
   }
 
+  .topMenu {
+    padding-right: 0.5rem;
+    width: 40%;
+    ul {
+      li {
+        margin-left: 0rem;
+        .icon{
+          margin: 0 0.7rem;
+        }
+      }
+    }
+  }
 }
