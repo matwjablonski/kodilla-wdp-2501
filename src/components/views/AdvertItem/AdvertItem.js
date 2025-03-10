@@ -4,7 +4,7 @@ import clsx from 'clsx';
 
 const AdvertItem = () => {
   return (
-    <div className={clsx(styles.advertWrapper, 'col-6 py-2')}>
+    <div className={clsx(styles.advertWrapper, 'd-none d-md-block col-md-6 py-2')}>
       <img
         className={styles.advertImage}
         src={`${process.env.PUBLIC_URL}/images/products/bed/bed-bd-aenean-ru-bristique-18.jpg`}
