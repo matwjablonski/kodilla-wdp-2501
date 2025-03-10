@@ -24,7 +24,7 @@ const TopBar = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className='row'>
-          <div className={`col C ${styles.topOptions}`}>
+          <div className={`C ${styles.topOptions}`}>
             <ul>
               <li>
                 <a href='#'>
@@ -43,7 +43,7 @@ const TopBar = () => {
               </li>
             </ul>
           </div>
-          <div className={`col text-right ${styles.topMenu}`}>
+          <div className={`text-right ${styles.topMenu}`}>
             <ul>
               {!isLogged && (
                 <Login
