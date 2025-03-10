@@ -4,16 +4,12 @@ import styles from './TabContentItem.module.scss';
 import clsx from 'clsx';
 import CompareBtn from '../../features/CompareBtn/CompareBtn';
 import Button from '../../common/Button/Button';
+import FavoriteBtn from '../../features/FavoriteBtn/FavoriteBtn';
 import StarRating from '../../features/StarRating/StarRating';
 import { setPartsWithImages } from '../../../utils/setPartWithImages';
 import Slider from '../../common/Slider/Silder';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import {
-  faExchangeAlt,
-  faShoppingBasket,
-  faEye,
-} from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket, faEye } from '@fortawesome/free-solid-svg-icons';
 
 const TabContentItem = ({ products }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -74,9 +70,12 @@ const TabContentItem = ({ products }) => {
         }}
       >
         <div className={styles.outlines}>
-          <Button variant='outline' data-title='Add to favorite'>
-            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-          </Button>
+          <FavoriteBtn
+            id={activeImage.id}
+            name={activeImage.name}
+            price={activeImage.price}
+            category={activeImage.category}
+          />
           <CompareBtn
             isCompared={activeImage.isCompared}
             id={activeImage.id}

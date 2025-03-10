@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CompareBtn from '../../features/CompareBtn/CompareBtn';
 import { faShoppingBasket, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
-import { faHeart, faEye } from '@fortawesome/free-regular-svg-icons';
+import { faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
 import styles from './PromotedBox.module.scss';
+import FavoriteBtn from '../../features/FavoriteBtn/FavoriteBtn';
 
 const calculateTimeLeft = endTime => {
   const total = Date.parse(endTime) - Date.parse(new Date());
@@ -111,9 +112,12 @@ const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
           <Button variant='outline'>
             <FontAwesomeIcon icon={faEye} />
           </Button>
-          <Button variant='outline'>
-            <FontAwesomeIcon icon={faHeart} />
-          </Button>
+          <FavoriteBtn
+            id={hotDeal.id}
+            name={hotDeal.id}
+            price={hotDeal.price}
+            category={hotDeal.category}
+          />
           <CompareBtn
             isCompared={hotDeal.isCompared}
             id={hotDeal.id}
