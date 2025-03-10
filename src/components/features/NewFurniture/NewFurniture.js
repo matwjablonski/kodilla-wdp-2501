@@ -17,7 +17,7 @@ class NewFurniture extends React.Component {
     const categoryProducts = this.props.products.filter(
       item => item.category === this.state.activeCategory
     );
-    const totalPages = Math.ceil(categoryProducts.length / 8);
+    const totalPages = Math.ceil(categoryProducts.length / this.getItemsPerPage());
 
     if (this.state.activePage < totalPages - 1) {
       this.setState({ activePage: this.state.activePage + 1 });
@@ -41,7 +41,7 @@ class NewFurniture extends React.Component {
   handleCategoryChange(newCategory) {
     this.setState({ isFade: true }, () => {
       setTimeout(() => {
-        this.setState({ activeCategory: newCategory, isFade: false });
+        this.setState({ activeCategory: newCategory, activePage: 0, isFade: false });
       }, 300);
     });
   }
@@ -65,7 +65,7 @@ class NewFurniture extends React.Component {
     const { activeCategory, activePage } = this.state;
 
     const categoryProducts = products.filter(item => item.category === activeCategory);
-    const pagesCount = Math.ceil(categoryProducts.length / 8);
+    const pagesCount = Math.ceil(categoryProducts.length / this.getItemsPerPage());
 
     const dots = [];
     for (let i = 0; i < pagesCount; i++) {
@@ -73,7 +73,7 @@ class NewFurniture extends React.Component {
         <li key={i}>
           <a
             onClick={() => this.handlePageChange(i)}
-            className={i === activePage && styles.active}
+            className={i === activePage ? styles.active : ''}
           >
             page {i}
           </a>
@@ -94,7 +94,7 @@ class NewFurniture extends React.Component {
                   {categories.map(item => (
                     <li key={item.id}>
                       <a
-                        className={item.id === activeCategory && styles.active}
+                        className={item.id === activeCategory ? styles.active : ''}
                         onClick={() => this.handleCategoryChange(item.id)}
                       >
                         {item.name}
@@ -117,7 +117,7 @@ class NewFurniture extends React.Component {
               )}
             >
               {categoryProducts
-                .slice(activePage * 8, (activePage + 1) * this.getItemsPerPage())
+                .slice(activePage * this.getItemsPerPage(), (activePage + 1) * this.getItemsPerPage())
                 .map(item => (
                   <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-12'>
                     <ProductBox action={this.addToCompare} {...item} />
