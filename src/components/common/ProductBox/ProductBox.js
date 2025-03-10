@@ -44,12 +44,6 @@ const ProductBox = ({
       <div className={styles.actions}>
         <div className={styles.outlines}>
           <FavoriteBtn id={id} name={name} price={price} category={category} />
-          <CompareBtn
-            data-testid='compare-test'
-            isCompared={isCompared}
-            id={id}
-            category={category}
-          />
           <CompareBtn isCompared={isCompared} id={id} category={category} />
         </div>
         <div className={styles.price}>
