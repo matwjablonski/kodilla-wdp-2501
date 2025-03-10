@@ -19,6 +19,12 @@ export const featuredProducts = ({ products }) =>
 export const getProductsByCategory = ({ products }, categoryId) =>
   products.filter(product => product.category === categoryId);
 
+export const getBySale = ({ products }) =>
+  products.filter(product => product.promo === 'sale');
+
+export const getByRated = ({ products }) =>
+  products.filter(product => product.stars > 2);
+
 // actions
 const createActionName = actionName => `app/products/${actionName}`;
 const SET_COMPARE_STATUS = createActionName('SET_COMPARE_STATUS');
