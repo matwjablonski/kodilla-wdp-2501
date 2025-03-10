@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './TabContentItem.module.scss';
 import clsx from 'clsx';
+import CompareBtn from '../../features/CompareBtn/CompareBtn';
 import Button from '../../common/Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
 import { setPartsWithImages } from '../../../utils/setPartWithImages';
@@ -61,7 +62,7 @@ const TabContentItem = ({ products }) => {
       setIsFade(false);
     }, 300);
   };
-  
+
   const imageParts = setPartsWithImages(products, imagesInRow);
 
   return (
@@ -76,13 +77,11 @@ const TabContentItem = ({ products }) => {
           <Button variant='outline' data-title='Add to favorite'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button
-            variant='outline'
-            data-testid='compare-test'
-            data-title='Add to compare'
-          >
-            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-          </Button>
+          <CompareBtn
+            isCompared={activeImage.isCompared}
+            id={activeImage.id}
+            category={activeImage.category}
+          />
           <Button
             variant='outline'
             data-tooltip-id='Add to cart'
