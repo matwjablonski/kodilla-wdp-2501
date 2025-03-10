@@ -2,6 +2,7 @@ import { combineReducers, createStore, applyMiddleware, compose } from 'redux';
 import initialState from './initialState';
 import compareFullReducer from './compareFullReducer';
 import compareReducer from './compareReducer';
+import favoritesReducer from './favoritesRedux';
 import cartReducer from './cartRedux';
 import categoriesReducer from './categoriesRedux';
 import productsReducer from './productsRedux';
@@ -40,6 +41,7 @@ const reducers = {
   logged: loggedUserReducer,
   compareFull: compareFullReducer,
   comparedProducts: compareReducer,
+  favorites: favoritesReducer,
   cart: cartReducer,
   categories: categoriesReducer,
   products: productsReducer,
