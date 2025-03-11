@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import CompareBtn from '../../features/CompareBtn/CompareBtn';
-import { faShoppingBasket, faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 import { faEye } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import StarRating from '../../features/StarRating/StarRating';
@@ -118,11 +118,7 @@ const PromotedBox = ({ hotDeal, dotsCount, activeDot, onDotClick }) => {
             price={hotDeal.price}
             category={hotDeal.category}
           />
-          <CompareBtn
-            isCompared={hotDeal.isCompared}
-            id={hotDeal.id}
-            category={hotDeal.category}
-          />
+          <CompareBtn id={hotDeal.id} category={hotDeal.category} />
         </div>
         <div className={styles.prices}>
           {hotDeal.oldPrice && (
