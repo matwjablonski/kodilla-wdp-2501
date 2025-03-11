@@ -18,8 +18,9 @@
     background-color: $tabContent-bg;
 }
 
-@media (max-width: 500px), (min-width: 768px) and (max-width: 991px) {
+@media (max-width: 520px), (min-width: 768px) and (max-width: 991px) {
     .nav-tabs .nav-link {
         font-size: 8px;
+        padding: 0 8px;
     }
 }
