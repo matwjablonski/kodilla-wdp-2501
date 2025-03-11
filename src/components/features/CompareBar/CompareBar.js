@@ -10,10 +10,10 @@ const CompareBar = ({ productsSelected }) => {
     <div
       className={clsx(
         styles.compareBar,
-        'row d-flex flex-md-column flex-lg-row justify-content-center align-items-center pl-3 py-4'
+        'row d-flex flex-column flex-lg-row justify-content-center align-items-center pl-3 py-3 py-lg-4'
       )}
     >
-      <div className='col-12 col-md-10 d-flex flex-row mx-auto'>
+      <div className='container col-12 col-md-10 d-flex flex-row mx-auto'>
         {productsSelected.map(product => (
           <CompareBarItem key={product.id} {...product} />
         ))}
