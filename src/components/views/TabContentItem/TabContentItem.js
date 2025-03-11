@@ -76,11 +76,7 @@ const TabContentItem = ({ products }) => {
             price={activeImage.price}
             category={activeImage.category}
           />
-          <CompareBtn
-            isCompared={activeImage.isCompared}
-            id={activeImage.id}
-            category={activeImage.category}
-          />
+          <CompareBtn id={activeImage.id} category={activeImage.category} />
           <Button
             variant='outline'
             data-tooltip-id='Add to cart'
