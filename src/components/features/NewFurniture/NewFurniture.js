@@ -55,7 +55,7 @@ class NewFurniture extends React.Component {
       return 6;
     }
     if (deviceMode === 'mobile') {
-      return 2;
+      return 4;
     }
     return 8;
   };
@@ -86,7 +86,7 @@ class NewFurniture extends React.Component {
         <div className='container'>
           <div className={styles.panelBar}>
             <div className='row no-gutters align-items-end'>
-              <div className={'col-auto ' + styles.heading}>
+              <div className={'col-auto mx-sm-0 mx-auto ' + styles.heading}>
                 <h3>New furniture</h3>
               </div>
               <div className={'col-lg col-md-auto ' + styles.menu}>
@@ -103,7 +103,7 @@ class NewFurniture extends React.Component {
                   ))}
                 </ul>
               </div>
-              <div className={'col-auto ' + styles.dots}>
+              <div className={'col-auto mx-sm-0 mx-auto ' + styles.dots}>
                 <ul>{dots}</ul>
               </div>
             </div>
@@ -117,7 +117,10 @@ class NewFurniture extends React.Component {
               )}
             >
               {categoryProducts
-                .slice(activePage * this.getItemsPerPage(), (activePage + 1) * this.getItemsPerPage())
+                .slice(
+                  activePage * this.getItemsPerPage(),
+                  (activePage + 1) * this.getItemsPerPage()
+                )
                 .map(item => (
                   <div key={item.id} className='col-lg-3 col-md-4 col-sm-6 col-12'>
                     <ProductBox action={this.addToCompare} {...item} />
