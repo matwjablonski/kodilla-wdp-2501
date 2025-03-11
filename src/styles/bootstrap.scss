@@ -23,3 +23,9 @@
         font-size: 8px;
     }
 }
+
+@media (max-width: 767px) {
+    .img-thumbnail {
+        padding: 0;
+    }
+}
