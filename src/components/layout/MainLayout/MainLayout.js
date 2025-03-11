@@ -7,8 +7,8 @@ import Header from '../Header/Header';
 import Feedback from '../../features/Feedback/Feedback';
 import Footer from '../Footer/Footer';
 
-const getDeviceMode = (width) => {
-  if (width >= 1024) return 'desktop';
+const getDeviceMode = width => {
+  if (width >= 992) return 'desktop';
   if (width >= 768) return 'tablet';
   return 'mobile';
 };
