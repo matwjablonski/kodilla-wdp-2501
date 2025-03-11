@@ -5,7 +5,6 @@ import styles from './CompareBarItem.module.scss';
 import Button from '../../common/Button/Button';
 import { useDispatch } from 'react-redux';
 import { removeFromCompare } from '../../../redux/compareReducer';
-import { setCompareStatus } from '../../../redux/productsRedux';
 
 const CompareBarItem = ({ id, category }) => {
   const dispatch = useDispatch();
@@ -13,11 +12,10 @@ const CompareBarItem = ({ id, category }) => {
   const remove = e => {
     e.preventDefault();
     dispatch(removeFromCompare(id));
-    dispatch(setCompareStatus({ id, isCompared: false }));
   };
 
   return (
-    <div className={clsx(styles.imageWrapper, 'py-2 col-3')}>
+    <div className={clsx(styles.imageWrapper, 'col-3 py-2')}>
       <img
         className='img-thumbnail'
         alt={`product-image-${id}`}
